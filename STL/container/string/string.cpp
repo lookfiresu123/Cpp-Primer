@@ -5,10 +5,10 @@ using namespace std;
 
 #define DO_TEST_STRING_1 0
 #define DO_TEST_STRING_2 0
-#define DO_TEST_STRING_3 1
+#define DO_TEST_STRING_3 0
 #define DO_TEST_STRING_4 0
 #define DO_TEST_STRING_5 0
-#define DO_TEST_STRING_6 0
+#define DO_TEST_STRING_6 1
 #define DO_TEST_STRING_7 0
 #define DO_TEST_STRING_8 0
 #define DO_TEST_STRING_9 0
@@ -48,6 +48,47 @@ int test_string_3 (void) {
     return 0;
 }
 
+int test_string_4 (void) {
+    string s;
+    /*
+    while (cin >> s)    // 自动跳过tab、'\n'、空格符，当类std::istream的对象cin中的有效位iostate = goodbit时，cin >> s == true，否则cin >> s == false（遇到EOF或非法输入）
+        cout << s << " ";
+    cout << endl;
+    */
+    /*
+    while (getline(cin, s))     // 遇到终止符EOF，则getline函数返回false
+        cout << s << endl;
+    */
+    // while (getline(cin, s) && !s.empty())   // 此时只输入'\n'也能退出循环
+    //     cout << s << endl;
+    while (getline(cin, s) && !s.empty())
+        if (s.size() > 20)      // 只输出size大于20的字符串
+            cout << s << endl;
+    return 0;
+}
+
+int test_string_5 (void) {
+    string str = "hello world";     // str实例在内存中实际上有个'\0'放在末尾，但没有实际意义，因为所有对类std::string的操作都会忽略'\0'
+    string::size_type size_str = str.size();    // size_type隶属于string类，但string类不是namespace，换句话说string::size_type整体是一个类型
+    cout << size_str << endl;
+    size_str = distance(str.begin(), str.end());
+    cout << size_str << endl;
+    return 0;
+}
+
+int test_string_6 (void) {
+    string s1 = "hello";
+    string s2 = "world";
+    string s = s1 + " " + s2 + "\n";
+    cout << s << endl;
+    //s = "," + "\n";         // 错误，两个字面值（const char [2]）之间不能用'+'（该操作符无效）
+    s = s1 + ',' + "\n";    // 正确，s = ((s1 + ",") + "\n")，先讲string对象和第一个字面值相加得到一个新的临时string对象，再将该临时string对象和第二个字面值相加，得到新的临时string对象后赋值到s中。
+    //s = "," + "\n" + s1;    // 错误，s = (("," + "\n") + s1)
+    s1 += s2;
+    cout << s1 << endl;
+    return 0;
+}
+
 int main (void) {
 #if DO_TEST_STRING_1
     test_string_1();
@@ -57,6 +98,15 @@ int main (void) {
 #endif
 #if DO_TEST_STRING_3
     test_string_3();
+#endif
+#if DO_TEST_STRING_4
+    test_string_4();
+#endif
+#if DO_TEST_STRING_5
+    test_string_5();
+#endif
+#if DO_TEST_STRING_6
+    test_string_6();
 #endif
     return 0;
 }
