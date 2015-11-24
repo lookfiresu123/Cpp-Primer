@@ -11,8 +11,14 @@ using namespace std;
 #define DO_TEST_STRING_5 0
 #define DO_TEST_STRING_6 0
 #define DO_TEST_STRING_7 0
-#define DO_TEST_STRING_8 1
+#define DO_TEST_STRING_8 0
 #define DO_TEST_STRING_9 0
+#define DO_TEST_STRING_10 1
+#define DO_TEST_STRING_11 0
+#define DO_TEST_STRING_12 0
+#define DO_TEST_STRING_13 0
+#define DO_TEST_STRING_14 0
+#define DO_TEST_STRING_15 0
 
 int test_string_1 (void) {
     string s1 = "hello world";
@@ -148,6 +154,7 @@ struct COUNT_CHAR {
     string::size_type xdigit_cnt = 0;
 };
 
+/* 遍历整个string变量 */
 int test_string_8 (void) {
     string str;
     getline(cin, str);
@@ -186,6 +193,78 @@ int test_string_8 (void) {
     return 0;
 }
 
+/* 只访问string类型中的某一个字符 */
+int test_string_9 (void) {
+    string s;
+    //下标运算符接受的参数和s.size()相同，都是string::size_type类型，由于下标必须大于等于0且小于s.size()，超出范围的下标会发生不可预知的效果.
+    //任何表达式的值只要是整数值都能作为下标（因为编译器会隐式的转换为string::size_type，由于该类型是无符号类型，因此s[-1] = s[11...11]，这就是不可预知的效果）
+#if 0
+    cin >> s;
+    if (! s.empty())    // 确保该字符不为空
+        cout << s[0] << endl;
+    if (! s.empty())    // 不管何时只要对string对象使用下标，都要确认那个位置上确实有值
+        s[0] = 'c';
+    cout << s << endl;
+#endif
+#if 1
+    getline(cin, s);
+    // 依次处理s，知道处理完或遇到一个空白字符为止
+    for (decltype(s.size()) index = 0 ; index < s.size() && !isspace(s[index]) ; index++)
+        s[index] = toupper(s[index]);
+    cout << s << endl;
+#endif
+    return 0;
+}
+
+/* 3.2.3练习 */
+int test_string_10 (void) {
+    // 练习3.6
+#if 0
+    string s;
+    getline(cin, s);
+    for (auto &c : s)
+        c = 'x';
+    cout << s << endl;
+    for (decltype(s.size()) index = 0 ; index < s.size() ; index++)
+        s[index] = toupper(s[index]);
+    cout << s << endl;
+#endif
+    // 练习3.7
+#if 0
+    string s;
+    getline(cin, s);
+    for (char c : s)
+        c = 'X';
+    // s不变，因为c只是一个副本
+    cout << s << endl;
+    for (char &c : s)
+        c = 'X';
+    // s都变为X，因为c和s中的字符绑定
+    cout << s << endl;
+#endif
+    // 练习3.8
+#if 0
+    string s;
+    getline(cin, s);
+    string::size_type i = 0;
+    while (i < s.size())
+        s[i++] = 'X';
+    cout << s << endl;
+#endif
+    // 练习3.9
+    // 练习3.10
+#if 1
+    string s = "hello world! My name is Chensu. I'm 24 years old, my birthday is 1992.10.7.";
+    //string::iterator c = s.end();       // c为字符'\0'，这表明'\0'也是string对象的一部分，只是size()函数不考虑它（size()类似于strlen()，而不是sizeof）
+    for (auto c : s)
+        if (! ispunct(c))
+            cout << c;
+    cout << endl;
+#endif
+    // 练习3.11
+    return 0;
+}
+
 int main (void) {
 #if DO_TEST_STRING_1
     test_string_1();
@@ -210,6 +289,12 @@ int main (void) {
 #endif
 #if DO_TEST_STRING_8
     test_string_8();
+#endif
+#if DO_TEST_STRING_9
+    test_string_9();
+#endif
+#if DO_TEST_STRING_10
+    test_string_10();
 #endif
 
     return 0;
