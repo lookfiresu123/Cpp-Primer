@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <cctype>
 
 using namespace std;
 
@@ -8,9 +9,9 @@ using namespace std;
 #define DO_TEST_STRING_3 0
 #define DO_TEST_STRING_4 0
 #define DO_TEST_STRING_5 0
-#define DO_TEST_STRING_6 1
+#define DO_TEST_STRING_6 0
 #define DO_TEST_STRING_7 0
-#define DO_TEST_STRING_8 0
+#define DO_TEST_STRING_8 1
 #define DO_TEST_STRING_9 0
 
 int test_string_1 (void) {
@@ -88,6 +89,102 @@ int test_string_6 (void) {
     cout << s1 << endl;
     return 0;
 }
+/* 第3.2.2节练习 */
+int test_string_7 (void) {
+    // 练习3.2
+#if 0
+    string str2;
+    getline(cin, str2);     // 遇到'\n'丢弃该字符并结束读入
+    while (cin >> str2)     // 遇到EOF(或cin.iostate != goodbit)跳出循环
+        cout << str2 << endl;
+#endif
+    // 练习3.3
+    // 练习3.4
+#if 0
+    string s1, s2, result;
+    cin >> s1 >> s2;
+    if (s1 != s2)
+        result = s1 > s2 ? s1 : s2;
+    cout << result << endl;
+#endif
+#if 0
+    string s1, s2, result;
+    cin >> s1 >> s2;
+    decltype(s1.size()) len1 = s1.size();
+    decltype(s2.size()) len2 = s2.size();
+    if (len1 != len2)
+        result = len1 > len2 ? s1 : s2;
+    cout << result << endl;
+#endif
+    // 练习3.5
+#if 0
+    string str, result;
+    while (cin >> str)
+        result += str;
+    cout << result << endl;
+#endif
+#if 1
+    string str, result;
+    while (cin >> str)
+        result += (str + " ");
+    result.pop_back();      // 移除最后一个字符
+    cout << result << endl;
+#endif
+    return 0;
+}
+
+typedef struct COUNT_CHAR Count_char;
+struct COUNT_CHAR {
+    string::size_type alnum_cnt = 0;
+    string::size_type alpha_cnt = 0;
+    string::size_type cntrl_cnt = 0;
+    string::size_type digit_cnt = 0;
+    string::size_type graph_cnt = 0;
+    string::size_type lower_cnt = 0;
+    string::size_type print_cnt = 0;
+    string::size_type punct_cnt = 0;
+    string::size_type space_cnt = 0;
+    string::size_type upper_cnt = 0;
+    string::size_type xdigit_cnt = 0;
+};
+
+int test_string_8 (void) {
+    string str;
+    getline(cin, str);
+    Count_char cnt;
+    for (auto c : str) {
+        if (isalnum(c))
+            cnt.alnum_cnt ++;
+        if (isalpha(c))
+            cnt.alpha_cnt ++;
+        if (iscntrl(c))
+            cnt.cntrl_cnt ++;
+        if (isdigit(c))
+            cnt.digit_cnt ++;
+        if (isgraph(c))
+            cnt.graph_cnt ++;
+        if (islower(c))
+            cnt.lower_cnt ++;
+        if (isprint(c))
+            cnt.print_cnt ++;
+        if (ispunct(c))
+            cnt.punct_cnt ++;
+        if (isupper(c))
+            cnt.upper_cnt ++;
+        if (isxdigit(c))
+            cnt.xdigit_cnt ++;
+    }
+    cout << "the str is : " << str << endl;
+    for (auto &c : str) {       // 要改变str的值，必须使用引用，因为引用符号&属于标识符，所以auto不变
+        if (islower(c)) {
+            c = toupper(c);
+            cnt.lower_cnt --;
+            cnt.upper_cnt ++;
+        }
+    }
+    cout << "the str is : " << str << endl;
+    return 0;
+}
 
 int main (void) {
 #if DO_TEST_STRING_1
@@ -108,5 +205,12 @@ int main (void) {
 #if DO_TEST_STRING_6
     test_string_6();
 #endif
+#if DO_TEST_STRING_7
+    test_string_7();
+#endif
+#if DO_TEST_STRING_8
+    test_string_8();
+#endif
+
     return 0;
 }
