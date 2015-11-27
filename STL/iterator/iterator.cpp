@@ -3,13 +3,14 @@
 #include <vector>
 #include <cctype>
 #include <cassert>
+#include <iterator>
 
 using namespace std;
 
 #define DO_TEST_ITERATOR_1 0
 #define DO_TEST_ITERATOR_2 0
-#define DO_TEST_ITERATOR_3 1
-#define DO_TEST_ITERATOR_4 0
+#define DO_TEST_ITERATOR_3 0
+#define DO_TEST_ITERATOR_4 1
 #define DO_TEST_ITERATOR_5 0
 #define DO_TEST_ITERATOR_6 0
 
@@ -87,7 +88,29 @@ int test_iterator_3 (void) {
     return 0;
 }
 
+/* 使用迭代器进行二分搜索 */
 int test_iterator_4 (void) {
+    vector<int> v;
+    int temp, value;
+    cout << "enter for value" << endl;
+    cin >> value;
+    cout << "enter for vector" << endl;
+    while (cin >> temp)
+        v.push_back(temp);
+    auto begin_pos = v.begin();
+    auto end_pos = v.end();
+    auto mid_pos = begin_pos + (end_pos - begin_pos) / 2;
+    while (begin_pos != end_pos && *mid_pos != value) {
+        if (*mid_pos > value)
+            end_pos = mid_pos;
+        else
+            begin_pos = mid_pos + 1;
+        mid_pos = begin_pos + (end_pos - begin_pos) / 2;
+    }
+    if (*mid_pos == value)
+        cout << "find it" << endl;
+    else
+        cout << "can not find it" << endl;
     return 0;
 }
 
@@ -96,6 +119,10 @@ int test_iterator_5 (void) {
 }
 
 int test_iterator_6 (void) {
+    return 0;
+}
+
+int test_iterator_7 (void) {
     return 0;
 }
 
