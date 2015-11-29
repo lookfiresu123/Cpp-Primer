@@ -10,8 +10,8 @@ using namespace std;
 #define DO_TEST_ITERATOR_1 0
 #define DO_TEST_ITERATOR_2 0
 #define DO_TEST_ITERATOR_3 0
-#define DO_TEST_ITERATOR_4 1
-#define DO_TEST_ITERATOR_5 0
+#define DO_TEST_ITERATOR_4 0
+#define DO_TEST_ITERATOR_5 1
 #define DO_TEST_ITERATOR_6 0
 
 void output (auto value) {
@@ -114,7 +114,24 @@ int test_iterator_4 (void) {
     return 0;
 }
 
+/* 练习3.24 */
 int test_iterator_5 (void) {
+    vector<int> v;
+    int temp;
+    while (cin >> temp)
+        v.push_back(temp);
+    cout << "相邻整数的和：";
+    for (auto index = v.begin() ; index != v.end()-1 ; ++index)
+        cout << *index + *(index + 1) << " ";
+    cout << endl;
+    cout << "首尾整数的和：";
+    for (auto first = v.begin(), last = v.end()-1 ; first <= last ; ++first, --last) {  // v.end()表示最后一个数的后一位数，因此最后一个数为v.end()-1
+        if (first == last)
+            cout << *first << " ";
+        else
+            cout << *first + *last << " ";
+    }
+    cout << endl;
     return 0;
 }
 
