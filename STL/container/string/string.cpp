@@ -1,8 +1,11 @@
 #include <string>
 #include <iostream>
 #include <cctype>
+#include <cstring>
 
 using namespace std;
+
+/* 函数内部的string对象的值保存在栈中，但其字符串成员保存在堆中（c语言中字符串字面值保存在.rodata中） */
 
 #define DO_TEST_STRING_1 0
 #define DO_TEST_STRING_2 0
@@ -13,10 +16,10 @@ using namespace std;
 #define DO_TEST_STRING_7 0
 #define DO_TEST_STRING_8 0
 #define DO_TEST_STRING_9 0
-#define DO_TEST_STRING_10 1
+#define DO_TEST_STRING_10 0
 #define DO_TEST_STRING_11 0
 #define DO_TEST_STRING_12 0
-#define DO_TEST_STRING_13 0
+#define DO_TEST_STRING_13 1
 #define DO_TEST_STRING_14 0
 #define DO_TEST_STRING_15 0
 
@@ -265,6 +268,52 @@ int test_string_10 (void) {
     return 0;
 }
 
+/* 用数组初始化string */
+int test_string_11 (void) {
+    string s1("hello world");       // for initial of string: () <--> {}
+    char array[] = "hello world";
+    string s2 = array;              // use array to initialize string object
+    const char *p = s2.c_str();     // use string object to initialize constant pointer or array
+    s2 = "my name is chensu";       // 编译器重新在堆中分配内存用于存放"my name is chensu"字符串，而将在栈中的string对象s2本身的值改为"my name is chensu"的首地址
+                                    // 且p的值依然是"hello world"的首地址
+    return 0;
+}
+
+/* 练习3.39 */
+int test_string_12 (void) {
+    string s1("hello world1");
+    string s2("hello world2");
+    if (s1 == s2)
+        cout << "s1 is same with s2" << endl;
+    else if (s1 > s2)
+        cout << "s1 is larger than s2" << endl;
+    else
+        cout << "s1 is smaller than s2" << endl;
+
+    char str1[] = "hello world";
+    char str2[] = "hello world";
+    auto ret = strcmp(str1, str2);
+    if (ret == 0)
+        cout << "str1 is same with str2" << endl;
+    else if (ret > 0)
+        cout << "str1 is larger than str2" << endl;
+    else
+        cout << "str1 is smaller than str2" << endl;
+    return 0;
+}
+
+/* 练习3.40 */
+int test_string_13 (void) {
+    char array1[] = "hello world, ";
+    char array2[] = "my name is chensu";
+    const size_t size = strlen(array1) + strlen(array2) + 1;
+    char array[size];
+    strcpy(array, array1);
+    strcat(array, array2);
+    cout << array << endl;
+    return 0;
+}
+
 int main (void) {
 #if DO_TEST_STRING_1
     test_string_1();
@@ -295,6 +344,15 @@ int main (void) {
 #endif
 #if DO_TEST_STRING_10
     test_string_10();
+#endif
+#if DO_TEST_STRING_11
+    test_string_11();
+#endif
+#if DO_TEST_STRING_12
+    test_string_12();
+#endif
+#if DO_TEST_STRING_13
+    test_string_13();
 #endif
 
     return 0;

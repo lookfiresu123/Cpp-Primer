@@ -11,9 +11,9 @@ using namespace std;
 #define DO_TEST_VECTOR_6 0
 #define DO_TEST_VECTOR_7 0
 #define DO_TEST_VECTOR_8 0
-#define DO_TEST_VECTOR_9 1
+#define DO_TEST_VECTOR_9 0
 #define DO_TEST_VECTOR_10 0
-#define DO_TEST_VECTOR_11 0
+#define DO_TEST_VECTOR_11 1
 #define DO_TEST_VECTOR_12 0
 #define DO_TEST_VECTOR_13 0
 
@@ -145,6 +145,24 @@ int test_vector_9 (void) {
     return 0;
 }
 
+/* 练习3.41 */
+int test_vector_10 (void) {
+    int array[] = {0,1,2,3,4,5,6,7,8,9};
+    vector<int> v(begin(array), end(array));        // end(array) = &array[10]，表示数组尾后一位的地址
+    return 0;
+}
+
+/* 练习3.42 */
+int test_vector_11 (void) {
+    vector<int> v = {0,1,2,3,4,5,6,7,8,9};
+    const size_t size = v.end() - v.begin();
+    int array[size];
+    auto beg = v.begin();
+    for (auto index = v.begin() ; index != v.end() ; ++index)
+        *(array + (index - beg)) = *index;
+    return 0;
+}
+
 int main (void) {
 #if DO_TEST_VECTOR_1
     test_vector_1();
@@ -174,8 +192,10 @@ int main (void) {
     test_vector_9();
 #endif
 #if DO_TEST_VECTOR_10
+    test_vector_10();
 #endif
 #if DO_TEST_VECTOR_11
+    test_vector_11();
 #endif
 #if DO_TEST_VECTOR_12
 #endif
