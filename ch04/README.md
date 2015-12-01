@@ -184,7 +184,7 @@ why those that aren’t legal are in error.
 *iter.empty() // illegal, iter should use '->' to indicate whether empty.
 iter->empty();  // indicate the iter' value whether empty.
 ++*iter;        // illegal, string have not increment.
-iter++->empty();  // return iter->empty(), then ++iter.
+iter++->empty();  // return iter->empty(), then (iter->empty())++.
 ```
 
 ##[Exercise 4.21](ex4_21.cpp)
