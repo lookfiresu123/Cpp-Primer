@@ -11,8 +11,8 @@ using namespace std;
 #define DO_TEST_IF_ELSE_5 0
 #define DO_TEST_IF_ELSE_6 0
 #define DO_TEST_IF_ELSE_7 0
-#define DO_TEST_IF_ELSE_8 1
-#define DO_TEST_IF_ELSE_9 0
+#define DO_TEST_IF_ELSE_8 0
+#define DO_TEST_IF_ELSE_9 1
 
 int test_if_else_1 (void) {
     int grade = 10;
@@ -194,6 +194,21 @@ int test_if_else_8 (void) {
     return 0;
 }
 
+/* wrong example */
+/* 要确保后面的所有case标签都在变量（改变量已被初始化）的作用域之外 */
+int test_if_else_9 (void) {
+    bool result = true;
+    switch (result) {
+        case true:
+            int jval = 0;
+            break;
+        case false:
+            jval = 1;       // 不能只注释掉这一部分，因为之后的修改有可能又把它加回去，到时候会出现意想不到的bug，因此为了
+                            // 帮助开发者治根，必须在初始化的case中加上{}块语句。
+            break;
+    }
+    return 0;
+}
 
 int main (void) {
 #if DO_TEST_IF_ELSE_1
