@@ -1,0 +1,2422 @@
+
+main:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400c50 <_init>:
+_init():
+  400c50:	sub    $0x8,%rsp
+  400c54:	mov    0x20239d(%rip),%rax        # 602ff8 <_DYNAMIC+0x1f0>
+  400c5b:	test   %rax,%rax
+  400c5e:	je     400c65 <_init+0x15>
+  400c60:	callq  400ca0 <__gmon_start__@plt>
+  400c65:	add    $0x8,%rsp
+  400c69:	retq   
+
+Disassembly of section .plt:
+
+0000000000400c70 <_ZNSsaSEPKc@plt-0x10>:
+  400c70:	pushq  0x202392(%rip)        # 603008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  400c76:	jmpq   *0x202394(%rip)        # 603010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  400c7c:	nopl   0x0(%rax)
+
+0000000000400c80 <_ZNSsaSEPKc@plt>:
+  400c80:	jmpq   *0x202392(%rip)        # 603018 <_GLOBAL_OFFSET_TABLE_+0x18>
+  400c86:	pushq  $0x0
+  400c8b:	jmpq   400c70 <_init+0x20>
+
+0000000000400c90 <_ZNSsC1Ev@plt>:
+  400c90:	jmpq   *0x20238a(%rip)        # 603020 <_GLOBAL_OFFSET_TABLE_+0x20>
+  400c96:	pushq  $0x1
+  400c9b:	jmpq   400c70 <_init+0x20>
+
+0000000000400ca0 <__gmon_start__@plt>:
+  400ca0:	jmpq   *0x202382(%rip)        # 603028 <_GLOBAL_OFFSET_TABLE_+0x28>
+  400ca6:	pushq  $0x2
+  400cab:	jmpq   400c70 <_init+0x20>
+
+0000000000400cb0 <_ZdlPv@plt>:
+  400cb0:	jmpq   *0x20237a(%rip)        # 603030 <_GLOBAL_OFFSET_TABLE_+0x30>
+  400cb6:	pushq  $0x3
+  400cbb:	jmpq   400c70 <_init+0x20>
+
+0000000000400cc0 <__cxa_rethrow@plt>:
+  400cc0:	jmpq   *0x202372(%rip)        # 603038 <_GLOBAL_OFFSET_TABLE_+0x38>
+  400cc6:	pushq  $0x4
+  400ccb:	jmpq   400c70 <_init+0x20>
+
+0000000000400cd0 <_ZNSt8ios_base4InitC1Ev@plt>:
+  400cd0:	jmpq   *0x20236a(%rip)        # 603040 <_GLOBAL_OFFSET_TABLE_+0x40>
+  400cd6:	pushq  $0x5
+  400cdb:	jmpq   400c70 <_init+0x20>
+
+0000000000400ce0 <__libc_start_main@plt>:
+  400ce0:	jmpq   *0x202362(%rip)        # 603048 <_GLOBAL_OFFSET_TABLE_+0x48>
+  400ce6:	pushq  $0x6
+  400ceb:	jmpq   400c70 <_init+0x20>
+
+0000000000400cf0 <_ZNSsC1ERKSs@plt>:
+  400cf0:	jmpq   *0x20235a(%rip)        # 603050 <_GLOBAL_OFFSET_TABLE_+0x50>
+  400cf6:	pushq  $0x7
+  400cfb:	jmpq   400c70 <_init+0x20>
+
+0000000000400d00 <__cxa_atexit@plt>:
+  400d00:	jmpq   *0x202352(%rip)        # 603058 <_GLOBAL_OFFSET_TABLE_+0x58>
+  400d06:	pushq  $0x8
+  400d0b:	jmpq   400c70 <_init+0x20>
+
+0000000000400d10 <_ZNSt8ios_base4InitD1Ev@plt>:
+  400d10:	jmpq   *0x20234a(%rip)        # 603060 <_GLOBAL_OFFSET_TABLE_+0x60>
+  400d16:	pushq  $0x9
+  400d1b:	jmpq   400c70 <_init+0x20>
+
+0000000000400d20 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>:
+  400d20:	jmpq   *0x202342(%rip)        # 603068 <_GLOBAL_OFFSET_TABLE_+0x68>
+  400d26:	pushq  $0xa
+  400d2b:	jmpq   400c70 <_init+0x20>
+
+0000000000400d30 <_ZNSsD1Ev@plt>:
+  400d30:	jmpq   *0x20233a(%rip)        # 603070 <_GLOBAL_OFFSET_TABLE_+0x70>
+  400d36:	pushq  $0xb
+  400d3b:	jmpq   400c70 <_init+0x20>
+
+0000000000400d40 <_ZNSsC1EPKcRKSaIcE@plt>:
+  400d40:	jmpq   *0x202332(%rip)        # 603078 <_GLOBAL_OFFSET_TABLE_+0x78>
+  400d46:	pushq  $0xc
+  400d4b:	jmpq   400c70 <_init+0x20>
+
+0000000000400d50 <_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E@plt>:
+  400d50:	jmpq   *0x20232a(%rip)        # 603080 <_GLOBAL_OFFSET_TABLE_+0x80>
+  400d56:	pushq  $0xd
+  400d5b:	jmpq   400c70 <_init+0x20>
+
+0000000000400d60 <__stack_chk_fail@plt>:
+  400d60:	jmpq   *0x202322(%rip)        # 603088 <_GLOBAL_OFFSET_TABLE_+0x88>
+  400d66:	pushq  $0xe
+  400d6b:	jmpq   400c70 <_init+0x20>
+
+0000000000400d70 <_ZNSaIcED1Ev@plt>:
+  400d70:	jmpq   *0x20231a(%rip)        # 603090 <_GLOBAL_OFFSET_TABLE_+0x90>
+  400d76:	pushq  $0xf
+  400d7b:	jmpq   400c70 <_init+0x20>
+
+0000000000400d80 <_ZNSolsEPFRSoS_E@plt>:
+  400d80:	jmpq   *0x202312(%rip)        # 603098 <_GLOBAL_OFFSET_TABLE_+0x98>
+  400d86:	pushq  $0x10
+  400d8b:	jmpq   400c70 <_init+0x20>
+
+0000000000400d90 <__cxa_end_catch@plt>:
+  400d90:	jmpq   *0x20230a(%rip)        # 6030a0 <_GLOBAL_OFFSET_TABLE_+0xa0>
+  400d96:	pushq  $0x11
+  400d9b:	jmpq   400c70 <_init+0x20>
+
+0000000000400da0 <_ZSt17__throw_bad_allocv@plt>:
+  400da0:	jmpq   *0x202302(%rip)        # 6030a8 <_GLOBAL_OFFSET_TABLE_+0xa8>
+  400da6:	pushq  $0x12
+  400dab:	jmpq   400c70 <_init+0x20>
+
+0000000000400db0 <_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@plt>:
+  400db0:	jmpq   *0x2022fa(%rip)        # 6030b0 <_GLOBAL_OFFSET_TABLE_+0xb0>
+  400db6:	pushq  $0x13
+  400dbb:	jmpq   400c70 <_init+0x20>
+
+0000000000400dc0 <__cxa_begin_catch@plt>:
+  400dc0:	jmpq   *0x2022f2(%rip)        # 6030b8 <_GLOBAL_OFFSET_TABLE_+0xb8>
+  400dc6:	pushq  $0x14
+  400dcb:	jmpq   400c70 <_init+0x20>
+
+0000000000400dd0 <_ZNSaIcEC1Ev@plt>:
+  400dd0:	jmpq   *0x2022ea(%rip)        # 6030c0 <_GLOBAL_OFFSET_TABLE_+0xc0>
+  400dd6:	pushq  $0x15
+  400ddb:	jmpq   400c70 <_init+0x20>
+
+0000000000400de0 <__gxx_personality_v0@plt>:
+  400de0:	jmpq   *0x2022e2(%rip)        # 6030c8 <_GLOBAL_OFFSET_TABLE_+0xc8>
+  400de6:	pushq  $0x16
+  400deb:	jmpq   400c70 <_init+0x20>
+
+0000000000400df0 <_Znwm@plt>:
+  400df0:	jmpq   *0x2022da(%rip)        # 6030d0 <_GLOBAL_OFFSET_TABLE_+0xd0>
+  400df6:	pushq  $0x17
+  400dfb:	jmpq   400c70 <_init+0x20>
+
+0000000000400e00 <_Unwind_Resume@plt>:
+  400e00:	jmpq   *0x2022d2(%rip)        # 6030d8 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  400e06:	pushq  $0x18
+  400e0b:	jmpq   400c70 <_init+0x20>
+
+0000000000400e10 <_ZNSirsERj@plt>:
+  400e10:	jmpq   *0x2022ca(%rip)        # 6030e0 <_GLOBAL_OFFSET_TABLE_+0xe0>
+  400e16:	pushq  $0x19
+  400e1b:	jmpq   400c70 <_init+0x20>
+
+Disassembly of section .text:
+
+0000000000400e20 <_start>:
+_start():
+  400e20:	xor    %ebp,%ebp
+  400e22:	mov    %rdx,%r9
+  400e25:	pop    %rsi
+  400e26:	mov    %rsp,%rdx
+  400e29:	and    $0xfffffffffffffff0,%rsp
+  400e2d:	push   %rax
+  400e2e:	push   %rsp
+  400e2f:	mov    $0x402060,%r8
+  400e36:	mov    $0x401ff0,%rcx
+  400e3d:	mov    $0x40183b,%rdi
+  400e44:	callq  400ce0 <__libc_start_main@plt>
+  400e49:	hlt    
+  400e4a:	nopw   0x0(%rax,%rax,1)
+
+0000000000400e50 <deregister_tm_clones>:
+deregister_tm_clones():
+  400e50:	mov    $0x6030ff,%eax
+  400e55:	push   %rbp
+  400e56:	sub    $0x6030f8,%rax
+  400e5c:	cmp    $0xe,%rax
+  400e60:	mov    %rsp,%rbp
+  400e63:	jbe    400e80 <deregister_tm_clones+0x30>
+  400e65:	mov    $0x0,%eax
+  400e6a:	test   %rax,%rax
+  400e6d:	je     400e80 <deregister_tm_clones+0x30>
+  400e6f:	pop    %rbp
+  400e70:	mov    $0x6030f8,%edi
+  400e75:	jmpq   *%rax
+  400e77:	nopw   0x0(%rax,%rax,1)
+  400e80:	pop    %rbp
+  400e81:	retq   
+  400e82:	nopl   0x0(%rax)
+  400e86:	nopw   %cs:0x0(%rax,%rax,1)
+
+0000000000400e90 <register_tm_clones>:
+register_tm_clones():
+  400e90:	mov    $0x6030f8,%esi
+  400e95:	push   %rbp
+  400e96:	sub    $0x6030f8,%rsi
+  400e9d:	sar    $0x3,%rsi
+  400ea1:	mov    %rsp,%rbp
+  400ea4:	mov    %rsi,%rax
+  400ea7:	shr    $0x3f,%rax
+  400eab:	add    %rax,%rsi
+  400eae:	sar    %rsi
+  400eb1:	je     400ec8 <register_tm_clones+0x38>
+  400eb3:	mov    $0x0,%eax
+  400eb8:	test   %rax,%rax
+  400ebb:	je     400ec8 <register_tm_clones+0x38>
+  400ebd:	pop    %rbp
+  400ebe:	mov    $0x6030f8,%edi
+  400ec3:	jmpq   *%rax
+  400ec5:	nopl   (%rax)
+  400ec8:	pop    %rbp
+  400ec9:	retq   
+  400eca:	nopw   0x0(%rax,%rax,1)
+
+0000000000400ed0 <__do_global_dtors_aux>:
+__do_global_dtors_aux():
+  400ed0:	cmpb   $0x0,0x202479(%rip)        # 603350 <completed.7291>
+  400ed7:	jne    400eea <__do_global_dtors_aux+0x1a>
+  400ed9:	push   %rbp
+  400eda:	mov    %rsp,%rbp
+  400edd:	callq  400e50 <deregister_tm_clones>
+  400ee2:	pop    %rbp
+  400ee3:	movb   $0x1,0x202466(%rip)        # 603350 <completed.7291>
+  400eea:	repz retq 
+  400eec:	nopl   0x0(%rax)
+
+0000000000400ef0 <frame_dummy>:
+frame_dummy():
+  400ef0:	mov    $0x602e00,%edi
+  400ef5:	cmpq   $0x0,(%rdi)
+  400ef9:	jne    400f00 <frame_dummy+0x10>
+  400efb:	jmp    400e90 <register_tm_clones>
+  400efd:	nopl   (%rax)
+  400f00:	mov    $0x0,%eax
+  400f05:	test   %rax,%rax
+  400f08:	je     400efb <frame_dummy+0xb>
+  400f0a:	push   %rbp
+  400f0b:	mov    %rsp,%rbp
+  400f0e:	callq  *%rax
+  400f10:	pop    %rbp
+  400f11:	jmpq   400e90 <register_tm_clones>
+
+0000000000400f16 <_Z14test_if_else_1v>:
+_Z14test_if_else_1v():
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:13
+#define DO_TEST_IF_ELSE_2 0
+#define DO_TEST_IF_ELSE_3 0
+#define DO_TEST_IF_ELSE_4 1
+#define DO_TEST_IF_ELSE_5 0
+
+int test_if_else_1 (void) {
+  400f16:	push   %rbp
+  400f17:	mov    %rsp,%rbp
+  400f1a:	sub    $0x10,%rsp
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:14
+    int grade = 10;
+  400f1e:	movl   $0xa,-0x4(%rbp)
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:15
+    if (grade < 10)
+  400f25:	cmpl   $0x9,-0x4(%rbp)
+  400f29:	jg     400f49 <_Z14test_if_else_1v+0x33>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:16
+        cout << "grade is smaller than 10" << endl;
+  400f2b:	mov    $0x402079,%esi
+  400f30:	mov    $0x603240,%edi
+  400f35:	callq  400d20 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+  400f3a:	mov    $0x400db0,%esi
+  400f3f:	mov    %rax,%rdi
+  400f42:	callq  400d80 <_ZNSolsEPFRSoS_E@plt>
+  400f47:	jmp    400f89 <_Z14test_if_else_1v+0x73>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:18
+    // cout << "jump over if" << endl;
+    else if (grade == 0)        // else if必须紧跟着if块（作用域）
+  400f49:	cmpl   $0x0,-0x4(%rbp)
+  400f4d:	jne    400f6d <_Z14test_if_else_1v+0x57>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:19
+        cout << "grade is equal to 10" << endl;
+  400f4f:	mov    $0x402092,%esi
+  400f54:	mov    $0x603240,%edi
+  400f59:	callq  400d20 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+  400f5e:	mov    $0x400db0,%esi
+  400f63:	mov    %rax,%rdi
+  400f66:	callq  400d80 <_ZNSolsEPFRSoS_E@plt>
+  400f6b:	jmp    400f89 <_Z14test_if_else_1v+0x73>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:22
+    // cout << "jump over else if" << endl;
+    else                        // else必须紧跟着if块或else if块
+        cout << "grade is larger than 10" << endl;
+  400f6d:	mov    $0x4020a7,%esi
+  400f72:	mov    $0x603240,%edi
+  400f77:	callq  400d20 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt>
+  400f7c:	mov    $0x400db0,%esi
+  400f81:	mov    %rax,%rdi
+  400f84:	callq  400d80 <_ZNSolsEPFRSoS_E@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:23
+    return 0;
+  400f89:	mov    $0x0,%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:24
+}
+  400f8e:	leaveq 
+  400f8f:	retq   
+
+0000000000400f90 <_Z14test_if_else_2v>:
+_Z14test_if_else_2v():
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:27
+
+/* 练习5.5 */
+int test_if_else_2 (void) {
+  400f90:	push   %rbp
+  400f91:	mov    %rsp,%rbp
+  400f94:	push   %r13
+  400f96:	push   %r12
+  400f98:	push   %rbx
+  400f99:	sub    $0x88,%rsp
+  400fa0:	mov    %fs:0x28,%rax
+  400fa9:	mov    %rax,-0x28(%rbp)
+  400fad:	xor    %eax,%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:28
+    const vector<string> scores = {"F","D","C","B","A","A++"};
+  400faf:	lea    -0x99(%rbp),%rax
+  400fb6:	mov    %rax,%rdi
+  400fb9:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  400fbe:	lea    -0x99(%rbp),%rdx
+  400fc5:	lea    -0x60(%rbp),%rax
+  400fc9:	mov    $0x4020bf,%esi
+  400fce:	mov    %rax,%rdi
+  400fd1:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:28 (discriminator 1)
+  400fd6:	lea    -0x98(%rbp),%rax
+  400fdd:	mov    %rax,%rdi
+  400fe0:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  400fe5:	lea    -0x98(%rbp),%rax
+  400fec:	lea    -0x60(%rbp),%rdx
+  400ff0:	lea    0x8(%rdx),%rcx
+  400ff4:	mov    %rax,%rdx
+  400ff7:	mov    $0x4020c1,%esi
+  400ffc:	mov    %rcx,%rdi
+  400fff:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:28 (discriminator 2)
+  401004:	lea    -0x97(%rbp),%rax
+  40100b:	mov    %rax,%rdi
+  40100e:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  401013:	lea    -0x97(%rbp),%rax
+  40101a:	lea    -0x60(%rbp),%rdx
+  40101e:	lea    0x10(%rdx),%rcx
+  401022:	mov    %rax,%rdx
+  401025:	mov    $0x4020c3,%esi
+  40102a:	mov    %rcx,%rdi
+  40102d:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:28 (discriminator 3)
+  401032:	lea    -0x96(%rbp),%rax
+  401039:	mov    %rax,%rdi
+  40103c:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  401041:	lea    -0x96(%rbp),%rax
+  401048:	lea    -0x60(%rbp),%rdx
+  40104c:	lea    0x18(%rdx),%rcx
+  401050:	mov    %rax,%rdx
+  401053:	mov    $0x4020c5,%esi
+  401058:	mov    %rcx,%rdi
+  40105b:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:28 (discriminator 4)
+  401060:	lea    -0x95(%rbp),%rax
+  401067:	mov    %rax,%rdi
+  40106a:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  40106f:	lea    -0x95(%rbp),%rax
+  401076:	lea    -0x60(%rbp),%rdx
+  40107a:	lea    0x20(%rdx),%rcx
+  40107e:	mov    %rax,%rdx
+  401081:	mov    $0x4020c7,%esi
+  401086:	mov    %rcx,%rdi
+  401089:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:28 (discriminator 5)
+  40108e:	lea    -0x94(%rbp),%rax
+  401095:	mov    %rax,%rdi
+  401098:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  40109d:	lea    -0x94(%rbp),%rax
+  4010a4:	lea    -0x60(%rbp),%rdx
+  4010a8:	lea    0x28(%rdx),%rcx
+  4010ac:	mov    %rax,%rdx
+  4010af:	mov    $0x4020c9,%esi
+  4010b4:	mov    %rcx,%rdi
+  4010b7:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:28 (discriminator 6)
+  4010bc:	lea    -0x60(%rbp),%rax
+  4010c0:	mov    %rax,%r12
+  4010c3:	mov    $0x6,%r13d
+  4010c9:	lea    -0x90(%rbp),%rax
+  4010d0:	mov    %rax,%rdi
+  4010d3:	callq  4018be <_ZNSaISsEC1Ev>
+  4010d8:	lea    -0x90(%rbp),%rdx
+  4010df:	mov    %r12,%rsi
+  4010e2:	mov    %r13,%rdi
+  4010e5:	mov    %r12,%rcx
+  4010e8:	mov    %r13,%rbx
+  4010eb:	mov    %rbx,%rdi
+  4010ee:	lea    -0x80(%rbp),%rax
+  4010f2:	mov    %rdx,%rcx
+  4010f5:	mov    %rdi,%rdx
+  4010f8:	mov    %rax,%rdi
+  4010fb:	callq  40194c <_ZNSt6vectorISsSaISsEEC1ESt16initializer_listISsERKS0_>
+  401100:	lea    -0x90(%rbp),%rax
+  401107:	mov    %rax,%rdi
+  40110a:	callq  4018d8 <_ZNSaISsED1Ev>
+  40110f:	lea    -0x60(%rbp),%rbx
+  401113:	add    $0x30,%rbx
+  401117:	lea    -0x60(%rbp),%rax
+  40111b:	cmp    %rax,%rbx
+  40111e:	je     40112e <_Z14test_if_else_2v+0x19e>
+  401120:	sub    $0x8,%rbx
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:28 (discriminator 2)
+  401124:	mov    %rbx,%rdi
+  401127:	callq  400d30 <_ZNSsD1Ev@plt>
+  40112c:	jmp    401117 <_Z14test_if_else_2v+0x187>
+  40112e:	lea    -0x94(%rbp),%rax
+  401135:	mov    %rax,%rdi
+  401138:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  40113d:	lea    -0x95(%rbp),%rax
+  401144:	mov    %rax,%rdi
+  401147:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  40114c:	lea    -0x96(%rbp),%rax
+  401153:	mov    %rax,%rdi
+  401156:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  40115b:	lea    -0x97(%rbp),%rax
+  401162:	mov    %rax,%rdi
+  401165:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  40116a:	lea    -0x98(%rbp),%rax
+  401171:	mov    %rax,%rdi
+  401174:	callq  400d70 <_ZNSaIcED1Ev@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:28
+  401179:	lea    -0x99(%rbp),%rax
+  401180:	mov    %rax,%rdi
+  401183:	callq  400d70 <_ZNSaIcED1Ev@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:30
+    unsigned grade;
+    string grade_str;
+  401188:	lea    -0x90(%rbp),%rax
+  40118f:	mov    %rax,%rdi
+  401192:	callq  400c90 <_ZNSsC1Ev@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:31
+    cin >> grade;
+  401197:	lea    -0x94(%rbp),%rax
+  40119e:	mov    %rax,%rsi
+  4011a1:	mov    $0x603100,%edi
+  4011a6:	callq  400e10 <_ZNSirsERj@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:32
+    if (grade < 60)
+  4011ab:	mov    -0x94(%rbp),%eax
+  4011b1:	cmp    $0x3b,%eax
+  4011b4:	ja     4011cf <_Z14test_if_else_2v+0x23f>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:33
+        grade_str = "F";
+  4011b6:	lea    -0x90(%rbp),%rax
+  4011bd:	mov    $0x4020bf,%esi
+  4011c2:	mov    %rax,%rdi
+  4011c5:	callq  400c80 <_ZNSsaSEPKc@plt>
+  4011ca:	jmpq   401296 <_Z14test_if_else_2v+0x306>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:34
+    else if (grade >= 60 && grade < 70)
+  4011cf:	mov    -0x94(%rbp),%eax
+  4011d5:	cmp    $0x3b,%eax
+  4011d8:	jbe    4011fe <_Z14test_if_else_2v+0x26e>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:34 (discriminator 1)
+  4011da:	mov    -0x94(%rbp),%eax
+  4011e0:	cmp    $0x45,%eax
+  4011e3:	ja     4011fe <_Z14test_if_else_2v+0x26e>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:35
+        grade_str = "D";
+  4011e5:	lea    -0x90(%rbp),%rax
+  4011ec:	mov    $0x4020c1,%esi
+  4011f1:	mov    %rax,%rdi
+  4011f4:	callq  400c80 <_ZNSsaSEPKc@plt>
+  4011f9:	jmpq   401296 <_Z14test_if_else_2v+0x306>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:36
+    else if (grade >= 70 && grade < 80)
+  4011fe:	mov    -0x94(%rbp),%eax
+  401204:	cmp    $0x45,%eax
+  401207:	jbe    40122a <_Z14test_if_else_2v+0x29a>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:36 (discriminator 1)
+  401209:	mov    -0x94(%rbp),%eax
+  40120f:	cmp    $0x4f,%eax
+  401212:	ja     40122a <_Z14test_if_else_2v+0x29a>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:37
+        grade_str = "C";
+  401214:	lea    -0x90(%rbp),%rax
+  40121b:	mov    $0x4020c3,%esi
+  401220:	mov    %rax,%rdi
+  401223:	callq  400c80 <_ZNSsaSEPKc@plt>
+  401228:	jmp    401296 <_Z14test_if_else_2v+0x306>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:38
+    else if (grade >= 80 && grade < 90)
+  40122a:	mov    -0x94(%rbp),%eax
+  401230:	cmp    $0x4f,%eax
+  401233:	jbe    401256 <_Z14test_if_else_2v+0x2c6>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:38 (discriminator 1)
+  401235:	mov    -0x94(%rbp),%eax
+  40123b:	cmp    $0x59,%eax
+  40123e:	ja     401256 <_Z14test_if_else_2v+0x2c6>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:39
+        grade_str = "B";
+  401240:	lea    -0x90(%rbp),%rax
+  401247:	mov    $0x4020c5,%esi
+  40124c:	mov    %rax,%rdi
+  40124f:	callq  400c80 <_ZNSsaSEPKc@plt>
+  401254:	jmp    401296 <_Z14test_if_else_2v+0x306>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:40
+    else if (grade >= 90 && grade < 100)
+  401256:	mov    -0x94(%rbp),%eax
+  40125c:	cmp    $0x59,%eax
+  40125f:	jbe    401282 <_Z14test_if_else_2v+0x2f2>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:40 (discriminator 1)
+  401261:	mov    -0x94(%rbp),%eax
+  401267:	cmp    $0x63,%eax
+  40126a:	ja     401282 <_Z14test_if_else_2v+0x2f2>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:41
+        grade_str = "A";
+  40126c:	lea    -0x90(%rbp),%rax
+  401273:	mov    $0x4020c7,%esi
+  401278:	mov    %rax,%rdi
+  40127b:	callq  400c80 <_ZNSsaSEPKc@plt>
+  401280:	jmp    401296 <_Z14test_if_else_2v+0x306>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:43
+    else
+        grade_str = "A++";
+  401282:	lea    -0x90(%rbp),%rax
+  401289:	mov    $0x4020c9,%esi
+  40128e:	mov    %rax,%rdi
+  401291:	callq  400c80 <_ZNSsaSEPKc@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:44
+    cout << grade_str << endl;
+  401296:	lea    -0x90(%rbp),%rax
+  40129d:	mov    %rax,%rsi
+  4012a0:	mov    $0x603240,%edi
+  4012a5:	callq  400d50 <_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E@plt>
+  4012aa:	mov    $0x400db0,%esi
+  4012af:	mov    %rax,%rdi
+  4012b2:	callq  400d80 <_ZNSolsEPFRSoS_E@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:45
+    return 0;
+  4012b7:	mov    $0x0,%ebx
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:30
+
+/* 练习5.5 */
+int test_if_else_2 (void) {
+    const vector<string> scores = {"F","D","C","B","A","A++"};
+    unsigned grade;
+    string grade_str;
+  4012bc:	lea    -0x90(%rbp),%rax
+  4012c3:	mov    %rax,%rdi
+  4012c6:	callq  400d30 <_ZNSsD1Ev@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:45
+    else if (grade >= 90 && grade < 100)
+        grade_str = "A";
+    else
+        grade_str = "A++";
+    cout << grade_str << endl;
+    return 0;
+  4012cb:	lea    -0x80(%rbp),%rax
+  4012cf:	mov    %rax,%rdi
+  4012d2:	callq  401a06 <_ZNSt6vectorISsSaISsEED1Ev>
+  4012d7:	mov    %ebx,%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:46
+}
+  4012d9:	mov    -0x28(%rbp),%rcx
+  4012dd:	xor    %fs:0x28,%rcx
+  4012e6:	je     4013de <_Z14test_if_else_2v+0x44e>
+  4012ec:	jmpq   4013d9 <_Z14test_if_else_2v+0x449>
+  4012f1:	mov    %rax,%rbx
+  4012f4:	lea    -0x90(%rbp),%rax
+  4012fb:	mov    %rax,%rdi
+  4012fe:	callq  4018d8 <_ZNSaISsED1Ev>
+  401303:	mov    %rbx,%r12
+  401306:	lea    -0x60(%rbp),%rbx
+  40130a:	add    $0x30,%rbx
+  40130e:	lea    -0x60(%rbp),%rax
+  401312:	cmp    %rax,%rbx
+  401315:	je     401325 <_Z14test_if_else_2v+0x395>
+  401317:	sub    $0x8,%rbx
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:28 (discriminator 5)
+    return 0;
+}
+
+/* 练习5.5 */
+int test_if_else_2 (void) {
+    const vector<string> scores = {"F","D","C","B","A","A++"};
+  40131b:	mov    %rbx,%rdi
+  40131e:	callq  400d30 <_ZNSsD1Ev@plt>
+  401323:	jmp    40130e <_Z14test_if_else_2v+0x37e>
+  401325:	mov    %r12,%rbx
+  401328:	jmp    40132d <_Z14test_if_else_2v+0x39d>
+  40132a:	mov    %rax,%rbx
+  40132d:	lea    -0x94(%rbp),%rax
+  401334:	mov    %rax,%rdi
+  401337:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  40133c:	jmp    401341 <_Z14test_if_else_2v+0x3b1>
+  40133e:	mov    %rax,%rbx
+  401341:	lea    -0x95(%rbp),%rax
+  401348:	mov    %rax,%rdi
+  40134b:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  401350:	jmp    401355 <_Z14test_if_else_2v+0x3c5>
+  401352:	mov    %rax,%rbx
+  401355:	lea    -0x96(%rbp),%rax
+  40135c:	mov    %rax,%rdi
+  40135f:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  401364:	jmp    401369 <_Z14test_if_else_2v+0x3d9>
+  401366:	mov    %rax,%rbx
+  401369:	lea    -0x97(%rbp),%rax
+  401370:	mov    %rax,%rdi
+  401373:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  401378:	jmp    40137d <_Z14test_if_else_2v+0x3ed>
+  40137a:	mov    %rax,%rbx
+  40137d:	lea    -0x98(%rbp),%rax
+  401384:	mov    %rax,%rdi
+  401387:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  40138c:	jmp    401391 <_Z14test_if_else_2v+0x401>
+  40138e:	mov    %rax,%rbx
+  401391:	lea    -0x99(%rbp),%rax
+  401398:	mov    %rax,%rdi
+  40139b:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  4013a0:	mov    %rbx,%rax
+  4013a3:	mov    %rax,%rdi
+  4013a6:	callq  400e00 <_Unwind_Resume@plt>
+  4013ab:	mov    %rax,%rbx
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:30
+    unsigned grade;
+    string grade_str;
+  4013ae:	lea    -0x90(%rbp),%rax
+  4013b5:	mov    %rax,%rdi
+  4013b8:	callq  400d30 <_ZNSsD1Ev@plt>
+  4013bd:	jmp    4013c2 <_Z14test_if_else_2v+0x432>
+  4013bf:	mov    %rax,%rbx
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:45
+    else if (grade >= 90 && grade < 100)
+        grade_str = "A";
+    else
+        grade_str = "A++";
+    cout << grade_str << endl;
+    return 0;
+  4013c2:	lea    -0x80(%rbp),%rax
+  4013c6:	mov    %rax,%rdi
+  4013c9:	callq  401a06 <_ZNSt6vectorISsSaISsEED1Ev>
+  4013ce:	mov    %rbx,%rax
+  4013d1:	mov    %rax,%rdi
+  4013d4:	callq  400e00 <_Unwind_Resume@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:46
+}
+  4013d9:	callq  400d60 <__stack_chk_fail@plt>
+  4013de:	add    $0x88,%rsp
+  4013e5:	pop    %rbx
+  4013e6:	pop    %r12
+  4013e8:	pop    %r13
+  4013ea:	pop    %rbp
+  4013eb:	retq   
+
+00000000004013ec <_Z14test_if_else_3v>:
+_Z14test_if_else_3v():
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:49
+
+/* 练习5.6 */
+int test_if_else_3 (void) {
+  4013ec:	push   %rbp
+  4013ed:	mov    %rsp,%rbp
+  4013f0:	push   %r13
+  4013f2:	push   %r12
+  4013f4:	push   %rbx
+  4013f5:	sub    $0x88,%rsp
+  4013fc:	mov    %fs:0x28,%rax
+  401405:	mov    %rax,-0x28(%rbp)
+  401409:	xor    %eax,%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:50
+    const vector<string> scores = {"F","D","C","B","A","A++"};
+  40140b:	lea    -0x99(%rbp),%rax
+  401412:	mov    %rax,%rdi
+  401415:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  40141a:	lea    -0x99(%rbp),%rdx
+  401421:	lea    -0x60(%rbp),%rax
+  401425:	mov    $0x4020bf,%esi
+  40142a:	mov    %rax,%rdi
+  40142d:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:50 (discriminator 1)
+  401432:	lea    -0x98(%rbp),%rax
+  401439:	mov    %rax,%rdi
+  40143c:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  401441:	lea    -0x98(%rbp),%rax
+  401448:	lea    -0x60(%rbp),%rdx
+  40144c:	lea    0x8(%rdx),%rcx
+  401450:	mov    %rax,%rdx
+  401453:	mov    $0x4020c1,%esi
+  401458:	mov    %rcx,%rdi
+  40145b:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:50 (discriminator 2)
+  401460:	lea    -0x97(%rbp),%rax
+  401467:	mov    %rax,%rdi
+  40146a:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  40146f:	lea    -0x97(%rbp),%rax
+  401476:	lea    -0x60(%rbp),%rdx
+  40147a:	lea    0x10(%rdx),%rcx
+  40147e:	mov    %rax,%rdx
+  401481:	mov    $0x4020c3,%esi
+  401486:	mov    %rcx,%rdi
+  401489:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:50 (discriminator 3)
+  40148e:	lea    -0x96(%rbp),%rax
+  401495:	mov    %rax,%rdi
+  401498:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  40149d:	lea    -0x96(%rbp),%rax
+  4014a4:	lea    -0x60(%rbp),%rdx
+  4014a8:	lea    0x18(%rdx),%rcx
+  4014ac:	mov    %rax,%rdx
+  4014af:	mov    $0x4020c5,%esi
+  4014b4:	mov    %rcx,%rdi
+  4014b7:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:50 (discriminator 4)
+  4014bc:	lea    -0x95(%rbp),%rax
+  4014c3:	mov    %rax,%rdi
+  4014c6:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  4014cb:	lea    -0x95(%rbp),%rax
+  4014d2:	lea    -0x60(%rbp),%rdx
+  4014d6:	lea    0x20(%rdx),%rcx
+  4014da:	mov    %rax,%rdx
+  4014dd:	mov    $0x4020c7,%esi
+  4014e2:	mov    %rcx,%rdi
+  4014e5:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:50 (discriminator 5)
+  4014ea:	lea    -0x94(%rbp),%rax
+  4014f1:	mov    %rax,%rdi
+  4014f4:	callq  400dd0 <_ZNSaIcEC1Ev@plt>
+  4014f9:	lea    -0x94(%rbp),%rax
+  401500:	lea    -0x60(%rbp),%rdx
+  401504:	lea    0x28(%rdx),%rcx
+  401508:	mov    %rax,%rdx
+  40150b:	mov    $0x4020c9,%esi
+  401510:	mov    %rcx,%rdi
+  401513:	callq  400d40 <_ZNSsC1EPKcRKSaIcE@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:50 (discriminator 6)
+  401518:	lea    -0x60(%rbp),%rax
+  40151c:	mov    %rax,%r12
+  40151f:	mov    $0x6,%r13d
+  401525:	lea    -0x90(%rbp),%rax
+  40152c:	mov    %rax,%rdi
+  40152f:	callq  4018be <_ZNSaISsEC1Ev>
+  401534:	lea    -0x90(%rbp),%rdx
+  40153b:	mov    %r12,%rsi
+  40153e:	mov    %r13,%rdi
+  401541:	mov    %r12,%rcx
+  401544:	mov    %r13,%rbx
+  401547:	mov    %rbx,%rdi
+  40154a:	lea    -0x80(%rbp),%rax
+  40154e:	mov    %rdx,%rcx
+  401551:	mov    %rdi,%rdx
+  401554:	mov    %rax,%rdi
+  401557:	callq  40194c <_ZNSt6vectorISsSaISsEEC1ESt16initializer_listISsERKS0_>
+  40155c:	lea    -0x90(%rbp),%rax
+  401563:	mov    %rax,%rdi
+  401566:	callq  4018d8 <_ZNSaISsED1Ev>
+  40156b:	lea    -0x60(%rbp),%rbx
+  40156f:	add    $0x30,%rbx
+  401573:	lea    -0x60(%rbp),%rax
+  401577:	cmp    %rax,%rbx
+  40157a:	je     40158a <_Z14test_if_else_3v+0x19e>
+  40157c:	sub    $0x8,%rbx
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:50 (discriminator 2)
+  401580:	mov    %rbx,%rdi
+  401583:	callq  400d30 <_ZNSsD1Ev@plt>
+  401588:	jmp    401573 <_Z14test_if_else_3v+0x187>
+  40158a:	lea    -0x94(%rbp),%rax
+  401591:	mov    %rax,%rdi
+  401594:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  401599:	lea    -0x95(%rbp),%rax
+  4015a0:	mov    %rax,%rdi
+  4015a3:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  4015a8:	lea    -0x96(%rbp),%rax
+  4015af:	mov    %rax,%rdi
+  4015b2:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  4015b7:	lea    -0x97(%rbp),%rax
+  4015be:	mov    %rax,%rdi
+  4015c1:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  4015c6:	lea    -0x98(%rbp),%rax
+  4015cd:	mov    %rax,%rdi
+  4015d0:	callq  400d70 <_ZNSaIcED1Ev@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:50
+  4015d5:	lea    -0x99(%rbp),%rax
+  4015dc:	mov    %rax,%rdi
+  4015df:	callq  400d70 <_ZNSaIcED1Ev@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:52
+    unsigned grade;
+    string grade_str;
+  4015e4:	lea    -0x90(%rbp),%rax
+  4015eb:	mov    %rax,%rdi
+  4015ee:	callq  400c90 <_ZNSsC1Ev@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:53
+    cin >> grade;
+  4015f3:	lea    -0x94(%rbp),%rax
+  4015fa:	mov    %rax,%rsi
+  4015fd:	mov    $0x603100,%edi
+  401602:	callq  400e10 <_ZNSirsERj@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:54
+    grade_str = (   grade < 60 ? "F" :
+  401607:	mov    -0x94(%rbp),%eax
+  40160d:	cmp    $0x3b,%eax
+  401610:	jbe    40168f <_Z14test_if_else_3v+0x2a3>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:55 (discriminator 1)
+                    grade >= 60 && grade < 70 ? "D" :
+  401612:	mov    -0x94(%rbp),%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:54 (discriminator 1)
+int test_if_else_3 (void) {
+    const vector<string> scores = {"F","D","C","B","A","A++"};
+    unsigned grade;
+    string grade_str;
+    cin >> grade;
+    grade_str = (   grade < 60 ? "F" :
+  401618:	cmp    $0x3b,%eax
+  40161b:	jbe    401628 <_Z14test_if_else_3v+0x23c>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:55
+                    grade >= 60 && grade < 70 ? "D" :
+  40161d:	mov    -0x94(%rbp),%eax
+  401623:	cmp    $0x45,%eax
+  401626:	jbe    401686 <_Z14test_if_else_3v+0x29a>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:56 (discriminator 3)
+                    grade >= 70 && grade < 80 ? "C" :
+  401628:	mov    -0x94(%rbp),%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:54 (discriminator 3)
+int test_if_else_3 (void) {
+    const vector<string> scores = {"F","D","C","B","A","A++"};
+    unsigned grade;
+    string grade_str;
+    cin >> grade;
+    grade_str = (   grade < 60 ? "F" :
+  40162e:	cmp    $0x45,%eax
+  401631:	jbe    40163e <_Z14test_if_else_3v+0x252>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:56
+                    grade >= 60 && grade < 70 ? "D" :
+                    grade >= 70 && grade < 80 ? "C" :
+  401633:	mov    -0x94(%rbp),%eax
+  401639:	cmp    $0x4f,%eax
+  40163c:	jbe    40167f <_Z14test_if_else_3v+0x293>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:57 (discriminator 4)
+                    grade >= 80 && grade < 90 ? "B" :
+  40163e:	mov    -0x94(%rbp),%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:54 (discriminator 4)
+int test_if_else_3 (void) {
+    const vector<string> scores = {"F","D","C","B","A","A++"};
+    unsigned grade;
+    string grade_str;
+    cin >> grade;
+    grade_str = (   grade < 60 ? "F" :
+  401644:	cmp    $0x4f,%eax
+  401647:	jbe    401654 <_Z14test_if_else_3v+0x268>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:57
+                    grade >= 60 && grade < 70 ? "D" :
+                    grade >= 70 && grade < 80 ? "C" :
+                    grade >= 80 && grade < 90 ? "B" :
+  401649:	mov    -0x94(%rbp),%eax
+  40164f:	cmp    $0x59,%eax
+  401652:	jbe    401678 <_Z14test_if_else_3v+0x28c>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:58 (discriminator 5)
+                    grade >= 90 && grade < 100 ? "A" : "A++");
+  401654:	mov    -0x94(%rbp),%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:54 (discriminator 5)
+int test_if_else_3 (void) {
+    const vector<string> scores = {"F","D","C","B","A","A++"};
+    unsigned grade;
+    string grade_str;
+    cin >> grade;
+    grade_str = (   grade < 60 ? "F" :
+  40165a:	cmp    $0x59,%eax
+  40165d:	jbe    401671 <_Z14test_if_else_3v+0x285>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:58
+                    grade >= 60 && grade < 70 ? "D" :
+                    grade >= 70 && grade < 80 ? "C" :
+                    grade >= 80 && grade < 90 ? "B" :
+                    grade >= 90 && grade < 100 ? "A" : "A++");
+  40165f:	mov    -0x94(%rbp),%eax
+  401665:	cmp    $0x63,%eax
+  401668:	ja     401671 <_Z14test_if_else_3v+0x285>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:54
+int test_if_else_3 (void) {
+    const vector<string> scores = {"F","D","C","B","A","A++"};
+    unsigned grade;
+    string grade_str;
+    cin >> grade;
+    grade_str = (   grade < 60 ? "F" :
+  40166a:	mov    $0x4020c7,%eax
+  40166f:	jmp    40168d <_Z14test_if_else_3v+0x2a1>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:54 (discriminator 6)
+  401671:	mov    $0x4020c9,%eax
+  401676:	jmp    40168d <_Z14test_if_else_3v+0x2a1>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:54 (discriminator 10)
+  401678:	mov    $0x4020c5,%eax
+  40167d:	jmp    40168d <_Z14test_if_else_3v+0x2a1>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:54 (discriminator 12)
+  40167f:	mov    $0x4020c3,%eax
+  401684:	jmp    40168d <_Z14test_if_else_3v+0x2a1>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:54 (discriminator 14)
+  401686:	mov    $0x4020c1,%eax
+  40168b:	jmp    401694 <_Z14test_if_else_3v+0x2a8>
+  40168d:	jmp    401694 <_Z14test_if_else_3v+0x2a8>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:54 (discriminator 2)
+  40168f:	mov    $0x4020bf,%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:58
+                    grade >= 60 && grade < 70 ? "D" :
+                    grade >= 70 && grade < 80 ? "C" :
+                    grade >= 80 && grade < 90 ? "B" :
+                    grade >= 90 && grade < 100 ? "A" : "A++");
+  401694:	lea    -0x90(%rbp),%rdx
+  40169b:	mov    %rax,%rsi
+  40169e:	mov    %rdx,%rdi
+  4016a1:	callq  400c80 <_ZNSsaSEPKc@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:59
+    cout << grade_str << endl;
+  4016a6:	lea    -0x90(%rbp),%rax
+  4016ad:	mov    %rax,%rsi
+  4016b0:	mov    $0x603240,%edi
+  4016b5:	callq  400d50 <_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E@plt>
+  4016ba:	mov    $0x400db0,%esi
+  4016bf:	mov    %rax,%rdi
+  4016c2:	callq  400d80 <_ZNSolsEPFRSoS_E@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:60
+    return 0;
+  4016c7:	mov    $0x0,%ebx
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:52
+
+/* 练习5.6 */
+int test_if_else_3 (void) {
+    const vector<string> scores = {"F","D","C","B","A","A++"};
+    unsigned grade;
+    string grade_str;
+  4016cc:	lea    -0x90(%rbp),%rax
+  4016d3:	mov    %rax,%rdi
+  4016d6:	callq  400d30 <_ZNSsD1Ev@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:60
+                    grade >= 60 && grade < 70 ? "D" :
+                    grade >= 70 && grade < 80 ? "C" :
+                    grade >= 80 && grade < 90 ? "B" :
+                    grade >= 90 && grade < 100 ? "A" : "A++");
+    cout << grade_str << endl;
+    return 0;
+  4016db:	lea    -0x80(%rbp),%rax
+  4016df:	mov    %rax,%rdi
+  4016e2:	callq  401a06 <_ZNSt6vectorISsSaISsEED1Ev>
+  4016e7:	mov    %ebx,%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:61
+}
+  4016e9:	mov    -0x28(%rbp),%rcx
+  4016ed:	xor    %fs:0x28,%rcx
+  4016f6:	je     4017ee <_Z14test_if_else_3v+0x402>
+  4016fc:	jmpq   4017e9 <_Z14test_if_else_3v+0x3fd>
+  401701:	mov    %rax,%rbx
+  401704:	lea    -0x90(%rbp),%rax
+  40170b:	mov    %rax,%rdi
+  40170e:	callq  4018d8 <_ZNSaISsED1Ev>
+  401713:	mov    %rbx,%r12
+  401716:	lea    -0x60(%rbp),%rbx
+  40171a:	add    $0x30,%rbx
+  40171e:	lea    -0x60(%rbp),%rax
+  401722:	cmp    %rax,%rbx
+  401725:	je     401735 <_Z14test_if_else_3v+0x349>
+  401727:	sub    $0x8,%rbx
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:50 (discriminator 5)
+    return 0;
+}
+
+/* 练习5.6 */
+int test_if_else_3 (void) {
+    const vector<string> scores = {"F","D","C","B","A","A++"};
+  40172b:	mov    %rbx,%rdi
+  40172e:	callq  400d30 <_ZNSsD1Ev@plt>
+  401733:	jmp    40171e <_Z14test_if_else_3v+0x332>
+  401735:	mov    %r12,%rbx
+  401738:	jmp    40173d <_Z14test_if_else_3v+0x351>
+  40173a:	mov    %rax,%rbx
+  40173d:	lea    -0x94(%rbp),%rax
+  401744:	mov    %rax,%rdi
+  401747:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  40174c:	jmp    401751 <_Z14test_if_else_3v+0x365>
+  40174e:	mov    %rax,%rbx
+  401751:	lea    -0x95(%rbp),%rax
+  401758:	mov    %rax,%rdi
+  40175b:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  401760:	jmp    401765 <_Z14test_if_else_3v+0x379>
+  401762:	mov    %rax,%rbx
+  401765:	lea    -0x96(%rbp),%rax
+  40176c:	mov    %rax,%rdi
+  40176f:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  401774:	jmp    401779 <_Z14test_if_else_3v+0x38d>
+  401776:	mov    %rax,%rbx
+  401779:	lea    -0x97(%rbp),%rax
+  401780:	mov    %rax,%rdi
+  401783:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  401788:	jmp    40178d <_Z14test_if_else_3v+0x3a1>
+  40178a:	mov    %rax,%rbx
+  40178d:	lea    -0x98(%rbp),%rax
+  401794:	mov    %rax,%rdi
+  401797:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  40179c:	jmp    4017a1 <_Z14test_if_else_3v+0x3b5>
+  40179e:	mov    %rax,%rbx
+  4017a1:	lea    -0x99(%rbp),%rax
+  4017a8:	mov    %rax,%rdi
+  4017ab:	callq  400d70 <_ZNSaIcED1Ev@plt>
+  4017b0:	mov    %rbx,%rax
+  4017b3:	mov    %rax,%rdi
+  4017b6:	callq  400e00 <_Unwind_Resume@plt>
+  4017bb:	mov    %rax,%rbx
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:52
+    unsigned grade;
+    string grade_str;
+  4017be:	lea    -0x90(%rbp),%rax
+  4017c5:	mov    %rax,%rdi
+  4017c8:	callq  400d30 <_ZNSsD1Ev@plt>
+  4017cd:	jmp    4017d2 <_Z14test_if_else_3v+0x3e6>
+  4017cf:	mov    %rax,%rbx
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:60
+                    grade >= 60 && grade < 70 ? "D" :
+                    grade >= 70 && grade < 80 ? "C" :
+                    grade >= 80 && grade < 90 ? "B" :
+                    grade >= 90 && grade < 100 ? "A" : "A++");
+    cout << grade_str << endl;
+    return 0;
+  4017d2:	lea    -0x80(%rbp),%rax
+  4017d6:	mov    %rax,%rdi
+  4017d9:	callq  401a06 <_ZNSt6vectorISsSaISsEED1Ev>
+  4017de:	mov    %rbx,%rax
+  4017e1:	mov    %rax,%rdi
+  4017e4:	callq  400e00 <_Unwind_Resume@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:61
+}
+  4017e9:	callq  400d60 <__stack_chk_fail@plt>
+  4017ee:	add    $0x88,%rsp
+  4017f5:	pop    %rbx
+  4017f6:	pop    %r12
+  4017f8:	pop    %r13
+  4017fa:	pop    %rbp
+  4017fb:	retq   
+
+00000000004017fc <_Z14test_if_else_4v>:
+_Z14test_if_else_4v():
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:63
+
+int test_if_else_4 (void) {
+  4017fc:	push   %rbp
+  4017fd:	mov    %rsp,%rbp
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:64
+    int ch = 'a';
+  401800:	movl   $0x61,-0xc(%rbp)
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:65
+    int cnt1 = 0, cnt2 = 0;
+  401807:	movl   $0x0,-0x8(%rbp)
+  40180e:	movl   $0x0,-0x4(%rbp)
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:66
+    switch (ch) {
+  401815:	mov    -0xc(%rbp),%eax
+  401818:	cmp    $0x61,%eax
+  40181b:	jl     401834 <_Z14test_if_else_4v+0x38>
+  40181d:	cmp    $0x63,%eax
+  401820:	jle    401829 <_Z14test_if_else_4v+0x2d>
+  401822:	cmp    $0x66,%eax
+  401825:	jg     401834 <_Z14test_if_else_4v+0x38>
+  401827:	jmp    40182f <_Z14test_if_else_4v+0x33>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:70
+        case 'a':
+        case 'b':
+        case 'c':
+            ++cnt1;
+  401829:	addl   $0x1,-0x8(%rbp)
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:71
+            break;
+  40182d:	jmp    401834 <_Z14test_if_else_4v+0x38>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:75
+        case 'd':
+        case 'e':
+        case 'f':
+            ++cnt2;
+  40182f:	addl   $0x1,-0x4(%rbp)
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:76
+            break;
+  401833:	nop
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:78
+    }
+    return 0;
+  401834:	mov    $0x0,%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:79
+}
+  401839:	pop    %rbp
+  40183a:	retq   
+
+000000000040183b <main>:
+main():
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:81
+
+int main (void) {
+  40183b:	push   %rbp
+  40183c:	mov    %rsp,%rbp
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:92
+#endif
+#if DO_TEST_IF_ELSE_3
+    test_if_else_3();
+#endif
+#if DO_TEST_IF_ELSE_4
+    test_if_else_4();
+  40183f:	callq  4017fc <_Z14test_if_else_4v>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:100
+    test_if_else_5();
+#endif
+
+
+
+    return 0;
+  401844:	mov    $0x0,%eax
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:101
+}
+  401849:	pop    %rbp
+  40184a:	retq   
+
+000000000040184b <_Z41__static_initialization_and_destruction_0ii>:
+_Z41__static_initialization_and_destruction_0ii():
+  40184b:	push   %rbp
+  40184c:	mov    %rsp,%rbp
+  40184f:	sub    $0x10,%rsp
+  401853:	mov    %edi,-0x4(%rbp)
+  401856:	mov    %esi,-0x8(%rbp)
+  401859:	cmpl   $0x1,-0x4(%rbp)
+  40185d:	jne    401886 <_Z41__static_initialization_and_destruction_0ii+0x3b>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:101 (discriminator 1)
+  40185f:	cmpl   $0xffff,-0x8(%rbp)
+  401866:	jne    401886 <_Z41__static_initialization_and_destruction_0ii+0x3b>
+/usr/include/c++/4.9/iostream:74
+  extern wostream wclog;	/// Linked to standard error (buffered)
+#endif
+  //@}
+
+  // For construction of filebuffers for cout, cin, cerr, clog et. al.
+  static ios_base::Init __ioinit;
+  401868:	mov    $0x603351,%edi
+  40186d:	callq  400cd0 <_ZNSt8ios_base4InitC1Ev@plt>
+  401872:	mov    $0x6030f0,%edx
+  401877:	mov    $0x603351,%esi
+  40187c:	mov    $0x400d10,%edi
+  401881:	callq  400d00 <__cxa_atexit@plt>
+/home/lookfiresu/Desktop/code/Cpp-Primer/grammer/if_else_switch.cpp:101
+  401886:	leaveq 
+  401887:	retq   
+
+0000000000401888 <_GLOBAL__sub_I__Z14test_if_else_1v>:
+_GLOBAL__sub_I__Z14test_if_else_1v():
+  401888:	push   %rbp
+  401889:	mov    %rsp,%rbp
+  40188c:	mov    $0xffff,%esi
+  401891:	mov    $0x1,%edi
+  401896:	callq  40184b <_Z41__static_initialization_and_destruction_0ii>
+  40189b:	pop    %rbp
+  40189c:	retq   
+
+000000000040189d <_ZnwmPv>:
+_ZnwmPv():
+/usr/include/c++/4.9/new:147
+void operator delete[](void*, const std::nothrow_t&) _GLIBCXX_USE_NOEXCEPT
+  __attribute__((__externally_visible__));
+
+// Default placement versions of operator new.
+inline void* operator new(std::size_t, void* __p) _GLIBCXX_USE_NOEXCEPT
+{ return __p; }
+  40189d:	push   %rbp
+  40189e:	mov    %rsp,%rbp
+  4018a1:	mov    %rdi,-0x8(%rbp)
+  4018a5:	mov    %rsi,-0x10(%rbp)
+  4018a9:	mov    -0x10(%rbp),%rax
+  4018ad:	pop    %rbp
+  4018ae:	retq   
+
+00000000004018af <_ZdlPvS_>:
+_ZdlPvS_():
+/usr/include/c++/4.9/new:152
+inline void* operator new[](std::size_t, void* __p) _GLIBCXX_USE_NOEXCEPT
+{ return __p; }
+
+// Default placement versions of operator delete.
+inline void operator delete  (void*, void*) _GLIBCXX_USE_NOEXCEPT { }
+  4018af:	push   %rbp
+  4018b0:	mov    %rsp,%rbp
+  4018b3:	mov    %rdi,-0x8(%rbp)
+  4018b7:	mov    %rsi,-0x10(%rbp)
+  4018bb:	pop    %rbp
+  4018bc:	retq   
+  4018bd:	nop
+
+00000000004018be <_ZNSaISsEC1Ev>:
+_ZNSaISsEC2Ev():
+/usr/include/c++/4.9/bits/allocator.h:113
+      // _GLIBCXX_RESOLVE_LIB_DEFECTS
+      // 2103. std::allocator propagate_on_container_move_assignment
+      typedef true_type propagate_on_container_move_assignment;
+#endif
+
+      allocator() throw() { }
+  4018be:	push   %rbp
+  4018bf:	mov    %rsp,%rbp
+  4018c2:	sub    $0x10,%rsp
+  4018c6:	mov    %rdi,-0x8(%rbp)
+  4018ca:	mov    -0x8(%rbp),%rax
+  4018ce:	mov    %rax,%rdi
+  4018d1:	callq  401a4a <_ZN9__gnu_cxx13new_allocatorISsEC1Ev>
+  4018d6:	leaveq 
+  4018d7:	retq   
+
+00000000004018d8 <_ZNSaISsED1Ev>:
+_ZNSaISsED2Ev():
+/usr/include/c++/4.9/bits/allocator.h:121
+      : __allocator_base<_Tp>(__a) { }
+
+      template<typename _Tp1>
+        allocator(const allocator<_Tp1>&) throw() { }
+
+      ~allocator() throw() { }
+  4018d8:	push   %rbp
+  4018d9:	mov    %rsp,%rbp
+  4018dc:	sub    $0x10,%rsp
+  4018e0:	mov    %rdi,-0x8(%rbp)
+  4018e4:	mov    -0x8(%rbp),%rax
+  4018e8:	mov    %rax,%rdi
+  4018eb:	callq  401a54 <_ZN9__gnu_cxx13new_allocatorISsED1Ev>
+  4018f0:	leaveq 
+  4018f1:	retq   
+
+00000000004018f2 <_ZNKSt16initializer_listISsE5beginEv>:
+_ZNKSt16initializer_listISsE5beginEv():
+/usr/include/c++/4.9/initializer_list:75
+      constexpr size_type
+      size() const noexcept { return _M_len; }
+
+      // First element.
+      constexpr const_iterator
+      begin() const noexcept { return _M_array; }
+  4018f2:	push   %rbp
+  4018f3:	mov    %rsp,%rbp
+  4018f6:	mov    %rdi,-0x8(%rbp)
+  4018fa:	mov    -0x8(%rbp),%rax
+  4018fe:	mov    (%rax),%rax
+  401901:	pop    %rbp
+  401902:	retq   
+  401903:	nop
+
+0000000000401904 <_ZNKSt16initializer_listISsE4sizeEv>:
+_ZNKSt16initializer_listISsE4sizeEv():
+/usr/include/c++/4.9/initializer_list:71
+      constexpr initializer_list() noexcept
+      : _M_array(0), _M_len(0) { }
+
+      // Number of elements.
+      constexpr size_type
+      size() const noexcept { return _M_len; }
+  401904:	push   %rbp
+  401905:	mov    %rsp,%rbp
+  401908:	mov    %rdi,-0x8(%rbp)
+  40190c:	mov    -0x8(%rbp),%rax
+  401910:	mov    0x8(%rax),%rax
+  401914:	pop    %rbp
+  401915:	retq   
+
+0000000000401916 <_ZNKSt16initializer_listISsE3endEv>:
+_ZNKSt16initializer_listISsE3endEv():
+/usr/include/c++/4.9/initializer_list:79
+      constexpr const_iterator
+      begin() const noexcept { return _M_array; }
+
+      // One past the last element.
+      constexpr const_iterator
+      end() const noexcept { return begin() + size(); }
+  401916:	push   %rbp
+  401917:	mov    %rsp,%rbp
+  40191a:	push   %rbx
+  40191b:	sub    $0x18,%rsp
+  40191f:	mov    %rdi,-0x18(%rbp)
+  401923:	mov    -0x18(%rbp),%rax
+  401927:	mov    %rax,%rdi
+  40192a:	callq  4018f2 <_ZNKSt16initializer_listISsE5beginEv>
+  40192f:	mov    %rax,%rbx
+  401932:	mov    -0x18(%rbp),%rax
+  401936:	mov    %rax,%rdi
+  401939:	callq  401904 <_ZNKSt16initializer_listISsE4sizeEv>
+  40193e:	shl    $0x3,%rax
+  401942:	add    %rbx,%rax
+  401945:	add    $0x18,%rsp
+  401949:	pop    %rbx
+  40194a:	pop    %rbp
+  40194b:	retq   
+
+000000000040194c <_ZNSt6vectorISsSaISsEEC1ESt16initializer_listISsERKS0_>:
+_ZNSt6vectorISsSaISsEEC2ESt16initializer_listISsERKS0_():
+/usr/include/c++/4.9/bits/stl_vector.h:373
+       *  initializer_list @a __l.
+       *
+       *  This will call the element type's copy constructor N times
+       *  (where N is @a __l.size()) and do no memory reallocation.
+       */
+      vector(initializer_list<value_type> __l,
+  40194c:	push   %rbp
+  40194d:	mov    %rsp,%rbp
+  401950:	push   %r12
+  401952:	push   %rbx
+  401953:	sub    $0x30,%rsp
+  401957:	mov    %rdi,-0x28(%rbp)
+  40195b:	mov    %rsi,%rax
+  40195e:	mov    %rdx,%rsi
+  401961:	mov    %rsi,%rdx
+  401964:	mov    %rax,-0x40(%rbp)
+  401968:	mov    %rdx,-0x38(%rbp)
+  40196c:	mov    %rcx,-0x30(%rbp)
+  401970:	mov    %fs:0x28,%rax
+  401979:	mov    %rax,-0x18(%rbp)
+  40197d:	xor    %eax,%eax
+/usr/include/c++/4.9/bits/stl_vector.h:375
+	     const allocator_type& __a = allocator_type())
+      : _Base(__a)
+  40197f:	mov    -0x28(%rbp),%rax
+  401983:	mov    -0x30(%rbp),%rdx
+  401987:	mov    %rdx,%rsi
+  40198a:	mov    %rax,%rdi
+  40198d:	callq  401a78 <_ZNSt12_Vector_baseISsSaISsEEC1ERKS0_>
+/usr/include/c++/4.9/bits/stl_vector.h:378
+      {
+	_M_range_initialize(__l.begin(), __l.end(),
+			    random_access_iterator_tag());
+  401992:	lea    -0x40(%rbp),%rax
+  401996:	mov    %rax,%rdi
+  401999:	callq  401916 <_ZNKSt16initializer_listISsE3endEv>
+  40199e:	mov    %rax,%rbx
+  4019a1:	lea    -0x40(%rbp),%rax
+  4019a5:	mov    %rax,%rdi
+  4019a8:	callq  4018f2 <_ZNKSt16initializer_listISsE5beginEv>
+  4019ad:	mov    %rax,%rcx
+/usr/include/c++/4.9/bits/stl_vector.h:377
+       */
+      vector(initializer_list<value_type> __l,
+	     const allocator_type& __a = allocator_type())
+      : _Base(__a)
+      {
+	_M_range_initialize(__l.begin(), __l.end(),
+  4019b0:	sub    $0x8,%rsp
+  4019b4:	mov    -0x28(%rbp),%rax
+  4019b8:	push   %r12
+  4019ba:	mov    %rbx,%rdx
+  4019bd:	mov    %rcx,%rsi
+  4019c0:	mov    %rax,%rdi
+  4019c3:	callq  401aee <_ZNSt6vectorISsSaISsEE19_M_range_initializeIPKSsEEvT_S5_St20forward_iterator_tag>
+  4019c8:	add    $0x10,%rsp
+/usr/include/c++/4.9/bits/stl_vector.h:379
+			    random_access_iterator_tag());
+      }
+  4019cc:	mov    -0x18(%rbp),%rax
+  4019d0:	xor    %fs:0x28,%rax
+  4019d9:	je     4019fc <_ZNSt6vectorISsSaISsEEC1ESt16initializer_listISsERKS0_+0xb0>
+  4019db:	jmp    4019f7 <_ZNSt6vectorISsSaISsEEC1ESt16initializer_listISsERKS0_+0xab>
+  4019dd:	mov    %rax,%rbx
+/usr/include/c++/4.9/bits/stl_vector.h:375
+       *  This will call the element type's copy constructor N times
+       *  (where N is @a __l.size()) and do no memory reallocation.
+       */
+      vector(initializer_list<value_type> __l,
+	     const allocator_type& __a = allocator_type())
+      : _Base(__a)
+  4019e0:	mov    -0x28(%rbp),%rax
+  4019e4:	mov    %rax,%rdi
+  4019e7:	callq  401a9e <_ZNSt12_Vector_baseISsSaISsEED1Ev>
+  4019ec:	mov    %rbx,%rax
+  4019ef:	mov    %rax,%rdi
+  4019f2:	callq  400e00 <_Unwind_Resume@plt>
+/usr/include/c++/4.9/bits/stl_vector.h:379
+      {
+	_M_range_initialize(__l.begin(), __l.end(),
+			    random_access_iterator_tag());
+      }
+  4019f7:	callq  400d60 <__stack_chk_fail@plt>
+  4019fc:	lea    -0x10(%rbp),%rsp
+  401a00:	pop    %rbx
+  401a01:	pop    %r12
+  401a03:	pop    %rbp
+  401a04:	retq   
+  401a05:	nop
+
+0000000000401a06 <_ZNSt6vectorISsSaISsEED1Ev>:
+_ZNSt6vectorISsSaISsEED2Ev():
+/usr/include/c++/4.9/bits/stl_vector.h:423
+       *  The dtor only erases the elements, and note that if the
+       *  elements themselves are pointers, the pointed-to memory is
+       *  not touched in any way.  Managing the pointer is the user's
+       *  responsibility.
+       */
+      ~vector() _GLIBCXX_NOEXCEPT
+  401a06:	push   %rbp
+  401a07:	mov    %rsp,%rbp
+  401a0a:	sub    $0x10,%rsp
+  401a0e:	mov    %rdi,-0x8(%rbp)
+/usr/include/c++/4.9/bits/stl_vector.h:425
+      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+		      _M_get_Tp_allocator()); }
+  401a12:	mov    -0x8(%rbp),%rax
+  401a16:	mov    %rax,%rdi
+  401a19:	callq  401b84 <_ZNSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv>
+  401a1e:	mov    %rax,%rdx
+  401a21:	mov    -0x8(%rbp),%rax
+  401a25:	mov    0x8(%rax),%rcx
+  401a29:	mov    -0x8(%rbp),%rax
+  401a2d:	mov    (%rax),%rax
+/usr/include/c++/4.9/bits/stl_vector.h:424
+       *  elements themselves are pointers, the pointed-to memory is
+       *  not touched in any way.  Managing the pointer is the user's
+       *  responsibility.
+       */
+      ~vector() _GLIBCXX_NOEXCEPT
+      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+  401a30:	mov    %rcx,%rsi
+  401a33:	mov    %rax,%rdi
+  401a36:	callq  401b92 <_ZSt8_DestroyIPSsSsEvT_S1_RSaIT0_E>
+/usr/include/c++/4.9/bits/stl_vector.h:425
+		      _M_get_Tp_allocator()); }
+  401a3b:	mov    -0x8(%rbp),%rax
+  401a3f:	mov    %rax,%rdi
+  401a42:	callq  401a9e <_ZNSt12_Vector_baseISsSaISsEED1Ev>
+  401a47:	leaveq 
+  401a48:	retq   
+  401a49:	nop
+
+0000000000401a4a <_ZN9__gnu_cxx13new_allocatorISsEC1Ev>:
+_ZN9__gnu_cxx13new_allocatorISsEC2Ev():
+/usr/include/c++/4.9/ext/new_allocator.h:79
+      // _GLIBCXX_RESOLVE_LIB_DEFECTS
+      // 2103. propagate_on_container_move_assignment
+      typedef std::true_type propagate_on_container_move_assignment;
+#endif
+
+      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+  401a4a:	push   %rbp
+  401a4b:	mov    %rsp,%rbp
+  401a4e:	mov    %rdi,-0x8(%rbp)
+  401a52:	pop    %rbp
+  401a53:	retq   
+
+0000000000401a54 <_ZN9__gnu_cxx13new_allocatorISsED1Ev>:
+_ZN9__gnu_cxx13new_allocatorISsED2Ev():
+/usr/include/c++/4.9/ext/new_allocator.h:86
+      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+
+      template<typename _Tp1>
+        new_allocator(const new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
+
+      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+  401a54:	push   %rbp
+  401a55:	mov    %rsp,%rbp
+  401a58:	mov    %rdi,-0x8(%rbp)
+  401a5c:	pop    %rbp
+  401a5d:	retq   
+
+0000000000401a5e <_ZNSt12_Vector_baseISsSaISsEE12_Vector_implD1Ev>:
+_ZNSt12_Vector_baseISsSaISsEE12_Vector_implD2Ev():
+/usr/include/c++/4.9/bits/stl_vector.h:79
+      typedef typename __gnu_cxx::__alloc_traits<_Alloc>::template
+        rebind<_Tp>::other _Tp_alloc_type;
+      typedef typename __gnu_cxx::__alloc_traits<_Tp_alloc_type>::pointer
+       	pointer;
+
+      struct _Vector_impl 
+  401a5e:	push   %rbp
+  401a5f:	mov    %rsp,%rbp
+  401a62:	sub    $0x10,%rsp
+  401a66:	mov    %rdi,-0x8(%rbp)
+  401a6a:	mov    -0x8(%rbp),%rax
+  401a6e:	mov    %rax,%rdi
+  401a71:	callq  4018d8 <_ZNSaISsED1Ev>
+  401a76:	leaveq 
+  401a77:	retq   
+
+0000000000401a78 <_ZNSt12_Vector_baseISsSaISsEEC1ERKS0_>:
+_ZNSt12_Vector_baseISsSaISsEEC2ERKS0_():
+/usr/include/c++/4.9/bits/stl_vector.h:127
+      { return allocator_type(_M_get_Tp_allocator()); }
+
+      _Vector_base()
+      : _M_impl() { }
+
+      _Vector_base(const allocator_type& __a) _GLIBCXX_NOEXCEPT
+  401a78:	push   %rbp
+  401a79:	mov    %rsp,%rbp
+  401a7c:	sub    $0x10,%rsp
+  401a80:	mov    %rdi,-0x8(%rbp)
+  401a84:	mov    %rsi,-0x10(%rbp)
+/usr/include/c++/4.9/bits/stl_vector.h:128
+      : _M_impl(__a) { }
+  401a88:	mov    -0x8(%rbp),%rax
+  401a8c:	mov    -0x10(%rbp),%rdx
+  401a90:	mov    %rdx,%rsi
+  401a93:	mov    %rax,%rdi
+  401a96:	callq  401bbc <_ZNSt12_Vector_baseISsSaISsEE12_Vector_implC1ERKS0_>
+  401a9b:	leaveq 
+  401a9c:	retq   
+  401a9d:	nop
+
+0000000000401a9e <_ZNSt12_Vector_baseISsSaISsEED1Ev>:
+_ZNSt12_Vector_baseISsSaISsEED2Ev():
+/usr/include/c++/4.9/bits/stl_vector.h:159
+	    _M_create_storage(__n);
+	  }
+      }
+#endif
+
+      ~_Vector_base() _GLIBCXX_NOEXCEPT
+  401a9e:	push   %rbp
+  401a9f:	mov    %rsp,%rbp
+  401aa2:	sub    $0x10,%rsp
+  401aa6:	mov    %rdi,-0x8(%rbp)
+/usr/include/c++/4.9/bits/stl_vector.h:161
+      { _M_deallocate(this->_M_impl._M_start, this->_M_impl._M_end_of_storage
+		      - this->_M_impl._M_start); }
+  401aaa:	mov    -0x8(%rbp),%rax
+  401aae:	mov    0x10(%rax),%rax
+  401ab2:	mov    %rax,%rdx
+  401ab5:	mov    -0x8(%rbp),%rax
+  401ab9:	mov    (%rax),%rax
+  401abc:	sub    %rax,%rdx
+  401abf:	mov    %rdx,%rax
+  401ac2:	sar    $0x3,%rax
+  401ac6:	mov    %rax,%rdx
+  401ac9:	mov    -0x8(%rbp),%rax
+  401acd:	mov    (%rax),%rcx
+/usr/include/c++/4.9/bits/stl_vector.h:160
+	  }
+      }
+#endif
+
+      ~_Vector_base() _GLIBCXX_NOEXCEPT
+      { _M_deallocate(this->_M_impl._M_start, this->_M_impl._M_end_of_storage
+  401ad0:	mov    -0x8(%rbp),%rax
+  401ad4:	mov    %rcx,%rsi
+  401ad7:	mov    %rax,%rdi
+  401ada:	callq  401c04 <_ZNSt12_Vector_baseISsSaISsEE13_M_deallocateEPSsm>
+/usr/include/c++/4.9/bits/stl_vector.h:161
+		      - this->_M_impl._M_start); }
+  401adf:	mov    -0x8(%rbp),%rax
+  401ae3:	mov    %rax,%rdi
+  401ae6:	callq  401a5e <_ZNSt12_Vector_baseISsSaISsEE12_Vector_implD1Ev>
+  401aeb:	leaveq 
+  401aec:	retq   
+  401aed:	nop
+
+0000000000401aee <_ZNSt6vectorISsSaISsEE19_M_range_initializeIPKSsEEvT_S5_St20forward_iterator_tag>:
+_ZNSt6vectorISsSaISsEE19_M_range_initializeIPKSsEEvT_S5_St20forward_iterator_tag():
+/usr/include/c++/4.9/bits/stl_vector.h:1283
+	}
+
+      // Called by the second initialize_dispatch above
+      template<typename _ForwardIterator>
+        void
+        _M_range_initialize(_ForwardIterator __first,
+  401aee:	push   %rbp
+  401aef:	mov    %rsp,%rbp
+  401af2:	sub    $0x30,%rsp
+  401af6:	mov    %rdi,-0x18(%rbp)
+  401afa:	mov    %rsi,-0x20(%rbp)
+  401afe:	mov    %rdx,-0x28(%rbp)
+/usr/include/c++/4.9/bits/stl_vector.h:1286
+			    _ForwardIterator __last, std::forward_iterator_tag)
+        {
+	  const size_type __n = std::distance(__first, __last);
+  401b02:	mov    -0x28(%rbp),%rdx
+  401b06:	mov    -0x20(%rbp),%rax
+  401b0a:	mov    %rdx,%rsi
+  401b0d:	mov    %rax,%rdi
+  401b10:	callq  401c38 <_ZSt8distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_>
+  401b15:	mov    %rax,-0x8(%rbp)
+/usr/include/c++/4.9/bits/stl_vector.h:1287
+	  this->_M_impl._M_start = this->_M_allocate(__n);
+  401b19:	mov    -0x18(%rbp),%rax
+  401b1d:	mov    -0x8(%rbp),%rdx
+  401b21:	mov    %rdx,%rsi
+  401b24:	mov    %rax,%rdi
+  401b27:	callq  401c9a <_ZNSt12_Vector_baseISsSaISsEE11_M_allocateEm>
+  401b2c:	mov    %rax,%rdx
+  401b2f:	mov    -0x18(%rbp),%rax
+  401b33:	mov    %rdx,(%rax)
+/usr/include/c++/4.9/bits/stl_vector.h:1288
+	  this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+  401b36:	mov    -0x18(%rbp),%rax
+  401b3a:	mov    (%rax),%rax
+  401b3d:	mov    -0x8(%rbp),%rdx
+  401b41:	shl    $0x3,%rdx
+  401b45:	add    %rax,%rdx
+  401b48:	mov    -0x18(%rbp),%rax
+  401b4c:	mov    %rdx,0x10(%rax)
+/usr/include/c++/4.9/bits/stl_vector.h:1292
+	  this->_M_impl._M_finish =
+	    std::__uninitialized_copy_a(__first, __last,
+					this->_M_impl._M_start,
+					_M_get_Tp_allocator());
+  401b50:	mov    -0x18(%rbp),%rax
+  401b54:	mov    %rax,%rdi
+  401b57:	callq  401b84 <_ZNSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv>
+  401b5c:	mov    %rax,%rcx
+  401b5f:	mov    -0x18(%rbp),%rax
+  401b63:	mov    (%rax),%rdx
+  401b66:	mov    -0x28(%rbp),%rsi
+  401b6a:	mov    -0x20(%rbp),%rax
+  401b6e:	mov    %rax,%rdi
+  401b71:	callq  401ccd <_ZSt22__uninitialized_copy_aIPKSsPSsSsET0_T_S4_S3_RSaIT1_E>
+  401b76:	mov    %rax,%rdx
+/usr/include/c++/4.9/bits/stl_vector.h:1289
+			    _ForwardIterator __last, std::forward_iterator_tag)
+        {
+	  const size_type __n = std::distance(__first, __last);
+	  this->_M_impl._M_start = this->_M_allocate(__n);
+	  this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+	  this->_M_impl._M_finish =
+  401b79:	mov    -0x18(%rbp),%rax
+  401b7d:	mov    %rdx,0x8(%rax)
+/usr/include/c++/4.9/bits/stl_vector.h:1293
+	    std::__uninitialized_copy_a(__first, __last,
+					this->_M_impl._M_start,
+					_M_get_Tp_allocator());
+	}
+  401b81:	leaveq 
+  401b82:	retq   
+  401b83:	nop
+
+0000000000401b84 <_ZNSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv>:
+_ZNSt12_Vector_baseISsSaISsEE19_M_get_Tp_allocatorEv():
+/usr/include/c++/4.9/bits/stl_vector.h:113
+      
+    public:
+      typedef _Alloc allocator_type;
+
+      _Tp_alloc_type&
+      _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
+  401b84:	push   %rbp
+  401b85:	mov    %rsp,%rbp
+  401b88:	mov    %rdi,-0x8(%rbp)
+/usr/include/c++/4.9/bits/stl_vector.h:114
+      { return *static_cast<_Tp_alloc_type*>(&this->_M_impl); }
+  401b8c:	mov    -0x8(%rbp),%rax
+  401b90:	pop    %rbp
+  401b91:	retq   
+
+0000000000401b92 <_ZSt8_DestroyIPSsSsEvT_S1_RSaIT0_E>:
+_ZSt8_DestroyIPSsSsEvT_S1_RSaIT0_E():
+/usr/include/c++/4.9/bits/stl_construct.h:148
+	__traits::destroy(__alloc, std::__addressof(*__first));
+    }
+
+  template<typename _ForwardIterator, typename _Tp>
+    inline void
+    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+  401b92:	push   %rbp
+  401b93:	mov    %rsp,%rbp
+  401b96:	sub    $0x20,%rsp
+  401b9a:	mov    %rdi,-0x8(%rbp)
+  401b9e:	mov    %rsi,-0x10(%rbp)
+  401ba2:	mov    %rdx,-0x18(%rbp)
+/usr/include/c++/4.9/bits/stl_construct.h:151
+	     allocator<_Tp>&)
+    {
+      _Destroy(__first, __last);
+  401ba6:	mov    -0x10(%rbp),%rdx
+  401baa:	mov    -0x8(%rbp),%rax
+  401bae:	mov    %rdx,%rsi
+  401bb1:	mov    %rax,%rdi
+  401bb4:	callq  401cfe <_ZSt8_DestroyIPSsEvT_S1_>
+/usr/include/c++/4.9/bits/stl_construct.h:152
+    }
+  401bb9:	leaveq 
+  401bba:	retq   
+  401bbb:	nop
+
+0000000000401bbc <_ZNSt12_Vector_baseISsSaISsEE12_Vector_implC1ERKS0_>:
+_ZNSt12_Vector_baseISsSaISsEE12_Vector_implC2ERKS0_():
+/usr/include/c++/4.9/bits/stl_vector.h:90
+
+	_Vector_impl()
+	: _Tp_alloc_type(), _M_start(0), _M_finish(0), _M_end_of_storage(0)
+	{ }
+
+	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+  401bbc:	push   %rbp
+  401bbd:	mov    %rsp,%rbp
+  401bc0:	sub    $0x10,%rsp
+  401bc4:	mov    %rdi,-0x8(%rbp)
+  401bc8:	mov    %rsi,-0x10(%rbp)
+/usr/include/c++/4.9/bits/stl_vector.h:91
+	: _Tp_alloc_type(__a), _M_start(0), _M_finish(0), _M_end_of_storage(0)
+  401bcc:	mov    -0x10(%rbp),%rdx
+  401bd0:	mov    -0x8(%rbp),%rax
+  401bd4:	mov    %rdx,%rsi
+  401bd7:	mov    %rax,%rdi
+  401bda:	callq  401d24 <_ZNSaISsEC1ERKS_>
+  401bdf:	mov    -0x8(%rbp),%rax
+  401be3:	movq   $0x0,(%rax)
+  401bea:	mov    -0x8(%rbp),%rax
+  401bee:	movq   $0x0,0x8(%rax)
+  401bf6:	mov    -0x8(%rbp),%rax
+  401bfa:	movq   $0x0,0x10(%rax)
+/usr/include/c++/4.9/bits/stl_vector.h:92
+	{ }
+  401c02:	leaveq 
+  401c03:	retq   
+
+0000000000401c04 <_ZNSt12_Vector_baseISsSaISsEE13_M_deallocateEPSsm>:
+_ZNSt12_Vector_baseISsSaISsEE13_M_deallocateEPSsm():
+/usr/include/c++/4.9/bits/stl_vector.h:174
+	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+	return __n != 0 ? _Tr::allocate(_M_impl, __n) : 0;
+      }
+
+      void
+      _M_deallocate(pointer __p, size_t __n)
+  401c04:	push   %rbp
+  401c05:	mov    %rsp,%rbp
+  401c08:	sub    $0x20,%rsp
+  401c0c:	mov    %rdi,-0x8(%rbp)
+  401c10:	mov    %rsi,-0x10(%rbp)
+  401c14:	mov    %rdx,-0x18(%rbp)
+/usr/include/c++/4.9/bits/stl_vector.h:177
+      {
+	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+	if (__p)
+  401c18:	cmpq   $0x0,-0x10(%rbp)
+  401c1d:	je     401c36 <_ZNSt12_Vector_baseISsSaISsEE13_M_deallocateEPSsm+0x32>
+/usr/include/c++/4.9/bits/stl_vector.h:178
+	  _Tr::deallocate(_M_impl, __p, __n);
+  401c1f:	mov    -0x8(%rbp),%rax
+  401c23:	mov    -0x18(%rbp),%rdx
+  401c27:	mov    -0x10(%rbp),%rcx
+  401c2b:	mov    %rcx,%rsi
+  401c2e:	mov    %rax,%rdi
+  401c31:	callq  401d49 <_ZNSt16allocator_traitsISaISsEE10deallocateERS0_PSsm>
+/usr/include/c++/4.9/bits/stl_vector.h:179
+      }
+  401c36:	leaveq 
+  401c37:	retq   
+
+0000000000401c38 <_ZSt8distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_>:
+_ZSt8distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_():
+/usr/include/c++/4.9/bits/stl_iterator_base_funcs.h:114
+   *  For random access iterators, this uses their @c + and @c - operations
+   *  and are constant time.  For other %iterator classes they are linear time.
+  */
+  template<typename _InputIterator>
+    inline typename iterator_traits<_InputIterator>::difference_type
+    distance(_InputIterator __first, _InputIterator __last)
+  401c38:	push   %rbp
+  401c39:	mov    %rsp,%rbp
+  401c3c:	push   %rbx
+  401c3d:	sub    $0x28,%rsp
+  401c41:	mov    %rdi,-0x28(%rbp)
+  401c45:	mov    %rsi,-0x30(%rbp)
+  401c49:	mov    %fs:0x28,%rax
+  401c52:	mov    %rax,-0x18(%rbp)
+  401c56:	xor    %eax,%eax
+/usr/include/c++/4.9/bits/stl_iterator_base_funcs.h:118
+    {
+      // concept requirements -- taken care of in __distance
+      return std::__distance(__first, __last,
+			     std::__iterator_category(__first));
+  401c58:	lea    -0x28(%rbp),%rax
+  401c5c:	mov    %rax,%rdi
+  401c5f:	callq  401d76 <_ZSt19__iterator_categoryIPKSsENSt15iterator_traitsIT_E17iterator_categoryERKS3_>
+  401c64:	mov    -0x28(%rbp),%rax
+  401c68:	sub    $0x8,%rsp
+  401c6c:	mov    -0x30(%rbp),%rdx
+  401c70:	push   %rbx
+  401c71:	mov    %rdx,%rsi
+  401c74:	mov    %rax,%rdi
+  401c77:	callq  401d80 <_ZSt10__distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag>
+  401c7c:	add    $0x10,%rsp
+/usr/include/c++/4.9/bits/stl_iterator_base_funcs.h:119
+    }
+  401c80:	mov    -0x18(%rbp),%rcx
+  401c84:	xor    %fs:0x28,%rcx
+  401c8d:	je     401c94 <_ZSt8distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_+0x5c>
+  401c8f:	callq  400d60 <__stack_chk_fail@plt>
+  401c94:	mov    -0x8(%rbp),%rbx
+  401c98:	leaveq 
+  401c99:	retq   
+
+0000000000401c9a <_ZNSt12_Vector_baseISsSaISsEE11_M_allocateEm>:
+_ZNSt12_Vector_baseISsSaISsEE11_M_allocateEm():
+/usr/include/c++/4.9/bits/stl_vector.h:167
+
+    public:
+      _Vector_impl _M_impl;
+
+      pointer
+      _M_allocate(size_t __n)
+  401c9a:	push   %rbp
+  401c9b:	mov    %rsp,%rbp
+  401c9e:	sub    $0x10,%rsp
+  401ca2:	mov    %rdi,-0x8(%rbp)
+  401ca6:	mov    %rsi,-0x10(%rbp)
+/usr/include/c++/4.9/bits/stl_vector.h:170
+      {
+	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+	return __n != 0 ? _Tr::allocate(_M_impl, __n) : 0;
+  401caa:	cmpq   $0x0,-0x10(%rbp)
+  401caf:	je     401cc6 <_ZNSt12_Vector_baseISsSaISsEE11_M_allocateEm+0x2c>
+/usr/include/c++/4.9/bits/stl_vector.h:170 (discriminator 1)
+  401cb1:	mov    -0x8(%rbp),%rax
+  401cb5:	mov    -0x10(%rbp),%rdx
+  401cb9:	mov    %rdx,%rsi
+  401cbc:	mov    %rax,%rdi
+  401cbf:	callq  401da0 <_ZNSt16allocator_traitsISaISsEE8allocateERS0_m>
+  401cc4:	jmp    401ccb <_ZNSt12_Vector_baseISsSaISsEE11_M_allocateEm+0x31>
+/usr/include/c++/4.9/bits/stl_vector.h:170 (discriminator 2)
+  401cc6:	mov    $0x0,%eax
+/usr/include/c++/4.9/bits/stl_vector.h:171 (discriminator 4)
+      }
+  401ccb:	leaveq 
+  401ccc:	retq   
+
+0000000000401ccd <_ZSt22__uninitialized_copy_aIPKSsPSsSsET0_T_S4_S3_RSaIT1_E>:
+_ZSt22__uninitialized_copy_aIPKSsPSsSsET0_T_S4_S3_RSaIT1_E():
+/usr/include/c++/4.9/bits/stl_uninitialized.h:277
+	}
+    }
+
+  template<typename _InputIterator, typename _ForwardIterator, typename _Tp>
+    inline _ForwardIterator
+    __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,
+  401ccd:	push   %rbp
+  401cce:	mov    %rsp,%rbp
+  401cd1:	sub    $0x20,%rsp
+  401cd5:	mov    %rdi,-0x8(%rbp)
+  401cd9:	mov    %rsi,-0x10(%rbp)
+  401cdd:	mov    %rdx,-0x18(%rbp)
+  401ce1:	mov    %rcx,-0x20(%rbp)
+/usr/include/c++/4.9/bits/stl_uninitialized.h:279
+			   _ForwardIterator __result, allocator<_Tp>&)
+    { return std::uninitialized_copy(__first, __last, __result); }
+  401ce5:	mov    -0x18(%rbp),%rdx
+  401ce9:	mov    -0x10(%rbp),%rcx
+  401ced:	mov    -0x8(%rbp),%rax
+  401cf1:	mov    %rcx,%rsi
+  401cf4:	mov    %rax,%rdi
+  401cf7:	callq  401dca <_ZSt18uninitialized_copyIPKSsPSsET0_T_S4_S3_>
+  401cfc:	leaveq 
+  401cfd:	retq   
+
+0000000000401cfe <_ZSt8_DestroyIPSsEvT_S1_>:
+_ZSt8_DestroyIPSsEvT_S1_():
+/usr/include/c++/4.9/bits/stl_construct.h:122
+   * a trivial destructor, the compiler should optimize all of this
+   * away, otherwise the objects' destructors must be invoked.
+   */
+  template<typename _ForwardIterator>
+    inline void
+    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+  401cfe:	push   %rbp
+  401cff:	mov    %rsp,%rbp
+  401d02:	sub    $0x10,%rsp
+  401d06:	mov    %rdi,-0x8(%rbp)
+  401d0a:	mov    %rsi,-0x10(%rbp)
+/usr/include/c++/4.9/bits/stl_construct.h:126
+    {
+      typedef typename iterator_traits<_ForwardIterator>::value_type
+                       _Value_type;
+      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
+  401d0e:	mov    -0x10(%rbp),%rdx
+  401d12:	mov    -0x8(%rbp),%rax
+  401d16:	mov    %rdx,%rsi
+  401d19:	mov    %rax,%rdi
+  401d1c:	callq  401dfb <_ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_>
+/usr/include/c++/4.9/bits/stl_construct.h:128
+	__destroy(__first, __last);
+    }
+  401d21:	leaveq 
+  401d22:	retq   
+  401d23:	nop
+
+0000000000401d24 <_ZNSaISsEC1ERKS_>:
+_ZNSaISsEC2ERKS_():
+/usr/include/c++/4.9/bits/allocator.h:115
+      typedef true_type propagate_on_container_move_assignment;
+#endif
+
+      allocator() throw() { }
+
+      allocator(const allocator& __a) throw()
+  401d24:	push   %rbp
+  401d25:	mov    %rsp,%rbp
+  401d28:	sub    $0x10,%rsp
+  401d2c:	mov    %rdi,-0x8(%rbp)
+  401d30:	mov    %rsi,-0x10(%rbp)
+/usr/include/c++/4.9/bits/allocator.h:116
+      : __allocator_base<_Tp>(__a) { }
+  401d34:	mov    -0x10(%rbp),%rdx
+  401d38:	mov    -0x8(%rbp),%rax
+  401d3c:	mov    %rdx,%rsi
+  401d3f:	mov    %rax,%rdi
+  401d42:	callq  401e32 <_ZN9__gnu_cxx13new_allocatorISsEC1ERKS1_>
+  401d47:	leaveq 
+  401d48:	retq   
+
+0000000000401d49 <_ZNSt16allocator_traitsISaISsEE10deallocateERS0_PSsm>:
+_ZNSt16allocator_traitsISaISsEE10deallocateERS0_PSsm():
+/usr/include/c++/4.9/bits/alloc_traits.h:382
+       *  @param  __p  Pointer to the memory to deallocate.
+       *  @param  __n  The number of objects space was allocated for.
+       *
+       *  Calls <tt> a.deallocate(p, n) </tt>
+      */
+      static void deallocate(_Alloc& __a, pointer __p, size_type __n)
+  401d49:	push   %rbp
+  401d4a:	mov    %rsp,%rbp
+  401d4d:	sub    $0x20,%rsp
+  401d51:	mov    %rdi,-0x8(%rbp)
+  401d55:	mov    %rsi,-0x10(%rbp)
+  401d59:	mov    %rdx,-0x18(%rbp)
+/usr/include/c++/4.9/bits/alloc_traits.h:383
+      { __a.deallocate(__p, __n); }
+  401d5d:	mov    -0x18(%rbp),%rdx
+  401d61:	mov    -0x10(%rbp),%rcx
+  401d65:	mov    -0x8(%rbp),%rax
+  401d69:	mov    %rcx,%rsi
+  401d6c:	mov    %rax,%rdi
+  401d6f:	callq  401e40 <_ZN9__gnu_cxx13new_allocatorISsE10deallocateEPSsm>
+  401d74:	leaveq 
+  401d75:	retq   
+
+0000000000401d76 <_ZSt19__iterator_categoryIPKSsENSt15iterator_traitsIT_E17iterator_categoryERKS3_>:
+_ZSt19__iterator_categoryIPKSsENSt15iterator_traitsIT_E17iterator_categoryERKS3_():
+/usr/include/c++/4.9/bits/stl_iterator_base_types.h:201
+   *  This function is not a part of the C++ standard but is syntactic
+   *  sugar for internal library use only.
+  */
+  template<typename _Iter>
+    inline typename iterator_traits<_Iter>::iterator_category
+    __iterator_category(const _Iter&)
+  401d76:	push   %rbp
+  401d77:	mov    %rsp,%rbp
+  401d7a:	mov    %rdi,-0x8(%rbp)
+/usr/include/c++/4.9/bits/stl_iterator_base_types.h:202
+    { return typename iterator_traits<_Iter>::iterator_category(); }
+  401d7e:	pop    %rbp
+  401d7f:	retq   
+
+0000000000401d80 <_ZSt10__distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag>:
+_ZSt10__distanceIPKSsENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag():
+/usr/include/c++/4.9/bits/stl_iterator_base_funcs.h:90
+      return __n;
+    }
+
+  template<typename _RandomAccessIterator>
+    inline typename iterator_traits<_RandomAccessIterator>::difference_type
+    __distance(_RandomAccessIterator __first, _RandomAccessIterator __last,
+  401d80:	push   %rbp
+  401d81:	mov    %rsp,%rbp
+  401d84:	mov    %rdi,-0x8(%rbp)
+  401d88:	mov    %rsi,-0x10(%rbp)
+/usr/include/c++/4.9/bits/stl_iterator_base_funcs.h:96
+               random_access_iterator_tag)
+    {
+      // concept requirements
+      __glibcxx_function_requires(_RandomAccessIteratorConcept<
+				  _RandomAccessIterator>)
+      return __last - __first;
+  401d8c:	mov    -0x10(%rbp),%rdx
+  401d90:	mov    -0x8(%rbp),%rax
+  401d94:	sub    %rax,%rdx
+  401d97:	mov    %rdx,%rax
+  401d9a:	sar    $0x3,%rax
+/usr/include/c++/4.9/bits/stl_iterator_base_funcs.h:97
+    }
+  401d9e:	pop    %rbp
+  401d9f:	retq   
+
+0000000000401da0 <_ZNSt16allocator_traitsISaISsEE8allocateERS0_m>:
+_ZNSt16allocator_traitsISaISsEE8allocateERS0_m():
+/usr/include/c++/4.9/bits/alloc_traits.h:356
+       *  @param  __n  The number of objects to allocate space for.
+       *
+       *  Calls @c a.allocate(n)
+      */
+      static pointer
+      allocate(_Alloc& __a, size_type __n)
+  401da0:	push   %rbp
+  401da1:	mov    %rsp,%rbp
+  401da4:	sub    $0x10,%rsp
+  401da8:	mov    %rdi,-0x8(%rbp)
+  401dac:	mov    %rsi,-0x10(%rbp)
+/usr/include/c++/4.9/bits/alloc_traits.h:357
+      { return __a.allocate(__n); }
+  401db0:	mov    -0x10(%rbp),%rcx
+  401db4:	mov    -0x8(%rbp),%rax
+  401db8:	mov    $0x0,%edx
+  401dbd:	mov    %rcx,%rsi
+  401dc0:	mov    %rax,%rdi
+  401dc3:	callq  401e62 <_ZN9__gnu_cxx13new_allocatorISsE8allocateEmPKv>
+  401dc8:	leaveq 
+  401dc9:	retq   
+
+0000000000401dca <_ZSt18uninitialized_copyIPKSsPSsET0_T_S4_S3_>:
+_ZSt18uninitialized_copyIPKSsPSsET0_T_S4_S3_():
+/usr/include/c++/4.9/bits/stl_uninitialized.h:107
+   *
+   *  Like copy(), but does not require an initialized output range.
+  */
+  template<typename _InputIterator, typename _ForwardIterator>
+    inline _ForwardIterator
+    uninitialized_copy(_InputIterator __first, _InputIterator __last,
+  401dca:	push   %rbp
+  401dcb:	mov    %rsp,%rbp
+  401dce:	sub    $0x30,%rsp
+  401dd2:	mov    %rdi,-0x18(%rbp)
+  401dd6:	mov    %rsi,-0x20(%rbp)
+  401dda:	mov    %rdx,-0x28(%rbp)
+/usr/include/c++/4.9/bits/stl_uninitialized.h:120
+      const bool __assignable = true;
+#else
+      // trivial types can have deleted assignment
+      typedef typename iterator_traits<_InputIterator>::reference _RefType1;
+      typedef typename iterator_traits<_ForwardIterator>::reference _RefType2;
+      const bool __assignable = is_assignable<_RefType2, _RefType1>::value;
+  401dde:	movb   $0x1,-0x1(%rbp)
+/usr/include/c++/4.9/bits/stl_uninitialized.h:126
+#endif
+
+      return std::__uninitialized_copy<__is_trivial(_ValueType1)
+				       && __is_trivial(_ValueType2)
+				       && __assignable>::
+	__uninit_copy(__first, __last, __result);
+  401de2:	mov    -0x28(%rbp),%rdx
+  401de6:	mov    -0x20(%rbp),%rcx
+  401dea:	mov    -0x18(%rbp),%rax
+  401dee:	mov    %rcx,%rsi
+  401df1:	mov    %rax,%rdi
+  401df4:	callq  401ea4 <_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_>
+/usr/include/c++/4.9/bits/stl_uninitialized.h:127
+    }
+  401df9:	leaveq 
+  401dfa:	retq   
+
+0000000000401dfb <_ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_>:
+_ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_():
+/usr/include/c++/4.9/bits/stl_construct.h:100
+  template<bool>
+    struct _Destroy_aux
+    {
+      template<typename _ForwardIterator>
+        static void
+        __destroy(_ForwardIterator __first, _ForwardIterator __last)
+  401dfb:	push   %rbp
+  401dfc:	mov    %rsp,%rbp
+  401dff:	sub    $0x10,%rsp
+  401e03:	mov    %rdi,-0x8(%rbp)
+  401e07:	mov    %rsi,-0x10(%rbp)
+/usr/include/c++/4.9/bits/stl_construct.h:102
+	{
+	  for (; __first != __last; ++__first)
+  401e0b:	jmp    401e26 <_ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_+0x2b>
+/usr/include/c++/4.9/bits/stl_construct.h:103 (discriminator 2)
+	    std::_Destroy(std::__addressof(*__first));
+  401e0d:	mov    -0x8(%rbp),%rax
+  401e11:	mov    %rax,%rdi
+  401e14:	callq  401f35 <_ZSt11__addressofISsEPT_RS0_>
+  401e19:	mov    %rax,%rdi
+  401e1c:	callq  401f43 <_ZSt8_DestroyISsEvPT_>
+/usr/include/c++/4.9/bits/stl_construct.h:102 (discriminator 2)
+    {
+      template<typename _ForwardIterator>
+        static void
+        __destroy(_ForwardIterator __first, _ForwardIterator __last)
+	{
+	  for (; __first != __last; ++__first)
+  401e21:	addq   $0x8,-0x8(%rbp)
+/usr/include/c++/4.9/bits/stl_construct.h:102 (discriminator 1)
+  401e26:	mov    -0x8(%rbp),%rax
+  401e2a:	cmp    -0x10(%rbp),%rax
+  401e2e:	jne    401e0d <_ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_+0x12>
+/usr/include/c++/4.9/bits/stl_construct.h:104
+	    std::_Destroy(std::__addressof(*__first));
+	}
+  401e30:	leaveq 
+  401e31:	retq   
+
+0000000000401e32 <_ZN9__gnu_cxx13new_allocatorISsEC1ERKS1_>:
+_ZN9__gnu_cxx13new_allocatorISsEC2ERKS1_():
+/usr/include/c++/4.9/ext/new_allocator.h:81
+      typedef std::true_type propagate_on_container_move_assignment;
+#endif
+
+      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+
+      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+  401e32:	push   %rbp
+  401e33:	mov    %rsp,%rbp
+  401e36:	mov    %rdi,-0x8(%rbp)
+  401e3a:	mov    %rsi,-0x10(%rbp)
+  401e3e:	pop    %rbp
+  401e3f:	retq   
+
+0000000000401e40 <_ZN9__gnu_cxx13new_allocatorISsE10deallocateEPSsm>:
+_ZN9__gnu_cxx13new_allocatorISsE10deallocateEPSsm():
+/usr/include/c++/4.9/ext/new_allocator.h:109
+	return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+      }
+
+      // __p is not permitted to be a null pointer.
+      void
+      deallocate(pointer __p, size_type)
+  401e40:	push   %rbp
+  401e41:	mov    %rsp,%rbp
+  401e44:	sub    $0x20,%rsp
+  401e48:	mov    %rdi,-0x8(%rbp)
+  401e4c:	mov    %rsi,-0x10(%rbp)
+  401e50:	mov    %rdx,-0x18(%rbp)
+/usr/include/c++/4.9/ext/new_allocator.h:110
+      { ::operator delete(__p); }
+  401e54:	mov    -0x10(%rbp),%rax
+  401e58:	mov    %rax,%rdi
+  401e5b:	callq  400cb0 <_ZdlPv@plt>
+  401e60:	leaveq 
+  401e61:	retq   
+
+0000000000401e62 <_ZN9__gnu_cxx13new_allocatorISsE8allocateEmPKv>:
+_ZN9__gnu_cxx13new_allocatorISsE8allocateEmPKv():
+/usr/include/c++/4.9/ext/new_allocator.h:99
+      { return std::__addressof(__x); }
+
+      // NB: __n is permitted to be 0.  The C++ standard says nothing
+      // about what the return value is when __n == 0.
+      pointer
+      allocate(size_type __n, const void* = 0)
+  401e62:	push   %rbp
+  401e63:	mov    %rsp,%rbp
+  401e66:	sub    $0x20,%rsp
+  401e6a:	mov    %rdi,-0x8(%rbp)
+  401e6e:	mov    %rsi,-0x10(%rbp)
+  401e72:	mov    %rdx,-0x18(%rbp)
+/usr/include/c++/4.9/ext/new_allocator.h:101
+      { 
+	if (__n > this->max_size())
+  401e76:	mov    -0x8(%rbp),%rax
+  401e7a:	mov    %rax,%rdi
+  401e7d:	callq  401f5e <_ZNK9__gnu_cxx13new_allocatorISsE8max_sizeEv>
+  401e82:	cmp    -0x10(%rbp),%rax
+  401e86:	setb   %al
+  401e89:	test   %al,%al
+  401e8b:	je     401e92 <_ZN9__gnu_cxx13new_allocatorISsE8allocateEmPKv+0x30>
+/usr/include/c++/4.9/ext/new_allocator.h:102
+	  std::__throw_bad_alloc();
+  401e8d:	callq  400da0 <_ZSt17__throw_bad_allocv@plt>
+/usr/include/c++/4.9/ext/new_allocator.h:104
+
+	return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+  401e92:	mov    -0x10(%rbp),%rax
+  401e96:	shl    $0x3,%rax
+  401e9a:	mov    %rax,%rdi
+  401e9d:	callq  400df0 <_Znwm@plt>
+/usr/include/c++/4.9/ext/new_allocator.h:105
+      }
+  401ea2:	leaveq 
+  401ea3:	retq   
+
+0000000000401ea4 <_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_>:
+_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_():
+/usr/include/c++/4.9/bits/stl_uninitialized.h:68
+  template<bool _TrivialValueTypes>
+    struct __uninitialized_copy
+    {
+      template<typename _InputIterator, typename _ForwardIterator>
+        static _ForwardIterator
+        __uninit_copy(_InputIterator __first, _InputIterator __last,
+  401ea4:	push   %rbp
+  401ea5:	mov    %rsp,%rbp
+  401ea8:	push   %rbx
+  401ea9:	sub    $0x38,%rsp
+  401ead:	mov    %rdi,-0x28(%rbp)
+  401eb1:	mov    %rsi,-0x30(%rbp)
+  401eb5:	mov    %rdx,-0x38(%rbp)
+/usr/include/c++/4.9/bits/stl_uninitialized.h:71
+		      _ForwardIterator __result)
+        {
+	  _ForwardIterator __cur = __result;
+  401eb9:	mov    -0x38(%rbp),%rax
+  401ebd:	mov    %rax,-0x18(%rbp)
+/usr/include/c++/4.9/bits/stl_uninitialized.h:74
+	  __try
+	    {
+	      for (; __first != __last; ++__first, ++__cur)
+  401ec1:	jmp    401eeb <_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_+0x47>
+/usr/include/c++/4.9/bits/stl_uninitialized.h:75
+		std::_Construct(std::__addressof(*__cur), *__first);
+  401ec3:	mov    -0x18(%rbp),%rax
+  401ec7:	mov    %rax,%rdi
+  401eca:	callq  401f35 <_ZSt11__addressofISsEPT_RS0_>
+  401ecf:	mov    %rax,%rdx
+  401ed2:	mov    -0x28(%rbp),%rax
+  401ed6:	mov    %rax,%rsi
+  401ed9:	mov    %rdx,%rdi
+  401edc:	callq  401f80 <_ZSt10_ConstructISsIRKSsEEvPT_DpOT0_>
+/usr/include/c++/4.9/bits/stl_uninitialized.h:74
+		      _ForwardIterator __result)
+        {
+	  _ForwardIterator __cur = __result;
+	  __try
+	    {
+	      for (; __first != __last; ++__first, ++__cur)
+  401ee1:	addq   $0x8,-0x28(%rbp)
+  401ee6:	addq   $0x8,-0x18(%rbp)
+/usr/include/c++/4.9/bits/stl_uninitialized.h:74 (discriminator 1)
+  401eeb:	mov    -0x28(%rbp),%rax
+  401eef:	cmp    -0x30(%rbp),%rax
+  401ef3:	jne    401ec3 <_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_+0x1f>
+/usr/include/c++/4.9/bits/stl_uninitialized.h:76
+		std::_Construct(std::__addressof(*__cur), *__first);
+	      return __cur;
+  401ef5:	mov    -0x18(%rbp),%rax
+  401ef9:	jmp    401f2e <_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPKSsPSsEET0_T_S6_S5_+0x8a>
+  401efb:	mov    %rax,%rbx
+/usr/include/c++/4.9/bits/stl_uninitialized.h:78
+	    }
+	  __catch(...)
+  401efe:	callq  400d90 <__cxa_end_catch@plt>
+  401f03:	mov    %rbx,%rax
+  401f06:	mov    %rax,%rdi
+  401f09:	callq  400e00 <_Unwind_Resume@plt>
+  401f0e:	mov    %rax,%rdi
+  401f11:	callq  400dc0 <__cxa_begin_catch@plt>
+/usr/include/c++/4.9/bits/stl_uninitialized.h:80
+	    {
+	      std::_Destroy(__result, __cur);
+  401f16:	mov    -0x18(%rbp),%rdx
+  401f1a:	mov    -0x38(%rbp),%rax
+  401f1e:	mov    %rdx,%rsi
+  401f21:	mov    %rax,%rdi
+  401f24:	callq  401cfe <_ZSt8_DestroyIPSsEvT_S1_>
+/usr/include/c++/4.9/bits/stl_uninitialized.h:81
+	      __throw_exception_again;
+  401f29:	callq  400cc0 <__cxa_rethrow@plt>
+/usr/include/c++/4.9/bits/stl_uninitialized.h:83
+	    }
+	}
+  401f2e:	add    $0x38,%rsp
+  401f32:	pop    %rbx
+  401f33:	pop    %rbp
+  401f34:	retq   
+
+0000000000401f35 <_ZSt11__addressofISsEPT_RS0_>:
+_ZSt11__addressofISsEPT_RS0_():
+/usr/include/c++/4.9/bits/move.h:47
+   *  @brief Same as C++11 std::addressof
+   *  @ingroup utilities
+   */
+  template<typename _Tp>
+    inline _Tp*
+    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+  401f35:	push   %rbp
+  401f36:	mov    %rsp,%rbp
+  401f39:	mov    %rdi,-0x8(%rbp)
+/usr/include/c++/4.9/bits/move.h:50
+    {
+      return reinterpret_cast<_Tp*>
+	(&const_cast<char&>(reinterpret_cast<const volatile char&>(__r)));
+  401f3d:	mov    -0x8(%rbp),%rax
+/usr/include/c++/4.9/bits/move.h:51
+    }
+  401f41:	pop    %rbp
+  401f42:	retq   
+
+0000000000401f43 <_ZSt8_DestroyISsEvPT_>:
+_ZSt8_DestroyISsEvPT_():
+/usr/include/c++/4.9/bits/stl_construct.h:92
+  /**
+   * Destroy the object pointed to by a pointer type.
+   */
+  template<typename _Tp>
+    inline void
+    _Destroy(_Tp* __pointer)
+  401f43:	push   %rbp
+  401f44:	mov    %rsp,%rbp
+  401f47:	sub    $0x10,%rsp
+  401f4b:	mov    %rdi,-0x8(%rbp)
+/usr/include/c++/4.9/bits/stl_construct.h:93
+    { __pointer->~_Tp(); }
+  401f4f:	mov    -0x8(%rbp),%rax
+  401f53:	mov    %rax,%rdi
+  401f56:	callq  400d30 <_ZNSsD1Ev@plt>
+  401f5b:	leaveq 
+  401f5c:	retq   
+  401f5d:	nop
+
+0000000000401f5e <_ZNK9__gnu_cxx13new_allocatorISsE8max_sizeEv>:
+_ZNK9__gnu_cxx13new_allocatorISsE8max_sizeEv():
+/usr/include/c++/4.9/ext/new_allocator.h:113
+      void
+      deallocate(pointer __p, size_type)
+      { ::operator delete(__p); }
+
+      size_type
+      max_size() const _GLIBCXX_USE_NOEXCEPT
+  401f5e:	push   %rbp
+  401f5f:	mov    %rsp,%rbp
+  401f62:	mov    %rdi,-0x8(%rbp)
+/usr/include/c++/4.9/ext/new_allocator.h:114
+      { return size_t(-1) / sizeof(_Tp); }
+  401f66:	movabs $0x1fffffffffffffff,%rax
+  401f70:	pop    %rbp
+  401f71:	retq   
+
+0000000000401f72 <_ZSt7forwardIRKSsEOT_RNSt16remove_referenceIS2_E4typeE>:
+_ZSt7forwardIRKSsEOT_RNSt16remove_referenceIS2_E4typeE():
+/usr/include/c++/4.9/bits/move.h:76
+   *
+   *  This function is used to implement "perfect forwarding".
+   */
+  template<typename _Tp>
+    constexpr _Tp&&
+    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+  401f72:	push   %rbp
+  401f73:	mov    %rsp,%rbp
+  401f76:	mov    %rdi,-0x8(%rbp)
+/usr/include/c++/4.9/bits/move.h:77
+    { return static_cast<_Tp&&>(__t); }
+  401f7a:	mov    -0x8(%rbp),%rax
+  401f7e:	pop    %rbp
+  401f7f:	retq   
+
+0000000000401f80 <_ZSt10_ConstructISsIRKSsEEvPT_DpOT0_>:
+_ZSt10_ConstructISsIRKSsEEvPT_DpOT0_():
+/usr/include/c++/4.9/bits/stl_construct.h:74
+   * object's constructor with an initializer.
+   */
+#if __cplusplus >= 201103L
+  template<typename _T1, typename... _Args>
+    inline void
+    _Construct(_T1* __p, _Args&&... __args)
+  401f80:	push   %rbp
+  401f81:	mov    %rsp,%rbp
+  401f84:	push   %r13
+  401f86:	push   %r12
+  401f88:	push   %rbx
+  401f89:	sub    $0x18,%rsp
+  401f8d:	mov    %rdi,-0x28(%rbp)
+  401f91:	mov    %rsi,-0x30(%rbp)
+/usr/include/c++/4.9/bits/stl_construct.h:75
+    { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+  401f95:	mov    -0x30(%rbp),%rax
+  401f99:	mov    %rax,%rdi
+  401f9c:	callq  401f72 <_ZSt7forwardIRKSsEOT_RNSt16remove_referenceIS2_E4typeE>
+  401fa1:	mov    %rax,%r13
+  401fa4:	mov    -0x28(%rbp),%r12
+  401fa8:	mov    %r12,%rsi
+  401fab:	mov    $0x8,%edi
+  401fb0:	callq  40189d <_ZnwmPv>
+  401fb5:	mov    %rax,%rbx
+  401fb8:	test   %rbx,%rbx
+  401fbb:	je     401fca <_ZSt10_ConstructISsIRKSsEEvPT_DpOT0_+0x4a>
+/usr/include/c++/4.9/bits/stl_construct.h:75 (discriminator 1)
+  401fbd:	mov    %r13,%rsi
+  401fc0:	mov    %rbx,%rdi
+  401fc3:	callq  400cf0 <_ZNSsC1ERKSs@plt>
+  401fc8:	jmp    401fe5 <_ZSt10_ConstructISsIRKSsEEvPT_DpOT0_+0x65>
+/usr/include/c++/4.9/bits/stl_construct.h:75 (discriminator 2)
+  401fca:	jmp    401fe5 <_ZSt10_ConstructISsIRKSsEEvPT_DpOT0_+0x65>
+  401fcc:	mov    %rax,%r13
+/usr/include/c++/4.9/bits/stl_construct.h:75
+  401fcf:	mov    %r12,%rsi
+  401fd2:	mov    %rbx,%rdi
+  401fd5:	callq  4018af <_ZdlPvS_>
+  401fda:	mov    %r13,%rax
+  401fdd:	mov    %rax,%rdi
+  401fe0:	callq  400e00 <_Unwind_Resume@plt>
+  401fe5:	add    $0x18,%rsp
+  401fe9:	pop    %rbx
+  401fea:	pop    %r12
+  401fec:	pop    %r13
+  401fee:	pop    %rbp
+  401fef:	retq   
+
+0000000000401ff0 <__libc_csu_init>:
+__libc_csu_init():
+  401ff0:	push   %r15
+  401ff2:	push   %r14
+  401ff4:	mov    %edi,%r15d
+  401ff7:	push   %r13
+  401ff9:	push   %r12
+  401ffb:	lea    0x200de6(%rip),%r12        # 602de8 <__frame_dummy_init_array_entry>
+  402002:	push   %rbp
+  402003:	lea    0x200dee(%rip),%rbp        # 602df8 <__init_array_end>
+  40200a:	push   %rbx
+  40200b:	mov    %rsi,%r14
+  40200e:	mov    %rdx,%r13
+  402011:	xor    %ebx,%ebx
+  402013:	sub    %r12,%rbp
+  402016:	sub    $0x8,%rsp
+  40201a:	sar    $0x3,%rbp
+  40201e:	callq  400c50 <_init>
+  402023:	test   %rbp,%rbp
+  402026:	je     402046 <__libc_csu_init+0x56>
+  402028:	nopl   0x0(%rax,%rax,1)
+  402030:	mov    %r13,%rdx
+  402033:	mov    %r14,%rsi
+  402036:	mov    %r15d,%edi
+  402039:	callq  *(%r12,%rbx,8)
+  40203d:	add    $0x1,%rbx
+  402041:	cmp    %rbp,%rbx
+  402044:	jne    402030 <__libc_csu_init+0x40>
+  402046:	add    $0x8,%rsp
+  40204a:	pop    %rbx
+  40204b:	pop    %rbp
+  40204c:	pop    %r12
+  40204e:	pop    %r13
+  402050:	pop    %r14
+  402052:	pop    %r15
+  402054:	retq   
+  402055:	nop
+  402056:	nopw   %cs:0x0(%rax,%rax,1)
+
+0000000000402060 <__libc_csu_fini>:
+__libc_csu_fini():
+  402060:	repz retq 
+
+Disassembly of section .fini:
+
+0000000000402064 <_fini>:
+_fini():
+  402064:	sub    $0x8,%rsp
+  402068:	add    $0x8,%rsp
+  40206c:	retq   
