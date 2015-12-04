@@ -7,7 +7,14 @@
 #define DO_TEST_REFERENCE_PARAMETER 0
 #define DO_TEST_REFERENCE_DECLARATION 0
 #define DO_TEST_PRACTICE_1 0
-#define DO_TEST_SELF_CHANGE 1
+#define DO_TEST_SELF_CHANGE 0
+#define DO_TEST_ARRAY_AUTOCHANGE 0
+#define DO_TEST_PRACTICE_2 0
+#define DO_TEST_PRACTICE_3 1
+#define DO_TEST_PRACTICE_4 0
+#define DO_TEST_PRACTICE_5 0
+#define DO_TEST_PRACTICE_6 0
+
 
 using namespace std;
 
@@ -92,6 +99,34 @@ int test_self_change (void) {
     return 0;
 }
 
+void auto_change_pointer (int a[10]) {      // 形参数组a自动转换为&a[0]
+    cout << sizeof(a) << endl;
+}
+
+void auto_change_reference (int (&a)[10]) {
+    cout << sizeof(a) << endl;
+}
+
+int test_array_autochange (void) {
+    int a[10] = {0,1,2,3,4,5,6,7,8,9};
+    auto_change_pointer(a);
+    auto_change_reference(a);
+    return 0;
+}
+
+/* 练习6.21 */
+int test_practice_2 (int a, int *b) {
+    return (a >= *b ? a : *b);
+}
+
+/* 练习6.22 */
+int test_practice_3 (int *&p, int *&q) {
+    auto temp = p;
+    p = q;
+    q = temp;
+    return 0;
+}
+
 int main (void) {
 #if DO_TEST_BASIC
     test_basic();
@@ -108,5 +143,29 @@ int main (void) {
 #if DO_TEST_SELF_CHANGE
     test_self_change();
 #endif
+#if DO_TEST_ARRAY_AUTOCHANGE
+    test_array_autochange();
+#endif
+#if DO_TEST_PRACTICE_2
+    int _b = 1;
+    int *b = &_b;
+    cout << test_practice_2(0, b) << endl;
+#endif
+#if DO_TEST_PRACTICE_3
+    int a = 0, b = 1;
+    int *p = &a, *q = &b;
+    test_practice_3(p, q);
+    cout << "*p = " << *p << " , *q = " << *q << endl;
+#endif
+#if DO_TEST_PRACTICE_4
+    test_practice_4();
+#endif
+#if DO_TEST_PRACTICE_5
+    test_practice_5();
+#endif
+#if DO_TEST_PRACTICE_6
+    test_practice_6();
+#endif
+
     return 0;
 }
