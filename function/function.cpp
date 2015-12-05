@@ -2,6 +2,9 @@
 #include <cmath>
 #include <string>
 #include <cctype>
+#include <initializer_list>
+#include <iterator>
+#include <vector>
 
 #define DO_TEST_BASIC 0
 #define DO_TEST_REFERENCE_PARAMETER 0
@@ -10,9 +13,9 @@
 #define DO_TEST_SELF_CHANGE 0
 #define DO_TEST_ARRAY_AUTOCHANGE 0
 #define DO_TEST_PRACTICE_2 0
-#define DO_TEST_PRACTICE_3 1
+#define DO_TEST_PRACTICE_3 0
 #define DO_TEST_PRACTICE_4 0
-#define DO_TEST_PRACTICE_5 0
+#define DO_TEST_PRACTICE_5 1
 #define DO_TEST_PRACTICE_6 0
 
 
@@ -127,6 +130,26 @@ int test_practice_3 (int *&p, int *&q) {
     return 0;
 }
 
+/* 练习6.27 */
+int test_practice_4 (initializer_list<int> il) {
+    int sum = 0;
+    for (auto index = il.begin() ; index != il.end() ; ++index) {
+        sum += *index;
+    }
+    cout << sum << endl;
+    return 0;
+}
+
+/* 练习6.33 */
+void test_practice_5 (const vector<int> &v, const vector<int>::iterator index) {
+    if (index == v.end())
+        return;
+    else {
+        cout << *index << " ";
+        test_practice_5(v,index+1);
+    }
+}
+
 int main (void) {
 #if DO_TEST_BASIC
     test_basic();
@@ -158,10 +181,11 @@ int main (void) {
     cout << "*p = " << *p << " , *q = " << *q << endl;
 #endif
 #if DO_TEST_PRACTICE_4
-    test_practice_4();
+    test_practice_4({0,1,2,3,4,5,6,7,8,9});     // （）不能为空，但{}可以为空
 #endif
 #if DO_TEST_PRACTICE_5
-    test_practice_5();
+    vector<int> v = {0,1,2,3,4,5,6,7,8,9};
+    test_practice_5(v, v.begin());
 #endif
 #if DO_TEST_PRACTICE_6
     test_practice_6();
