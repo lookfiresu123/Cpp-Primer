@@ -11,7 +11,12 @@ private:
     string name;        // 姓名
     string address;     // 住址
 public:
-    Person () {  }
+    Person () = default;
+    Person (const string &init_name) : name(init_name) {  }
+    Person (const std::string &init_name, const std::string &init_address) {
+        name = init_name;
+        address = init_address;
+    }
     ~Person() {  }
     void Set_Name (const string &new_name);
     void Set_Address (const string &new_address);
