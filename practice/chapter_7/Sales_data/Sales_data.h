@@ -21,7 +21,7 @@ private:
     std::string bookNo;
     unsigned units_sold = 0;
     double revenue = 0.0;
-    double avg_price () const {
+    inline double avg_price () const {
         return static_cast<double> (units_sold != 0 ? revenue / units_sold : 0);
     }
 
