@@ -12,6 +12,7 @@ public:
     Window_mgr() = default;
     void clear (ScreenIndex);       // 将指定下标的Screen中的内容设置为空白
     Window_mgr &insert_Screen (pos ht, pos wd, char c);
+    ScreenIndex addScreen (const Screen &);
 
 private:
     std::vector<Screen> screens;

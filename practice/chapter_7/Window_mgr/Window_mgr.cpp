@@ -11,6 +11,11 @@ Window_mgr &Window_mgr::insert_Screen (pos ht, pos wd, char c) {
     return *this;
 }
 
+Window_mgr::ScreenIndex Window_mgr::addScreen (const Screen &s) {
+     screens.push_back(s);
+     return screens.size() - 1;
+}
+
 int test_Window_mgr_1 (void) {
     Window_mgr win;
     win.insert_Screen(1, 1, 'a').insert_Screen(2, 2, 'b').insert_Screen(3, 3, 'c');
