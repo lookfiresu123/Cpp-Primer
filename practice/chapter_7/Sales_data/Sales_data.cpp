@@ -7,8 +7,8 @@
 #define DO_TEST_SALES_DATA_3 0
 #define DO_TEST_SALES_DATA_4 0
 #define DO_TEST_SALES_DATA_5 0
-#define DO_TEST_SALES_DATA_6 1
-#define DO_TEST_SALES_DATA_7 0
+#define DO_TEST_SALES_DATA_6 0
+#define DO_TEST_SALES_DATA_7 1
 #define DO_TEST_SALES_DATA_8 0
 #define DO_TEST_SALES_DATA_9 0
 
@@ -151,6 +151,11 @@ int test_sales_data_6 (void) {
     return 0;
 }
 
+int test_sales_data_7 (void) {
+    Sales_data total("string", 1);
+    return 0;
+}
+
 int main (void) {
 #if DO_TEST_SALES_DATA_1
     test_sales_data_1();
@@ -169,6 +174,9 @@ int main (void) {
 #endif
 #if DO_TEST_SALES_DATA_6
     test_sales_data_6();
+#endif
+#if DO_TEST_SALES_DATA_7
+    test_sales_data_7();
 #endif
 
     return 0;

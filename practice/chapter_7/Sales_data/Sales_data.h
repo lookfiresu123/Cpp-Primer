@@ -30,6 +30,7 @@ public:
     Sales_data (const std::string &s) : bookNo(s) {  }
     Sales_data (const std::string &s, unsigned n, double p) : bookNo(s), units_sold(n), revenue(p*n) {  }
     Sales_data (std::istream &);
+    Sales_data(const std::string &s, unsigned n) : Sales_data(s, 0, 0.0) { std::cout << "bookNo = " << bookNo << ", units_sold = " << units_sold << ", revenue = " << revenue << std::endl; } 
     std::string isbn() const {
         return bookNo;
     }
