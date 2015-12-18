@@ -1,0 +1,32 @@
+providers: [
+  {
+    key: "bt"
+    config:
+      commands: [
+        {
+          project: "/home/lookfiresu/Desktop/code/Cpp-Primer/practice/chapter_7/Example"
+          source: "/home/lookfiresu/Desktop/code/Cpp-Primer/practice/chapter_7/Example/.build-tools.cson"
+          name: "g++ -std=c++14"
+          command: "g++ -g -Wall -std=c++14 Example.cpp -o main"
+          wd: "."
+          env: {}
+          modifier: {}
+          stdout:
+            pty: false
+            highlighting: "nh"
+            ansi_option: "ignore"
+          stderr:
+            highlighting: "hc"
+            profile: "gcc_clang"
+          output:
+            console:
+              close_success: false
+              queue_in_buffer: true
+              stdin: false
+            linter:
+              no_trace: false
+          version: 1
+        }
+      ]
+  }
+]
