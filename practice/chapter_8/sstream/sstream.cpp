@@ -31,9 +31,9 @@ int test_sstream_1 (void) {
     while (getline(finput, line)) {
         PersonInfo per;
         // 用std::istringstream流分割line行stirng对象
-        std::istringstream sinput(line);
-        sinput >> per.name;
-        while (sinput >> word)
+        std::istringstream sinput(line);    // 创建string流，并将其和line对象绑定
+        sinput >> per.name;     // 读取line中的数据，并存到了per.name中
+        while (sinput >> word)  // 读取line中的数据，并存到了word中
             per.phones.push_back(word);
         persons.push_back(per);
     }
@@ -122,12 +122,12 @@ int test_sstream_3 (void) {
 
     for (const PersonInfo &entry : persons) {
         // 将数据从entry写入std::ostringstream中
-        std::ostringstream formatted, badNums;
+        std::ostringstream formatted, badNums;  // 创建string流
         for (const std::string &nums : entry.phones) {
             if (!valid(nums))
-                badNums << " " << nums;     // 将std::string nums数据写入流badNums中
+                badNums << " " << nums;     // 将std::string nums中的数据写入流badNums中
             else
-                formatted << " " << format(nums);   // 将合法的电话号码格式化
+                formatted << " " << format(nums);   // 将合法的电话号码格式化，并将string对象写入formatted流中
         }
         if (badNums.str().empty())  // 若某个人的所有电话都合法
             std::cout << entry.name << " " << formatted.str() << std::endl;
