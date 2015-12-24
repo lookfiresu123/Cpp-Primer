@@ -95,6 +95,73 @@ int test_container_4(void) {
     return 0;
 }
 
+int test_container_5 (void) {
+    std::array<int, 10> a1 = {0,1,2,3,4,5,6,7,8,9};     // 正确，array对象初始化时可以使用花括号{}
+    // std::array<int, 11> a2 = a1;    // 错误，由于容器大小也是array类型的一部分，且容器大小无法转换,因此无法将std::array<int, 10ul>转换为std::array<int, 11ul>
+    a1 = {0,0,0,0,0,0,0,0,0,0};
+    std::vector<int> v1(10, 1);
+    std::vector<int> v2;
+    v2.assign(10, 2);
+    v2.assign(v1.begin(), v1.end());
+    v2.assign({1,2,3});
+    v2.assign(v2.begin(), v2.end());
+    return 0;
+}
+
+int test_container_6 (void) {
+    std::vector<int> v1(10, 0);
+    std::vector<int> v2(5, 1);
+    v1.swap(v2);
+    std::array<int, 10> a1{0,0,0,0,0,0,0,0,0,0};
+    std::array<int, 10> a2{1,1,1,1,1,1,1,1,1,1};
+    a1.swap(a2);
+    std::string s1 = "abc";
+    std::string s2 = "def";
+    // s1.swap(s2);
+    swap(s1, s2);
+    return 0;
+}
+
+/**
+ * 练习9.14 —— 将一个list中的char *指针元素赋值给一个vector中的string
+ * @method test_container_7
+ * @return 0
+ */
+int test_container_7 (void) {
+    // 使用assign函数赋值不同类型的对象
+    std::list<const char *> l{"hello", "world"};
+    std::vector<std::string> v{"my", "name", "is", "chensu"};
+    v.assign(l.begin(), l.end());
+    return 0;
+}
+
+/**
+ * 练习9.15 —— 判断两个vector<int>是否相等
+ * @method test_container_8
+ * @return 0
+ */
+int test_container_8 (void) {
+    std::vector<int> v1(5, 1);
+    std::vector<int> v2(5, 1);
+    bool result = v1 == v2 ? true : false;
+    return 0;
+}
+
+/**
+ * 比较一个list<int>和一个vector<int>是否相等
+ * @method test_container_9
+ * @return 0
+ */
+int test_container_9 (void) {
+    std::list<int> l{0,1,2,3,4,5,6,7,8,9};
+    std::vector<int> v1{0,1,2,3,4,5,6,7,8,9};
+    // 先将list<int>转换为vector<int>，在比较
+    std::vector<int> v2;
+    v2.assign(l.begin(), l.end());
+    bool result = v1 == v2 ? true : false;
+    return 0;
+}
+
 int main (void) {
 #if TEST_CONTAINER_1
     test_container_1();
@@ -107,6 +174,21 @@ int main (void) {
 #endif
 #if TEST_CONTAINER_4
     test_container_4();
+#endif
+#if TEST_CONTAINER_5
+    test_container_5();
+#endif
+#if TEST_CONTAINER_6
+    test_container_6();
+#endif
+#if TEST_CONTAINER_7
+    test_container_7();
+#endif
+#if TEST_CONTAINER_8
+    test_container_8();
+#endif
+#if TEST_CONTAINER_9
+    test_container_9();
 #endif
     return 0;
 }
