@@ -74,6 +74,27 @@ int test_container_3 (void) {
     return 0;
 }
 
+/**
+ * 练习9.11 —— 对6种创建和初始化vector对象的方法，每一种给出一个实例
+ * @method test_container_4
+ * @return 0
+ */
+int test_container_4(void) {
+    // std::array<int, 10> ia1;               // ia1中的10个元素为任意值
+    // static std::array<int, 10> ia2;        // ia2中的10个元素都为0
+
+    // 默认初始化
+    std::vector<int> v1;
+    // 直接初始化
+    std::vector<int> v2{0,1,2,3,4,5,6,7,8,9};
+    std::vector<int> v3 = {0,1,2,3,4,5,6,7,8,9};
+    // 拷贝初始化
+    std::vector<int> v4(v3);        // 对象拷贝
+    std::vector<int> v5 = v3;       // 对象拷贝
+    std::vector<int> v6(v3.begin(), v3.end());     // 迭代器拷贝
+    return 0;
+}
+
 int main (void) {
 #if TEST_CONTAINER_1
     test_container_1();
@@ -83,6 +104,9 @@ int main (void) {
 #endif
 #if TEST_CONTAINER_3
     test_container_3();
+#endif
+#if TEST_CONTAINER_4
+    test_container_4();
 #endif
     return 0;
 }
