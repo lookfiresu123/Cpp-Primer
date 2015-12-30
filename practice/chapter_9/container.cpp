@@ -162,6 +162,71 @@ int test_container_9 (void) {
     return 0;
 }
 
+/**
+ * 练习9.18， 从标准输入读取string序列，存入一个deque中，编写循环并用迭代器打印deque中的元素
+ * @return 0
+ */
+int test_container_10 (void) {
+    std::deque<std::string> dq;
+    std::string word;
+    while (std::cin >> word)
+        dq.push_back(word);
+    for (std::deque<std::string>::iterator index = dq.begin() ; index != dq.end(); ++index)
+        std::cout << *index << " ";
+    std::cout << std::endl;
+    return 0;
+}
+
+/**
+ * 练习9.19，用list替代deque重写上题程序
+ * @return 0
+ */
+int test_container_11 (void) {
+    std::list<std::string> lst;
+    std::string word;
+    while (std::cin >> word)
+        lst.push_back(word);
+    for (std::list<std::string>::iterator index = lst.begin() ; index != lst.end() ; ++index)
+        std::cout << *index << " ";
+    std::cout << std::endl;
+    return 0;
+}
+
+/**
+ * 练习9.20， 从一个list<int>拷贝元素到两个deque中，值为偶数的所有元素拷贝到一个deque中，值为奇数的拷贝到一个deque中
+ * @return 0
+ */
+int test_container_12(void) {
+    std::list<int> lst = {0,1,2,3,4,5,6,7,8,9};
+    std::deque<int> dq1, dq2;
+    for (int member : lst) {
+        if (member % 2 == 0)
+            dq1.push_back(member);
+        else
+            dq2.push_back(member);
+    }
+    for (int member : dq1)
+        std::cout << member << " ";
+    std::cout << std::endl;
+    for (int member : dq2)
+        std::cout << member << " ";
+    std::cout << std::endl;
+    return 0;
+}
+
+/**
+ * 用insert代替push_front将数据插入vector中
+ * @return 0
+ */
+int test_container_13(void) {
+    std::vector<std::string> v;
+    std::vector<std::string>::iterator iter = v.begin();
+    std::string word;
+    while (std::cin >> word)
+        iter = v.insert(iter, word);
+    return 0;
+}
+
 int main (void) {
 #if TEST_CONTAINER_1
     test_container_1();
@@ -189,6 +254,18 @@ int main (void) {
 #endif
 #if TEST_CONTAINER_9
     test_container_9();
+#endif
+#if TEST_CONTAINER_10
+    test_container_10();
+#endif
+#if TEST_CONTAINER_11
+    test_container_11();
+#endif
+#if TEST_CONTAINER_12
+    test_container_12();
+#endif
+#if TEST_CONTAINER_13
+    test_container_13();
 #endif
     return 0;
 }
