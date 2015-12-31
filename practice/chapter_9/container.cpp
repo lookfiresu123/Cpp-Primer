@@ -227,6 +227,32 @@ int test_container_13(void) {
     return 0;
 }
 
+int test_container_14(void) {
+    int ia[] = {0,1,2,3,4,5,6,7,8,9};
+    std::vector<int> v;
+    std::list<int> lst;
+    for (size_t i = 0 ; i < 10 ; i++) {
+        v.push_back(ia[i]);
+        lst.push_back(ia[i]);
+    }
+    // 不能使用for(index = v.begin() ; index != v.end() ; ++index)，因为删除元素会导致后面的元素前移，使迭代器失效
+    for (std::vector<int>::iterator index = v.begin() ; index != v.end() ; ) {
+        if (*index % 2 == 0)
+            index = v.erase(index);
+        else
+            ++ index;
+    }
+    // 不能使用for(index = lst.begin() ; index != lst.end() ; ++index)，因为删除元素会导致被删除节点的前后节点的next指针和prev指针改变，从而导致迭代器失效
+    for (std::list<int>::iterator index = lst.begin() ; index != lst.end() ; ){
+        if (*index % 2 != 0)
+            index = lst.erase(index);
+        else
+            ++ index;
+    }
+    return 0;
+}
+
+
 int main (void) {
 #if TEST_CONTAINER_1
     test_container_1();
@@ -266,6 +292,9 @@ int main (void) {
 #endif
 #if TEST_CONTAINER_13
     test_container_13();
+#endif
+#if TEST_CONTAINER_14
+    test_container_14();
 #endif
     return 0;
 }
