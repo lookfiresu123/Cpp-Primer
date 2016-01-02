@@ -252,6 +252,42 @@ int test_container_14(void) {
     return 0;
 }
 
+/**
+ * 练习9.27：编写函数，查找并删除forward_list<int>中的奇数元素
+ * @return 0
+ */
+int test_container_15(void) {
+    std::forward_list<int> flst = {0,1,2,3,4,5,6,7,8,9};
+    std::forward_list<int>::iterator prev = flst.before_begin();       // prev保存可能被删元素前驱的迭代器，被首前迭代器初始化
+    std::forward_list<int>::iterator curr = flst.begin();       // curr保存可能被删元素的迭代器，被首元素迭代器初始化
+    while (curr != flst.end()) {
+        if (*curr % 2 != 0)
+            curr = flst.erase_after(prev);
+        else {
+            prev = curr;
+            ++ curr;
+        }
+    }
+    return 0;
+}
+
+/**
+ * 练习9.28：在forward_list<string>链表中查找第一个string的位置，并将第二个string插入到第一个string之后，若链表中没有第一个string，则将第二个string插入到表尾
+ * @return 0
+ */
+int test_container_16(void) {
+    std::forward_list<std::string> flst = {"hello", "world", "my", "name", "is", "chensu"};
+    std::forward_list<std::string>::iterator prev = flst.before_begin();
+    std::string word_1 = "my";
+    std::string word_2 = "here";
+    while (prev != flst.end()) {
+        if (*prev == word_1)
+            break;
+        ++ prev;
+    }
+    flst.insert_after(prev, word_2);
+    return 0;
+}
 
 int main (void) {
 #if TEST_CONTAINER_1
@@ -295,6 +331,12 @@ int main (void) {
 #endif
 #if TEST_CONTAINER_14
     test_container_14();
+#endif
+#if TEST_CONTAINER_15
+    test_container_15();
+#endif
+#if TEST_CONTAINER_16
+    test_container_16();
 #endif
     return 0;
 }
