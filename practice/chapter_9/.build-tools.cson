@@ -27,6 +27,30 @@ providers: [
               no_trace: false
           version: 1
         }
+        {
+          project: "/home/lookfiresu/Desktop/code/Cpp-Primer/practice/chapter_9"
+          source: "/home/lookfiresu/Desktop/code/Cpp-Primer/practice/chapter_9/.build-tools.cson"
+          name: "clang++ container.cpp"
+          command: "clang++ -std=c++14 container.cpp -o main"
+          wd: "."
+          env: {}
+          modifier: {}
+          stdout:
+            pty: false
+            highlighting: "nh"
+            ansi_option: "ignore"
+          stderr:
+            highlighting: "hc"
+            profile: "gcc_clang"
+          output:
+            console:
+              close_success: false
+              queue_in_buffer: true
+              stdin: false
+            linter:
+              no_trace: false
+          version: 1
+        }
       ]
   }
 ]

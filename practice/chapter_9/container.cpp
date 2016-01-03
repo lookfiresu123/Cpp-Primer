@@ -289,6 +289,227 @@ int test_container_16(void) {
     return 0;
 }
 
+/**
+ * 分别在list和forward_list中删除偶数值并复制奇数值
+ * @return 0
+ */
+int test_container_17(void) {
+    std::list<int> lst = {0,1,2,3,4,5,6,7,8,9};
+    std::forward_list<int> flst = {0,1,2,3,4,5,6,7,8,9};
+    // 在list中操作
+    for (std::list<int>::iterator index = lst.begin() ; index != lst.end() ; ) {
+        if (*index % 2 == 0) {
+            // 删除偶数
+            index = lst.erase(index);
+        } else {
+            // 复制奇数
+            index = lst.insert(index, *index);
+            ++ index;
+            ++ index;
+        }
+    }
+    // 在forward_list中操作
+    std::forward_list<int>::iterator prev = flst.before_begin();
+    std::forward_list<int>::iterator curr = flst.begin();
+    while (curr != flst.end()) {
+        if (*curr % 2 == 0) {
+            // 删除偶数
+            curr = flst.erase_after(prev);
+        } else {
+            // 复制奇数
+            curr = flst.insert_after(prev, *curr);
+            ++ curr;
+            prev = curr;
+            ++ curr;
+        }
+    }
+    return 0;
+}
+
+int test_container_18(void) {
+    std::vector<std::string> v1, v2, v3, v4;
+    std::vector<std::string>::size_type size1 = 256 + 256 / 2;
+    std::vector<std::string>::size_type size2 = 512 + 512 / 2;
+    std::vector<std::string>::size_type size3 = 1000 + 1000 / 2;
+    std::vector<std::string>::size_type size4 = 1048 + 1048 / 2;
+    v1.reserve(1024);
+    v2.reserve(1024);
+    v3.reserve(1024);
+    v4.reserve(1024);
+    v1.resize(size1);
+    v2.resize(size2);
+    v3.resize(size3);
+    v4.resize(size4);
+    std::cout << v1.capacity() << std::endl;        // 1024
+    std::cout << v2.capacity() << std::endl;        // 1024
+    std::cout << v3.capacity() << std::endl;        // 1500
+    std::cout << v4.capacity() << std::endl;        // 1572
+    return 0;
+}
+
+/**
+ * 练习9.41： 从一个vector<char>初始化一个string
+ * @return 0
+ */
+int test_container_19(void) {
+    std::vector<char> v = {'h','e','l','l','o'};
+    std::string s;
+    for (std::vector<char>::iterator index = v.begin(); index != v.end(); ++index) {
+        s.push_back(*index);
+    }
+    return 0;
+}
+
+/**
+ * 练习9.43：将s中所有oldVal替换为newVal
+ * @return 0
+ */
+int test_container_20(void) {
+    std::string s = "hello world";
+    std::string oldVal = "or";
+    std::string newVal = "pp";
+    // 使用迭代器、insert、erase
+    for (std::string::iterator index = s.begin() ; index != s.end()-oldVal.size(); ) {
+        if (std::string(index, index + oldVal.size()) == oldVal) {
+            index = s.erase(index, index + oldVal.size());      // 删去迭代器范围为index到index+oldVal.size()的元素，并返回下一个元素的迭代器
+            for (std::string::iterator curr = newVal.begin() ; curr != newVal.end() ; ++curr)
+                index = s.insert(index, *curr);
+        } else {
+            ++ index;
+        }
+    }
+    return 0;
+}
+
+/**
+ * 练习9.44： 使用下标和replace重写上一题
+ * @return 0
+ */
+int test_container_21(void) {
+    std::string s = "hello world";
+    std::string oldVal = "or";
+    std::string newVal = "pp";
+    for (std::string::size_type index = 0 ; index < s.size() ; ) {
+        if (s.substr(index, oldVal.size()) == oldVal) {
+            s.replace(index, oldVal.size(), newVal);
+            index += oldVal.size();
+        } else {
+            ++ index;
+        }
+    }
+    return 0;
+}
+
+/**
+ * 练习9.45： 使用迭代器、insert、append函数将前缀和后缀加到字符串中
+ * @return 0
+ */
+int test_container_22(void) {
+    std::string s = "Chen Su";
+    std::string prev = "Mr. ";
+    std::string post = " Jr.";
+    s.insert(s.begin(), prev.begin(), prev.end());
+    s.append(post);
+    std::cout << s << std::endl;
+    return 0;
+}
+
+/**
+ * 练习9.46： 使用位置、长度、insert重写上一题
+ * @return 0
+ */
+int test_container_23(void) {
+    std::string s = "Chen Su";
+    std::string prev = "Mr. ";
+    std::string post = " Jr.";
+    std::string::size_type curr = 0;
+    s.insert(curr, prev);
+    curr = s.size();
+    s.insert(curr, post);
+    std::cout << s << std::endl;
+    return 0;
+}
+
+/**
+ * 练习9.47： 查找string对象中的每个数字字符（使用find_first_of）和字母字符（使用find_first_not_of）
+ * @return 0
+ */
+int test_container_24(void) {
+    std::string s = "ab2c3d7R4E6";
+    std::string digits = "0123456789";
+    std::string s_digit, s_nodigit;
+    std::string::size_type pos = 0;
+    while ((pos = s.find_first_of(digits, pos)) != std::string::npos) {
+        s_digit.append(1, s[pos]);
+        ++ pos;
+    }
+    pos = 0;
+    while ((pos = s.find_first_not_of(digits, pos)) != std::string::npos) {
+        s_nodigit.append(1, s[pos]);
+        ++ pos;
+    }
+    std::cout << s_digit << std::endl;
+    std::cout << s_nodigit << std::endl;
+    return 0;
+}
+
+/**
+ * 读入一个单词文件，输出最长的既不包含上出头，也不包含下出头的单词
+ * @return 0
+ */
+int test_container_25(void) {
+    std::string ascender = "bdfhijklt";
+    std::string descender = "gjpqy";
+    std::vector<std::string> letters;
+    std::string word, line;
+    std::ifstream input("letter.txt");
+    while (std::getline(input, line)) {
+        std::istringstream sinput(line);
+        while (sinput >> word)
+            letters.push_back(word);
+    }
+    input.close();
+    std::string longest_letter = "";
+    for (std::vector<std::string>::iterator index = letters.begin() ; index != letters.end() ; ++index) {
+        if ((*index).find_first_of(ascender) == std::string::npos && (*index).find_first_of(descender) == std::string::npos) {
+            if (longest_letter.size() < (*index).size())
+                longest_letter = *index;
+        }
+    }
+    std::cout << longest_letter << std::endl;
+    return 0;
+}
+
+/**
+ * 练习9.50： 将vector<string>转为int或double，并计算和
+ * @return 0
+ */
+int test_container_26(void) {
+    std::vector<std::string> v = {"0","1","2","3","4","5","6","7","8","9"};
+    int sum_int = 0;
+    double sum_double = 0.0;
+    for (std::string s : v) {
+        sum_int += stoi(s);
+    }
+    for (std::string s : v) {
+        sum_double += stod(s);
+    }
+    std::cout << sum_int << std::endl;
+    std::cout << sum_double << std::endl;
+    return 0;
+}
+
+/**
+ * 练习9.51： 设计一个类，它由year、day、month组成，编写一个构造函数，接受日期string（格式不同）
+ * @return 0
+ */
+int test_container_27(void) {
+    Date date1("1/1/1990");
+    Date date2("January 1,1990");
+    Date date3("Jan 1 1990");
+    return 0;
+}
+
 int main (void) {
 #if TEST_CONTAINER_1
     test_container_1();
@@ -337,6 +558,39 @@ int main (void) {
 #endif
 #if TEST_CONTAINER_16
     test_container_16();
+#endif
+#if TEST_CONTAINER_17
+    test_container_17();
+#endif
+#if TEST_CONTAINER_18
+    test_container_18();
+#endif
+#if TEST_CONTAINER_19
+    test_container_19();
+#endif
+#if TEST_CONTAINER_20
+    test_container_20();
+#endif
+#if TEST_CONTAINER_21
+    test_container_21();
+#endif
+#if TEST_CONTAINER_22
+    test_container_22();
+#endif
+#if TEST_CONTAINER_23
+    test_container_23();
+#endif
+#if TEST_CONTAINER_24
+    test_container_24();
+#endif
+#if TEST_CONTAINER_25
+    test_container_25();
+#endif
+#if TEST_CONTAINER_26
+    test_container_26();
+#endif
+#if TEST_CONTAINER_27
+    test_container_27();
 #endif
     return 0;
 }
