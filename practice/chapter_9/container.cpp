@@ -510,6 +510,34 @@ int test_container_27(void) {
     return 0;
 }
 
+/**
+ * 练习9.52：使用stack处理括号表达式
+ * @return 0
+ */
+int test_container_28(void) {
+    std::string expression = {"This is (pezy)"};
+    std::stack<char> stk;
+    bool bseen = false;
+    for (char c : expression) {
+        if (c == '(') {
+            bseen = true;
+            continue;
+        } else if (c == ')')
+            bseen = false;
+        if (bseen)
+            stk.push(c);
+    }
+    // 处理stk中的元素
+    std::string temp;
+    while (!stk.empty()) {
+        temp += stk.top();
+        stk.pop();
+    }
+    expression.replace(expression.find("(")+1, temp.size(), temp);
+    std::cout << expression << std::endl;
+    return 0;
+}
+
 int main (void) {
 #if TEST_CONTAINER_1
     test_container_1();
@@ -591,6 +619,9 @@ int main (void) {
 #endif
 #if TEST_CONTAINER_27
     test_container_27();
+#endif
+#if TEST_CONTAINER_28
+    test_container_28();
 #endif
     return 0;
 }
