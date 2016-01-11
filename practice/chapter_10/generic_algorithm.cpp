@@ -127,6 +127,77 @@ int test_generic_algorithm_8 (void) {
 	return 0;
 }
 
+/**
+ * 练习10.14：编写一个lambda表达式，接受两个int，返回他们的和
+ * @return 0
+ */
+int test_generic_algorithm_9 (void) {
+	auto lambda_expr = [](int a, int b){ return a+b; };
+	int result = lambda_expr(1, 2);		// lambda表达式相当于定义在内部的inline函数
+	std::cout << result << std::endl;
+	return 0;
+}
+
+/**
+ * 练习10.15：编写一个lambda，捕获所在函数的int，并接受一个int参数，返回和
+ * @return  [description]
+ */
+int test_generic_algorithm_10 (void) {
+	int a = 1;
+	auto lambda_expr = [a](int b){ return a+b; };
+	int result = lambda_expr(2);
+	std::cout << result << std::endl;
+	return 0;
+}
+
+/**
+ * 练习10.17：重写10.12，用lambda代替compareIsbn
+ * @return 0
+ */
+int test_generic_algorithm_11 (void) {
+	std::vector<Sales_data> v;
+	v.push_back(Sales_data("google"));
+	v.push_back(Sales_data("sina"));
+	std::sort(v.begin(), v.end(), [](const Sales_data &s1, const Sales_data &s2) -> bool { return s1.isbn().size() < s2.isbn().size(); });
+	return 0;
+}
+
+/**
+ * 练习10.18：用partition算法代替find_if重写biggies函数
+ * @return 0
+ */
+int test_generic_algorithm_12 (void) {
+	std::vector<std::string> words = {"google", "sina", "name", "chnsu", "short"};
+	std::vector<std::string>::size_type sz = words.size();
+	elimDups(words);	// 将words按字典序排序
+	std::stable_sort(words.begin(), words.end(), [](const std::string &a, const std::string &b){ return a.size() < b.size(); });	// 按长度排序，长度相同的维持字典序
+	// 获取一个迭代器，指向第一个满足size() >= sz的元素
+	std::vector<std::string>::iterator wc = std::partition(words.begin(), words.end(), [sz](const std::string &a){ return a.size() >= sz; });
+	// 计算满足size >= sz的元素数目
+	auto count = words.end() - wc;
+	std::cout << "the number of elements which large than or equal to " << sz << " is " << count << std::endl;
+	std::for_each(wc, words.end(), [](const std::string &a){ std::cout << a << " "; });
+	std::cout << std::endl;
+	return 0;
+}
+
+/**
+ * 练习10.19：用stable_partition重写前一题
+ * @return 0
+ */
+int test_generic_algorithm_13 (void) {
+	std::vector<std::string> words = {"google", "sina", "name", "chnsu", "short"};
+	std::vector<std::string>::size_type sz = words.size();
+	elimDups(words);	// 将words按字典序排序
+	auto wc = std::stable_partition(words.begin(), words.end(), [sz](const std::string &a){ return a.size() >= sz; });	// 按sz划分，长度相同的维持字典序
+	// 计算满足size >= sz的元素数目
+	auto count = words.end() - wc;
+	std::cout << "the number of elements which large than or equal to " << sz << " is " << count << std::endl;
+	std::for_each(wc, words.end(), [](const std::string &a){ std::cout << a << " "; });
+	std::cout << std::endl;
+	return 0;
+}
+
 int main (void) {
 #if TEST_GENERIC_ALGORITHM_1
 	test_generic_algorithm_1();
@@ -151,6 +222,30 @@ int main (void) {
 #endif
 #if TEST_GENERIC_ALGORITHM_8
 	test_generic_algorithm_8();
+#endif
+#if TEST_GENERIC_ALGORITHM_9
+	test_generic_algorithm_9();
+#endif
+#if TEST_GENERIC_ALGORITHM_10
+	test_generic_algorithm_10();
+#endif
+#if TEST_GENERIC_ALGORITHM_11
+	test_generic_algorithm_11();
+#endif
+#if TEST_GENERIC_ALGORITHM_12
+	test_generic_algorithm_12();
+#endif
+#if TEST_GENERIC_ALGORITHM_13
+	test_generic_algorithm_13();
+#endif
+#if TEST_GENERIC_ALGORITHM_14
+	test_generic_algorithm_14();
+#endif
+#if TEST_GENERIC_ALGORITHM_15
+	test_generic_algorithm_15();
+#endif
+#if TEST_GENERIC_ALGORITHM_16
+	test_generic_algorithm_16();
 #endif
 	return 0;
 }
