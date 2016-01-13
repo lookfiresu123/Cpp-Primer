@@ -198,6 +198,24 @@ int test_generic_algorithm_13 (void) {
 	return 0;
 }
 
+/*
+ * 练习10.20：使用count_if统计有多少个单词长度超过6的部分
+ * */
+int test_generic_algorithm_14 (void) {
+    std::vector<std::string> words = {"google", "sina", "facebook", "microsoft", "apple"};
+    auto count = std::count_if(words.begin(), words.end(), [](std::string s){ return s.size() > 6;});
+    std::cout << count << std::endl;
+    return 0;
+}
+
+int test_generic_algorithm_15 (void) {
+    std::srand(std::time(nullptr));
+    int sum = std::rand() % 100;
+    auto f1 = [&] { while(sum > 0) { --sum; } };
+    f1();
+    return 0;
+}
+
 int main (void) {
 #if TEST_GENERIC_ALGORITHM_1
 	test_generic_algorithm_1();
