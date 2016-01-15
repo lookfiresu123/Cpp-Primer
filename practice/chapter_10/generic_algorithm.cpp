@@ -230,17 +230,54 @@ int test_generic_algorithm_16 (void) {
     return 0;
 }
 
-bool check_size (int val, int sz) {
+bool check_size_int (int val, int sz) {
     return val > sz;
 }
 
+/*
+ * 练习10.23
+ * */
 int test_generic_algorithm_17 (void) {
     std::string s = "words";
     int sz = static_cast<int>(s.size());
     std::vector<int> v = {0,1,2,3,4,5,6,7,8,9};
-    std::vector<int>::iterator iter = std::find_if(v.begin(), v.end(), bind(_1, sz));
+    std::vector<int>::iterator iter = std::find_if(v.begin(), v.end(), std::bind(check_size_int, _1, sz));
     std::cout << *iter << std::endl;
     return 0;
+}
+
+/**
+ * 练习10.27：用unique_copy代替copy
+ * @return 0
+ */
+int test_generic_algorithm_18 (void) {
+    std::vector<int> vec = {1,2,3,4,5,1,2,3,7,8,9,0};
+    std::list<int> lst;
+    std::unique_copy(vec.begin(), vec.end(), std::back_inserter(lst));
+    return 0;
+}
+
+void print (int val) {
+	std::cout << val << " ";
+}
+
+/**
+ * 练习10.28：分别使用inserter、back_inserter、front_inserter将元素添加到三个容器中
+ * @return 0
+ */
+int test_generic_algorithm_19 (void) {
+    std::deque<int> v = {1,2,3,4,5,6,7,8,9};
+	std::deque<int> v1, v2, v3;
+	std::copy(v.begin(), v.end(), std::inserter(v1, v1.begin()));
+	std::copy(v.begin(), v.end(), std::back_inserter(v2));
+	std::copy(v.begin(), v.end(), std::front_inserter(v3));
+	std::for_each(v1.begin(), v1.end(), print);
+	std::cout << std::endl;
+	std::for_each(v2.begin(), v2.end(), print);
+	std::cout << std::endl;
+	std::for_each(v3.begin(), v3.end(), print);
+	std::cout << std::endl;
+	return 0;
 }
 
 int main (void) {
@@ -291,6 +328,15 @@ int main (void) {
 #endif
 #if TEST_GENERIC_ALGORITHM_16
 	test_generic_algorithm_16();
+#endif
+#if TEST_GENERIC_ALGORITHM_17
+	test_generic_algorithm_17();
+#endif
+#if TEST_GENERIC_ALGORITHM_18
+	test_generic_algorithm_18();
+#endif
+#if TEST_GENERIC_ALGORITHM_19
+	test_generic_algorithm_19();
 #endif
 	return 0;
 }

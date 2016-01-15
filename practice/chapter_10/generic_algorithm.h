@@ -9,6 +9,8 @@
 #include <numeric>
 #include <typeinfo>
 #include <functional>
+#include <list>
+#include <deque>
 
 #define TEST_GENERIC_ALGORITHM_1 0
 #define TEST_GENERIC_ALGORITHM_2 0
@@ -25,10 +27,10 @@
 #define TEST_GENERIC_ALGORITHM_13 0
 #define TEST_GENERIC_ALGORITHM_14 0
 #define TEST_GENERIC_ALGORITHM_15 0
-#define TEST_GENERIC_ALGORITHM_16 1
+#define TEST_GENERIC_ALGORITHM_16 0
 #define TEST_GENERIC_ALGORITHM_17 0
 #define TEST_GENERIC_ALGORITHM_18 0
-#define TEST_GENERIC_ALGORITHM_19 0
+#define TEST_GENERIC_ALGORITHM_19 1
 #define TEST_GENERIC_ALGORITHM_20 0
 #define TEST_GENERIC_ALGORITHM_21 0
 
