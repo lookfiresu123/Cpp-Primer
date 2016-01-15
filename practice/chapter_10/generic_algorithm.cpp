@@ -216,6 +216,33 @@ int test_generic_algorithm_15 (void) {
     return 0;
 }
 
+bool check_size (const std::string &s, std::string::size_type sz) {
+    return s.size() <= sz;
+}
+
+/*
+ * 练习10.22：统计长度小于等于6的单词数量，使用bind
+ * */
+int test_generic_algorithm_16 (void) {
+    std::vector<std::string> words = { "hello", "google", "facebook", "microsoft", "apple" };
+    auto count = std::count_if(words.begin(), words.end(), bind(check_size, _1, 6));
+    std::cout << count << std::endl;
+    return 0;
+}
+
+bool check_size (int val, int sz) {
+    return val > sz;
+}
+
+int test_generic_algorithm_17 (void) {
+    std::string s = "words";
+    int sz = static_cast<int>(s.size());
+    std::vector<int> v = {0,1,2,3,4,5,6,7,8,9};
+    std::vector<int>::iterator iter = std::find_if(v.begin(), v.end(), bind(_1, sz));
+    std::cout << *iter << std::endl;
+    return 0;
+}
+
 int main (void) {
 #if TEST_GENERIC_ALGORITHM_1
 	test_generic_algorithm_1();

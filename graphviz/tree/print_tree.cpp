@@ -61,7 +61,7 @@ void btree::insert(int index, int key, node *leaf)
     if(key< leaf->key_value)
     {
         if(leaf->left!=NULL)
-        insert(index, key, leaf->left);
+            insert(index, key, leaf->left);
         else
         {
             leaf->left=new node;
@@ -74,7 +74,7 @@ void btree::insert(int index, int key, node *leaf)
     else if(key>=leaf->key_value)
     {
         if(leaf->right!=NULL)
-        insert(index, key, leaf->right);
+            insert(index, key, leaf->right);
         else
         {
             leaf->right=new node;
@@ -113,7 +113,8 @@ void btree::insert(int index, int key)
     {
         root=new node;
         root->key_value=key;
-        root->name = "node" + std::to_string(index);            root->left=NULL;
+        root->name = "node" + std::to_string(index);
+        root->left=NULL;
         root->right=NULL;
     }
 }
