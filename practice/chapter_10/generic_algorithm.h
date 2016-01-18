@@ -11,6 +11,9 @@
 #include <functional>
 #include <list>
 #include <deque>
+#include <fstream>
+#include <sstream>
+#include <iterator>
 
 #define TEST_GENERIC_ALGORITHM_1 0
 #define TEST_GENERIC_ALGORITHM_2 0
@@ -30,11 +33,20 @@
 #define TEST_GENERIC_ALGORITHM_16 0
 #define TEST_GENERIC_ALGORITHM_17 0
 #define TEST_GENERIC_ALGORITHM_18 0
-#define TEST_GENERIC_ALGORITHM_19 1
+#define TEST_GENERIC_ALGORITHM_19 0
 #define TEST_GENERIC_ALGORITHM_20 0
 #define TEST_GENERIC_ALGORITHM_21 0
+#define TEST_GENERIC_ALGORITHM_22 0
+#define TEST_GENERIC_ALGORITHM_23 0
+#define TEST_GENERIC_ALGORITHM_24 0
+#define TEST_GENERIC_ALGORITHM_25 0
+#define TEST_GENERIC_ALGORITHM_26 0
+#define TEST_GENERIC_ALGORITHM_27 1
+#define TEST_GENERIC_ALGORITHM_28 0
+#define TEST_GENERIC_ALGORITHM_29 0
 
 using namespace std::placeholders;
+using namespace std;
 
 class Sales_data {
 private:

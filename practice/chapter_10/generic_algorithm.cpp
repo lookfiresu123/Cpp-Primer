@@ -280,6 +280,113 @@ int test_generic_algorithm_19 (void) {
 	return 0;
 }
 
+/* 练习10.29：使用流迭代器读取一个文本文件，存入一个vector中的string里*/
+int test_generic_algorithm_20 (void) {
+    std::fstream ifs("data.txt");       // input file stream
+    std::istream_iterator<std::string> iter(ifs);   // bind iterator with fstream
+    std::istream_iterator<std::string> eof;
+    std::vector<std::string> vec;
+    while (iter != eof) {
+        vec.push_back(*iter);
+        ++iter;
+    }
+    for_each(vec.begin(), vec.end(), [](const string &s){ cout << s << " "; });
+    return 0;
+}
+
+/* 练习10.30：使用流迭代器、sort、copy从标准输入读取一个整数数列 */
+int test_generic_algorithm_21 (void) {
+    istream_iterator<int> input_iter(cin);
+    istream_iterator<int> input_eof;
+    ostream_iterator<int> output_iter(cout, " ");
+    vector<int> temp;
+    // read data
+    while (input_iter != input_eof)
+        temp.push_back(*input_iter++);
+    // sort temp
+    sort(temp.begin(), temp.end());
+    // copy to output iterator
+    copy(temp.begin(), temp.end(), output_iter);
+    return 0;
+}
+
+/* 练习10.31：修改前一题，只打印不重复的元素 */
+int test_generic_algorithm_22 (void) {
+    // 使用unique_copy代替copy，其它不变
+    istream_iterator<int> input_iter(cin);
+    istream_iterator<int> input_eof;
+    ostream_iterator<int> output_iter(cout, " ");
+    vector<int> temp;
+    // read data
+    while (input_iter != input_eof)
+        temp.push_back(*input_iter++);
+    // sort temp
+    sort(temp.begin(), temp.end());
+    // unique copy to output iterator
+    unique_copy(temp.begin(), temp.end(), output_iter);
+    return 0;
+}
+
+/* 练习10.33： 从输入文件中读取整数，分别将奇数和偶数存入两个不同的输出文件中 */
+int test_generic_algorithm_23 (void) {
+    ifstream ifs("input_data.txt");
+    ofstream ofs_odd("output_odd.txt");
+    ofstream ofs_even("output_even.txt");
+    istream_iterator<int> input_iter(ifs);
+    istream_iterator<int> input_eof;
+    ostream_iterator<int> output_odd_iter(ofs_odd, " ");   // 保存奇数
+    ostream_iterator<int> output_even_iter(ofs_even, "\n"); // 保存偶数
+    vector<int> temp;
+    // read data
+    while (input_iter != input_eof)
+        temp.push_back(*input_iter++);
+    // divide into odd or even, and then write into file
+    for (auto i : temp) {
+        if ((i % 2) == 0)
+            *output_odd_iter = i;
+        else
+            *output_even_iter = i;
+    }
+    return 0;
+}
+
+/* 练习10.34：使用reverse_iterator逆序打印一个vector */
+int test_generic_algorithm_24 (void) {
+    vector<int> vec = {0,1,2,3,4,5,6,7,8,9};
+    for (vector<int>::reverse_iterator iter = vec.rbegin() ; iter != vec.rend() ; ++iter)
+        cout << *iter << " ";
+    cout << endl;
+    return 0;
+}
+
+/* 练习10.35：使用普通迭代器逆序打印一个vector */
+int test_generic_algorithm_25 (void) {
+    vector<int> vec = {0,1,2,3,4,5,6,7,8,9};
+    for (vector<int>::iterator iter = vec.end()-1 ; iter >= vec.begin(); --iter)
+        cout << *iter << " ";
+    cout << endl;
+    return 0;
+}
+
+int test_generic_algorithm_26 (void) {
+    vector<int> vec = {0,1,2,3,0,4,5,0,6,7,8,0,9};
+    find(vec.rbegin(), vec.rend(), 0);
+    return 0;
+}
+
+int test_generic_algorithm_27 (void) {
+    vector<int> vec = {0,1,2,3,4,5,6,7,8,9};
+    list<int> lst;
+    int i;
+    vector<int>::reverse_iterator iter;
+    for (iter = vec.rbegin(), i = 0 ; iter != vec.rend() ; ++iter, ++i) {
+        if (i >= 2 && i <= 6)
+            lst.push_back(*iter);
+    }
+    return 0;
+}
+
+
 int main (void) {
 #if TEST_GENERIC_ALGORITHM_1
 	test_generic_algorithm_1();
@@ -338,5 +445,36 @@ int main (void) {
 #if TEST_GENERIC_ALGORITHM_19
 	test_generic_algorithm_19();
 #endif
+#if TEST_GENERIC_ALGORITHM_20
+	test_generic_algorithm_20();
+#endif
+#if TEST_GENERIC_ALGORITHM_21
+	test_generic_algorithm_21();
+#endif
+#if TEST_GENERIC_ALGORITHM_22
+	test_generic_algorithm_22();
+#endif
+#if TEST_GENERIC_ALGORITHM_23
+	test_generic_algorithm_23();
+#endif
+#if TEST_GENERIC_ALGORITHM_24
+	test_generic_algorithm_24();
+#endif
+#if TEST_GENERIC_ALGORITHM_25
+	test_generic_algorithm_25();
+#endif
+#if TEST_GENERIC_ALGORITHM_26
+	test_generic_algorithm_26();
+#endif
+#if TEST_GENERIC_ALGORITHM_27
+	test_generic_algorithm_27();
+#endif
+#if TEST_GENERIC_ALGORITHM_28
+	test_generic_algorithm_28();
+#endif
+#if TEST_GENERIC_ALGORITHM_29
+	test_generic_algorithm_29();
+#endif
+
 	return 0;
 }
