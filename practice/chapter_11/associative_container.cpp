@@ -46,6 +46,40 @@ int test_associative_container_3(void) {
     return 0;
 }
 
+void add_family(map<string, vector<string>> &families, const string &family_name, vector<string> &init_member) {
+    families.insert(std::make_pair(family_name, init_member));
+}
+
+void add_member(map<string, vector<string>> &families, const string &family_name, const string &child_name) {
+    families[family_name].push_back(child_name);
+}
+
+// 练习11.7：定义一个map，关键字是家庭的姓，值是一个vector，保存家中孩子的名，实现添加
+// 新的家庭以及向已有家庭中添加新的孩子
+int test_associative_container_4(void) {
+    map<string, vector<string>> families;      // 定义家庭组，其中一个元素(pair)表示一个家庭
+    string family_name;     // 家庭的关键字——姓
+    vector<string> init_member;     // 家庭的值——孩子的名（初始值为空）
+    string child_name;
+    while (cin >> family_name)
+        add_family(families, family_name, init_member);
+    cin.clear();
+    cin.sync();
+    while (cin >> child_name)
+        add_member(families, family_name, child_name);
+    return 0;
+}
+
+// 练习11.8：编写一个程序，在一个vector而不是一个set中保存不重复的单词
+int test_associative_container_5(void) {
+    vector<string> vec;
+    string word;
+    while (cin >> word) {
+        if (std::find(vec.cbegin(), vec.cend(), word) != vec.cend())
+            vec.push_back(word);
+    }
+    return 0;
+}
 
 int main() {
 #if TEST_ASSOCIATIVE_CONTAINER_1
@@ -56,6 +90,12 @@ int main() {
 #endif
 #if TEST_ASSOCIATIVE_CONTAINER_3
     test_associative_container_3();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_4
+    test_associative_container_4();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_5
+    test_associative_container_5();
 #endif
     return 0;
 }
