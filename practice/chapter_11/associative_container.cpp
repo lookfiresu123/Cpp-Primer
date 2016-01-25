@@ -81,6 +81,57 @@ int test_associative_container_5(void) {
     return 0;
 }
 
+bool compareIsbn(const Sales_data &lhs, const Sales_data &rhs) {
+    return lhs.isbn() < rhs.isbn();
+}
+
+// 练习11.11：不使用decltype的情况下重新定义bookstore
+int test_associative_container_6(void) {
+    using ptr_compareIsbn = bool (*) (const Sales_data &, const Sales_data &rhs);
+    multiset<Sales_data, ptr_compareIsbn> bookstore(compareIsbn);
+    return 0;
+}
+
+// 练习11.10：vector<int>::iterator中有<操作，而list<int>::iterator中没有<操作
+int test_associative_container_7(void) {
+    // declaration is valid
+    map<vector<int>::iterator, int> example_map;
+    map<list<int>::iterator, int> example_set;
+    // defination is invalid, because list has no operator <
+    vector<int> vec = {0,1,2,3,4,5,6,7,8,9};
+    list<int> lst = {9,8,7,6,5,4,3,2,1,0};
+    example_map.insert(std::make_pair(vec.begin(), vec.front()));
+    // example_set.insert(std::make_pair(lst.begin(), lst.front()));
+    return 0;
+}
+
+int test_associative_container_8(void) {
+    vector<string> names = {"Jim","David","James","Lily","Steven"};
+    vector<int> ages = {24, 30, 31, 27, 18};
+    vector<pair<string, int> > result1, result2, result3;
+    vector<string>::size_type i;
+    vector<int>::size_type j;
+    for (i = 0 , j = 0 ; i < names.size() && j < ages.size() ; ++i, ++j)
+        result1.push_back(make_pair(names[i], ages[j]));
+    for (i = 0 , j = 0 ; i < names.size() && j < ages.size() ; ++i, ++j)
+        result2.push_back(pair<string, int>(names[i], ages[j]));
+    for (i = 0 , j = 0 ; i < names.size() && j < ages.size() ; ++i, ++j)
+        result3.push_back(pair<string, int>{names[i], ages[j]});
+    return 0;
+}
+
+int test_associative_container_9(void) {
+    map<string, pair<string, string> > result;
+    vector<string> first_names = {"Jim", "David", "James", "Lily", "Steven"};
+    vector<string> second_names = {"Scott", "Jobs", "Gates", "Alen", "Mogen"};
+    vector<string> birthday = {"1992/10/6", "1994/6/8", "1997/9/25", "1991/1/7","1989/7/1"};
+    for (vector<string>::size_type i = 0 ; i < first_names.size() ; ++i)
+        result.insert(make_pair(first_names[i], make_pair(second_names[i], birthday[i])));
+    for (auto iter = result.begin() ; iter != result.end() ; ++iter)
+        cout << iter->first << " " << iter->second.first << " " << iter->second.second << endl;
+    return 0;
+}
+
 int main() {
 #if TEST_ASSOCIATIVE_CONTAINER_1
     test_associative_container_1();
@@ -96,6 +147,18 @@ int main() {
 #endif
 #if TEST_ASSOCIATIVE_CONTAINER_5
     test_associative_container_5();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_6
+    test_associative_container_6();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_7
+    test_associative_container_7();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_8
+    test_associative_container_8();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_9
+    test_associative_container_9();
 #endif
     return 0;
 }

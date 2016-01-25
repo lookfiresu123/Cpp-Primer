@@ -11,6 +11,8 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <cctype>
+#include <list>
+#include <utility>
 
 using std::vector;
 using std::string;
@@ -22,12 +24,29 @@ using std::unordered_map;
 using std::unordered_set;
 using std::cin;
 using std::cout;
+using std::endl;
+using std::list;
+using std::pair;
+
+class Sales_data {
+private:
+    string bookname;
+public:
+    Sales_data(const string &str) : bookname(str) { }
+    const string &isbn() const {
+        return bookname;
+    }
+};
 
 #define TEST_ASSOCIATIVE_CONTAINER_1 0
 #define TEST_ASSOCIATIVE_CONTAINER_2 0
 #define TEST_ASSOCIATIVE_CONTAINER_3 0
-#define TEST_ASSOCIATIVE_CONTAINER_4 1
+#define TEST_ASSOCIATIVE_CONTAINER_4 0
 #define TEST_ASSOCIATIVE_CONTAINER_5 0
+#define TEST_ASSOCIATIVE_CONTAINER_6 0
+#define TEST_ASSOCIATIVE_CONTAINER_7 0
+#define TEST_ASSOCIATIVE_CONTAINER_8 0
+#define TEST_ASSOCIATIVE_CONTAINER_9 1
 
 #endif
 
