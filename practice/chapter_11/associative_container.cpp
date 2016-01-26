@@ -105,6 +105,7 @@ int test_associative_container_7(void) {
     return 0;
 }
 
+// 练习11.12和11.13：用三种方法保存pair到vector中
 int test_associative_container_8(void) {
     vector<string> names = {"Jim","David","James","Lily","Steven"};
     vector<int> ages = {24, 30, 31, 27, 18};
@@ -120,6 +121,7 @@ int test_associative_container_8(void) {
     return 0;
 }
 
+// 练习11.14：保存从姓到pair，其中pair保存名和生日
 int test_associative_container_9(void) {
     map<string, pair<string, string> > result;
     vector<string> first_names = {"Jim", "David", "James", "Lily", "Steven"};
@@ -129,6 +131,41 @@ int test_associative_container_9(void) {
         result.insert(make_pair(first_names[i], make_pair(second_names[i], birthday[i])));
     for (auto iter = result.begin() ; iter != result.end() ; ++iter)
         cout << iter->first << " " << iter->second.first << " " << iter->second.second << endl;
+    return 0;
+}
+
+// 练习11.16：使用一个map迭代器写一个表达式，将一个值赋予一个元素
+int test_associative_container_10(void) {
+    map<int, int> mymap = {{1,1}};
+    auto iter = mymap.begin();
+    iter->second = 0;
+    cout << iter->first << " " << iter->second << endl;
+    return 0;
+}
+
+// 练习11.20：重写11.1练习，使用insert代替下标
+int test_associative_container_11(void) {
+    map<string, size_t> word_count;
+    set<string> exclude = {"The", "But","And","Or","An","A","the","but","and","or","an","a"};
+    string word;
+    pair<map<string, size_t>::iterator, bool> ret;
+    while (cin >> word) {
+        if (exclude.find(word) == exclude.end()) {
+            ret = word_count.insert(pair<string, size_t>(word, 1));
+            if (!ret.second)
+                ++ret.first->second;
+        }
+    }
+    return 0;
+}
+
+// 练习11.23：用multimap代替map重写11.2.1中的练习
+int test_associative_container_12(void) {
+    multimap<string, vector<string>> mymultimap;
+    vector<string> eof;     // 初始为空
+    string first_name;
+    while (cin >> first_name)
+        mymultimap.insert(pair<string, vector<string>>(first_name, eof));
     return 0;
 }
 
@@ -160,5 +197,21 @@ int main() {
 #if TEST_ASSOCIATIVE_CONTAINER_9
     test_associative_container_9();
 #endif
+#if TEST_ASSOCIATIVE_CONTAINER_10
+    test_associative_container_10();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_11
+    test_associative_container_11();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_12
+    test_associative_container_12();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_13
+    test_associative_container_13();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_14
+    test_associative_container_14();
+#endif
+
     return 0;
 }
