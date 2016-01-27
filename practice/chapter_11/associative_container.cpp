@@ -169,6 +169,74 @@ int test_associative_container_12(void) {
     return 0;
 }
 
+// 练习11.26：map的下标操作练习
+int test_associative_container_13(void) {
+    map<string, int> mymap;
+    multiset<string> myset = {"book","name","book","map"};
+    for (multiset<string>::key_type k : myset) {
+        ++mymap[k];     // 若mymap不存在关键字k，则新建一个元素（first为k，值初始化second为0）并插入，之后进行其它操作
+    }
+    map<string, int>::mapped_type result = mymap["book"];
+    cout << result << endl;
+    return 0;
+}
+
+// 练习11.18：对一个map<string,vector<int>>定义并初始化一个变量来保存在其上调用find的结果
+int test_associative_container_14(void) {
+    map<string, vector<int>> mymap;
+    mymap.insert(pair<string, vector<int>>("book", vector<int>{1,2,3,4}));
+    map<string, vector<int>>::iterator iter = mymap.find("book");
+    cout << (iter != mymap.end() ? "find" : "miss") << endl;
+    return 0;
+}
+
+// 练习11.31：定义一个作者及其作品的multimap，使用find和count在multimap中查找一个元素
+// 并用erase删除它，确保你的程序在map中也能正常运行
+int test_associative_container_15(void) {
+    multimap<string, string> mymap;
+    vector<string> authors = {"chensu","chenye","chensu","yuechengxu"};
+    vector<string> cources = {"physics","english","chinese","math"};
+    string key = "chensu";
+    // init mymap
+    for (vector<string>::size_type i = 0 ; i < authors.size() ; ++i)
+        mymap.insert(pair<string, string>(authors[i], cources[i]));
+    // find and count
+    auto beg = mymap.find(key);     // 第一个key所对应的迭代器
+    auto cnt = mymap.count(key);    // 返回容器中key的数量
+    while (cnt) {
+        mymap.erase(beg++);
+        --cnt;
+    }
+    for (auto iter = mymap.begin() ; iter != mymap.end() ; ++iter)
+        cout << iter->first << " " << iter->second << endl;
+    return 0;
+}
+
+// 练习11.32：按字典序打印上题中的作者列表和作品
+int test_associative_container_16(void) {
+    multimap<string, string> mymap;
+    vector<string> authors = {"chensu","chenye","chensu","yuechengxu"};
+    vector<string> cources = {"physics","english","chinese","math"};
+    // init mymap
+    for (vector<string>::size_type i = 0 ; i < authors.size() ; ++i)
+        mymap.insert(pair<string, string>(authors[i], cources[i]));
+    set<string> author_list;    // 用不重复有序set按字典序存储作者列表
+    for (auto iter = mymap.begin() ; iter != mymap.end() ; ++iter)
+        author_list.insert(iter->first);
+    for (auto k : author_list) {
+        auto range = mymap.equal_range(k);
+        multiset<string> per_books;
+        // 打印
+        cout << k << ": ";
+        for (auto iter = range.first ; iter != range.second ; ++iter)
+            per_books.insert(iter->second);
+        for (auto key : per_books)
+            cout << key << " ";
+        cout << endl;
+    }
+    return 0;
+}
+
 int main() {
 #if TEST_ASSOCIATIVE_CONTAINER_1
     test_associative_container_1();
@@ -211,6 +279,18 @@ int main() {
 #endif
 #if TEST_ASSOCIATIVE_CONTAINER_14
     test_associative_container_14();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_15
+    test_associative_container_15();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_16
+    test_associative_container_16();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_17
+    test_associative_container_17();
+#endif
+#if TEST_ASSOCIATIVE_CONTAINER_18
+    test_associative_container_18();
 #endif
 
     return 0;
