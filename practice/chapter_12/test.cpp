@@ -5,7 +5,8 @@
 using namespace std;
 
 #define TEST_SHARED_PTR_AUTODELETE 0
-#define TEST_SHARED_PTR_INITIALIZATION 1
+#define TEST_SHARED_PTR_INITIALIZATION 0
+#define TEST_SHARED_PTR_INITIALIZATION_NEW 1
 
 class Person {
 private:
@@ -36,12 +37,22 @@ int test_shared_ptr_initialization(void) {
     return 0;
 }
 
+int test_shared_ptr_initialization_new(void) {
+    // shared_ptr<Person> p = new Person("chensu", 24);
+    shared_ptr<Person> p(new Person("chensu", 24));
+    shared_ptr<Person> q = shared_ptr<Person>(new Person("chenye", 23));
+    return 0;
+}
+
 int main() {
 #if TEST_SHARED_PTR_AUTODELETE
     test_shared_ptr_autodelete();
 #endif
 #if TEST_SHARED_PTR_INITIALIZATION
     test_shared_ptr_initialization();
+#endif
+#if TEST_SHARED_PTR_INITIALIZATION_NEW
+    test_shared_ptr_initialization_new();
 #endif
     return 0;
 }
