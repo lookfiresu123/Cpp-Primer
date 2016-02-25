@@ -6,7 +6,10 @@ using namespace std;
 
 #define TEST_SHARED_PTR_AUTODELETE 0
 #define TEST_SHARED_PTR_INITIALIZATION 0
-#define TEST_SHARED_PTR_INITIALIZATION_NEW 1
+#define TEST_SHARED_PTR_INITIALIZATION_NEW 0
+#define TEST_COMPARE_MAKESHARED_NEW 0
+#define TEST_UNIQUE_PTR 0
+#define TEST_UNIQUE_PTR_DELETE 1
 
 class Person {
 private:
@@ -44,6 +47,36 @@ int test_shared_ptr_initialization_new(void) {
     return 0;
 }
 
+int test_compare_makeshared_new(void) {
+    Person *p = new Person("chensu", 24);
+    shared_ptr<Person> p1(p);
+    shared_ptr<Person> p2(p);
+    cout << "p1: " << p1.use_count() << endl;
+    cout << "p2: " << p2.use_count() << endl;
+    delete p;
+    return 0;
+}
+
+int test_unique_ptr(void) {
+    unique_ptr<int> u(new int(1));
+    // u.release();    // 释放指针对象u对指针的控制权，返回指针，并将u置为空，但对象没有被释放且和指针之间的联系被断开
+    // unique_ptr<int> p(u.release());     // 此时内存由p控制，离开作用域是，p会被销毁，同时内存也会被销毁
+    unique_ptr<int> p(new int(2));
+    // p.reset(nullptr);
+    p.reset(u.release());
+    return 0;
+}
+
+void my_deleter(int *ptr) {
+    delete ptr;
+}
+
+int test_unique_ptr_delete(void) {
+    int *q = new int(1);
+    unique_ptr<int, decltype(my_deleter) *> p(q, my_deleter);
+    return 0;
+}
+
 int main() {
 #if TEST_SHARED_PTR_AUTODELETE
     test_shared_ptr_autodelete();
@@ -54,5 +87,14 @@ int main() {
 #if TEST_SHARED_PTR_INITIALIZATION_NEW
     test_shared_ptr_initialization_new();
 #endif
+#if TEST_COMPARE_MAKESHARED_NEW
+    test_compare_makeshared_new();
+#endif
+#if TEST_UNIQUE_PTR
+    test_unique_ptr();
+#endif
+# if TEST_UNIQUE_PTR_DELETE
+#endif
+    test_unique_ptr_delete();
     return 0;
 }
