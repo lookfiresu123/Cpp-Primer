@@ -8,11 +8,19 @@
 
 using namespace std;
 
+class StrBlobPtr;
+
 class StrBlob {
 public:
+    friend class StrBlobPtr;
     typedef vector<string>::size_type size_type;
     StrBlob();
     StrBlob(initializer_list<string> il);
+    StrBlobPtr begin() { return StrBlobPtr(*this); }
+    StrBlobPtr end() {
+        auto ret = StrBlobPtr(*this, data->size());
+        return ret;
+    }
     size_type size() const { return data->size(); }
     bool empty() const { return data->empty(); }
     // 添加或删除元素

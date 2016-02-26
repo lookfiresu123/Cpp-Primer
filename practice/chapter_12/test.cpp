@@ -9,7 +9,9 @@ using namespace std;
 #define TEST_SHARED_PTR_INITIALIZATION_NEW 0
 #define TEST_COMPARE_MAKESHARED_NEW 0
 #define TEST_UNIQUE_PTR 0
-#define TEST_UNIQUE_PTR_DELETE 1
+#define TEST_UNIQUE_PTR_DELETE 0
+#define TEST_DYNAMIC_ARRAY 0
+#define TEST_ALLOCATOR 1
 
 class Person {
 private:
@@ -77,6 +79,20 @@ int test_unique_ptr_delete(void) {
     return 0;
 }
 
+int test_dynamic_array(void) {
+    int *p = new int[10]{0,1,2,3,4};
+    delete [] p;
+    return 0;
+}
+
+int test_allocator(void) {
+    allocator<string> a;
+    string *p = a.allocate(1);
+    a.construct(p, "chensu");
+    a.destroy(p);
+    return 0;
+}
+
 int main() {
 #if TEST_SHARED_PTR_AUTODELETE
     test_shared_ptr_autodelete();
@@ -93,8 +109,14 @@ int main() {
 #if TEST_UNIQUE_PTR
     test_unique_ptr();
 #endif
-# if TEST_UNIQUE_PTR_DELETE
-#endif
+#if TEST_UNIQUE_PTR_DELETE
     test_unique_ptr_delete();
+#endif
+#if TEST_DYNAMIC_ARRAY
+    test_dynamic_array();
+#endif
+#if TEST_ALLOCATOR
+    test_allocator();
+#endif
     return 0;
 }
