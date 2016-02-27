@@ -90,6 +90,8 @@ int test_allocator(void) {
     string *p = a.allocate(1);
     a.construct(p, "chensu");
     a.destroy(p);
+    a.deallocate(p, 1);
+    // a.destroy(p);
     return 0;
 }
 

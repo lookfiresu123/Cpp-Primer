@@ -6,8 +6,8 @@
 using namespace std;
 
 #define TEST_DYNAMIC_MEMORY_1 0
-#define TEST_DYNAMIC_MEMORY_2 1
-#define TEST_DYNAMIC_MEMORY_3 0
+#define TEST_DYNAMIC_MEMORY_2 0
+#define TEST_DYNAMIC_MEMORY_3 1
 #define TEST_DYNAMIC_MEMORY_4 0
 #define TEST_DYNAMIC_MEMORY_5 0
 
@@ -52,6 +52,24 @@ int test_dynamic_memory_2(void) {
     return 0;
 }
 
+int test_dynamic_memory_3(void) {
+    const size_t n = 10;
+    allocator<string> a;
+    string *const p = a.allocate(n);
+    for (size_t i = 0 ; i < n ; ++i)
+        a.construct(p+i);
+    string s;
+    string *q = p;
+    while (cin >> s && q != p + n)
+        *q++ = s;
+    const size_t size = q - p;
+    for (size_t i = 0 ; i < n ; ++i)
+        a.destroy(p+i);
+    a.deallocate(p, n);
+    cout << size << endl;
+    return 0;
+}
+
 int main() {
 #if TEST_DYNAMIC_MEMORY_1
     test_dynamic_memory_1();    // 练习1.26
@@ -60,6 +78,7 @@ int main() {
     test_dynamic_memory_2();    // 练习1.27
 #endif
 #if TEST_DYNAMIC_MEMORY_3
+    test_dynamic_memory_3();
 #endif
 #if TEST_DYNAMIC_MEMORY_4
 #endif
