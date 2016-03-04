@@ -13,6 +13,9 @@ using namespace std;
 
 // 类vector类内存分配策略的简化实现
 class StrVec {
+    friend bool operator==(const StrVec &lhs, const StrVec &rhs);
+    friend bool operator!=(const StrVec &lhs, const StrVec &rhs);
+
 public:
     StrVec() : elements(nullptr), first_free(nullptr), cap(nullptr) {}   // 默认构造函数
     StrVec(const StrVec &);     // 拷贝构造函数
@@ -42,5 +45,8 @@ private:
     string *first_free; // 指向数组第一个空闲元素的指针（对应vector的end）
     string *cap;        // 指向数组尾后位置的指针（对应vector的capability）
 };
+
+bool operator==(const StrVec &lhs, const StrVec &rhs);
+bool operator!=(const StrVec &lhs, const StrVec &rhs);
 
 #endif

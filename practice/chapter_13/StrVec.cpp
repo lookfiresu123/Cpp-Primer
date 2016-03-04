@@ -107,6 +107,14 @@ StrVec &StrVec::resize(size_t count) {
     return *this;
 }
 
+bool operator==(const StrVec &lhs, const StrVec &rhs) {
+    return lhs.elements == rhs.elements && lhs.first_free == rhs.first_free && lhs.cap == rhs.cap;
+}
+
+bool operator!=(const StrVec &lhs, const StrVec &rhs) {
+    return !(lhs == rhs);
+}
+
 
 int main() {
     StrVec sv;
