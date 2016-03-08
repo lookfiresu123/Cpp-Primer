@@ -14,6 +14,32 @@ private:
     int age;
 };
 
+class B;
+class A {
+public:
+    A() = default;
+    A(const B &);
+private:
+    int data;
+};
+
+class B {
+public:
+    B(int init) : data(init) {}
+    operator A() const;
+    int getdata() const { return data; }
+private:
+    int data;
+};
+
+A::A(const B &b) {
+    data = b.getdata();
+}
+
+B::operator A() const {
+    return A(*this);
+}
+
 int test_function_callable_1(int, int) { return 0; }
 int test_function_callable_2(int, int) { return 0; }
 
@@ -31,10 +57,16 @@ int test_function() {
     return 0;
 }
 
+A f(const A &a) { return a; }
+
 int test_operator_type() {
-    int i = 42;
+    B b(1);
+    // A a = b;        // conversion is ambiguous, candidate has "operator A() const" and "A::A(const B &b)"
+    A a1 = f(b.operator A());
+    A a2 = f(A(b));
     return 0;
 }
+
 
 int main() {
     // test_function();
