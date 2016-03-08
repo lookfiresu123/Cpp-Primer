@@ -29,6 +29,9 @@ public:
     string isbn() const { return bookNo; }
     Sales_data &operator+=(const Sales_data &);
     Sales_data &operator=(const Sales_data &);
+    operator string() const { return bookNo; }
+    operator double() const { return units_sold; }
+
 };
 void Reset_Istream (istream &is);
 

@@ -3,7 +3,8 @@
 
 #define TEST_OPERATOR_ADD 0
 #define TEST_OPERATOR_POINTER 0
-#define TEST_OPERATOR_DEREFERENCE 1
+#define TEST_OPERATOR_DEREFERENCE 0
+#define TEST_OPERATOR_CONVERSION 1
 
 int test_operator_add(void) {
     Sales_data lhs, rhs;
@@ -25,6 +26,14 @@ int test_operator_dereference(void) {
     return 0;
 }
 
+int test_operator_conversion(void) {
+    Sales_data p("google", 1, 1.0);
+    const string q = p;
+    cout << q << endl;
+    cout << p + 2.0 << endl;
+    return 0;
+}
+
 int main() {
 #if TEST_OPERATOR_ADD
     test_operator_add();
@@ -34,6 +43,9 @@ int main() {
 #endif
 #if TEST_OPERATOR_DEREFERENCE
     test_operator_dereference();
+#endif
+#if TEST_OPERATOR_CONVERSION
+    test_operator_conversion();
 #endif
     return 0;
 }
