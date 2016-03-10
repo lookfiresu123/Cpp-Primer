@@ -25,7 +25,9 @@ int test_function_dynamic_bind() {
 }
 
 int test_access_control() {
-    Quote q1;
+    Quote q1;       // 自定义类型的对象存储在栈区，标准库的类的对象存储在堆区
+    Quote *p = new Quote();     // 存储在堆区
+    delete p;
     Bulk_quote q2;
     q2.isbn();
     q2.print_price();
