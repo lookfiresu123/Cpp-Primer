@@ -1,69 +1,73 @@
-#include "Bulk_quote.h"
+#include <iostream>
+#include <string>
 
-#define TEST_DESTRUCTOR_DYNAMIC_BIND 0
-#define TEST_FUNCTION_DYNAMIC_BIND 0
-#define TEST_ACCESS_CONTROL_1 0
-#define TEST_ACCESS_CONTROL_2 1
+using namespace std;
 
-int test_destructor_dynamic_bind() {
-    Quote *ptr_quote = new Quote();     // 基类的构造函数
-    Bulk_quote *ptr_bulk_quote = new Bulk_quote();  // 派生类的构造函数
-    delete ptr_quote;
-    delete ptr_bulk_quote;
-    return 0;
-}
+class A {
+public:
+    A(const string &_name, int _age) : name(_name), age(_age) {}
+    void print() { cout << name << " " << age << endl; }
+    virtual ~A() {}
+protected:
+    string name;
+    int age;
+};
 
-int test_function_dynamic_bind() {
-    // Quote quote1;     // 基类的构造函数
-    Bulk_quote bulk_quote;  // 派生类的构造函数
-    Quote &quote2 = bulk_quote;     // 引用
-    // quote1.net_price(10);
-    quote2.net_price(10);
-    Quote *ptr_quote2 = new Bulk_quote();   // 指针
-    ptr_quote2->net_price(10);
-    delete ptr_quote2;
-    return 0;
-}
+class B : public virtual A {
+public:
+    B(const string &_name, int _age, int _height) : A(_name, _age), height(_height) {}
+    virtual ~B() {}
+protected:
+    int height;
+};
 
-int test_access_control_1() {
-    Quote q1;       // 自定义类型的对象存储在栈区，标准库的类的对象存储在堆区
-    Quote *p = new Quote();     // 存储在堆区
-    delete p;
-    Bulk_quote q2;
-    q2.isbn();
-    q2.print_price();
-    return 0;
-}
+class C : public virtual A {
+public:
+    C(const string &_name, int _age, int _weight) : A(_name, _age), weight(_weight) {}
+    virtual ~C() {}
+protected:
+    int weight;
+};
 
-int test_access_control_2() {
-    Quote q1;
-    Bulk_quote q2;
-    void (Quote::*p1)() = &Quote::print1;
-    void (Bulk_quote::*p2)() = &Bulk_quote::print1;
-    void (Quote::*p3)() = &Quote::print2;
-    void (Bulk_quote::*p4)() = &Bulk_quote::print2;
-    // q1.print1();
-    // q1.print2();
-    // q2.print1();
-    // q2.print2();
-    // Bulk_quote q;
-    // Quote &p = q;
-    // p.print();
-    return 0;
-}
+class D : public B, public C {
+public:
+    D(const string &_name1, const string &_name2 ,int _age1, int _age2, int _height, int _weight, const string &_sex) :
+        B(_name1, _age1, _height), C( _name2, _age2, _weight ), A(_name1, _age1), sex(_sex) {}
+    ~D() {}
+protected:
+    string sex;
+};
+
+class E : public A {
+public:
+    E(const string &_name, int _age, int _height) : A(_name, _age), height(_height) {}
+    virtual ~E() {}
+protected:
+    int height;
+};
+
+class F : public A {
+public:
+    F(const string &_name, int _age, int _weight) : A(_name, _age), weight(_weight) {}
+    virtual ~F() {}
+protected:
+    int weight;
+};
+
+class G : public E, public F {
+public:
+    G(const string &_name1, const string &_name2 ,int _age1, int _age2, int _height, int _weight, const string &_sex) :
+        E(_name1, _age1, _height), F( _name2, _age2, _weight ), sex(_sex) {}
+    ~G() {}
+protected:
+    string sex;
+};
+
+
 
 int main() {
-#if TEST_DESTRUCTOR_DYNAMIC_BIND
-    test_destructor_dynamic_bind();
-#endif
-#if TEST_FUNCTION_DYNAMIC_BIND
-    test_function_dynamic_bind();
-#endif
-#if TEST_ACCESS_CONTROL_1
-    test_access_control_1();
-#endif
-#if TEST_ACCESS_CONTROL_2
-    test_access_control_2();
-#endif
+    // D d("chensu", "chenye", 24, 23, 172, 100, "male");
+    // d.print();
+    G g("chensu", "chenye", 24, 23, 172, 100, "male");
     return 0;
 }
