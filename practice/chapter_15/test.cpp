@@ -36,6 +36,19 @@ int test_access_control_1() {
 }
 
 int test_access_control_2() {
+    Quote q1;
+    Bulk_quote q2;
+    void (Quote::*p1)() = &Quote::print1;
+    void (Bulk_quote::*p2)() = &Bulk_quote::print1;
+    void (Quote::*p3)() = &Quote::print2;
+    void (Bulk_quote::*p4)() = &Bulk_quote::print2;
+    // q1.print1();
+    // q1.print2();
+    // q2.print1();
+    // q2.print2();
+    // Bulk_quote q;
+    // Quote &p = q;
+    // p.print();
     return 0;
 }
 
@@ -48,6 +61,9 @@ int main() {
 #endif
 #if TEST_ACCESS_CONTROL_1
     test_access_control_1();
+#endif
+#if TEST_ACCESS_CONTROL_2
+    test_access_control_2();
 #endif
     return 0;
 }

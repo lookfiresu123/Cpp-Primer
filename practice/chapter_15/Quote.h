@@ -11,11 +11,14 @@ public:
     Quote() = default;      // 默认构造函数
     // 直接构造函数
     Quote(const string &book, double sales_price) : bookNo(book), price(sales_price) {}
-    string isbn() const { return bookNo; }  // 返回书籍的编号
+    // void isbn() const { cout << "isbn" << endl;}  // 返回书籍的编号
     // 返回给定数量的书籍的销售总额
     // 派生类负责改写改写并使用不同的折扣计算算法
     virtual double net_price(size_t n) const { return n * price; }
     virtual ~Quote() = default; // 虚析构函数
+    void isbn() const { cout << "isbn" << endl;}  // 返回书籍的编号
+    void print1() { cout << "Quote" << endl; }
+    void print2() { cout << "Quote" << endl; }
 private:
     string bookNo;
 protected:

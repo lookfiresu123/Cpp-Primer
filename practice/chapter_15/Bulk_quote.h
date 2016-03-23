@@ -10,6 +10,7 @@ public:
     double net_price(size_t) const override { return 0; }
     void print_price() { cout << price << endl; }
     // void print_bookNo() { cout << bookNo << endl; }
+    void print2() {cout << "Bulk_quote" << endl; }
 private:
     size_t min_qty = 0;
     double discount = 0.0;
