@@ -66,8 +66,25 @@ protected:
 
 
 int main() {
-    // D d("chensu", "chenye", 24, 23, 172, 100, "male");
+    A a("chensu", 24);
+    B b("chensu", 24, 172);
+    C c("chensu", 24, 100);
+    D d("chensu", "chenye", 24, 23, 172, 100, "male");
     // d.print();
+    E e("chensu", 24, 172);
+    E f("chensu", 24, 100);
     G g("chensu", "chenye", 24, 23, 172, 100, "male");
+
+
+    cout << "a = " << sizeof(a) << endl;
+
+    cout << "virtual inheritance" << endl;
+    cout << "b = "<< sizeof(b) << endl;
+    cout << "c = "<< sizeof(c) << endl;
+    cout << "d = " << sizeof(d) << endl;
+    cout << "no virtual inheritance" << endl;
+    cout << "e = " << sizeof(e) << endl;
+    cout << "f = " << sizeof(f) << endl;
+    cout << "g = " << sizeof(g) << endl;
     return 0;
 }
