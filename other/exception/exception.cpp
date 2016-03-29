@@ -1,13 +1,17 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>        // 处理异常的头文件
+#include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
 #define DO_TEST_THROW_1 0
 #define DO_TEST_TRY_CATCH_1 0
 #define DO_TEST_EXCEPTION_1 0
-#define DO_TEST_EXCEPTION_2 1
+#define DO_TEST_EXCEPTION_2 0
+#define DO_TEST_EXCEPTION_3 1
+#define DO_TEST_EXCEPTION_4 0
 
 int test_throw_1 (void) {
     string s1 = "hello world";
@@ -63,6 +67,33 @@ int test_exception_2 (void) {
     return 0;
 }
 
+class Exception_1 {};       // 自定义异常类
+class Exception_2 {};       // 自定义异常类
+class Exception_3 {};       // 自定义异常类
+
+int test_exception_3() {
+    srand(time(0));
+    int temp = rand() % 3;
+    try {
+        if (temp == 1)
+            throw Exception_1();
+        else if (temp == 2)
+            throw Exception_2();
+        else
+            throw Exception_3();
+    }
+    catch(Exception_1) {
+        cout << "exception 1" << endl;
+    }
+    catch(Exception_2) {
+        cout << "exception 2" << endl;
+    }
+    catch(Exception_3) {
+        cout << "exception 3" << endl;
+    }
+    return 0;
+}
+
 int main (void) {
 #if DO_TEST_THROW_1
     test_throw_1();
@@ -75,6 +106,9 @@ int main (void) {
 #endif
 #if DO_TEST_EXCEPTION_2
     test_exception_2();
+#endif
+#if DO_TEST_EXCEPTION_3
+    test_exception_3();
 #endif
 
     return 0;
