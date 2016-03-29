@@ -1,7 +1,11 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <sstream>
+#include <algorithm>
 
-#define TEST_STREAM_1 1
+#define TEST_STREAM_1 0
+#define TEST_STREAM_2 1
 
 bool debug_istream (std::istream &is) {
     std::ios_base::iostate state = is.rdstate();
@@ -32,9 +36,27 @@ int test_stream_1 (void) {
     return 0;
 }
 
+void split_string(std::vector<std::string> &vec, std::string &input) {
+    std::stringstream ss(input);
+    std::string word;
+    while (std::getline(ss, word, ' '))
+        vec.push_back(word);
+}
+
+int test_stream_2() {
+    std::string s("Hello my name is chensu");
+    std::vector<std::string> vec;
+    split_string(vec, s);
+    std::for_each(vec.begin(), vec.end(), [](std::string &i){std::cout << i << std::endl;});
+    return 0;
+}
+
 int main (void) {
 #if TEST_STREAM_1
     test_stream_1();    // 练习8.1和8.2
+#endif
+#if TEST_STREAM_2
+    test_stream_2();
 #endif
     return 0;
 }
