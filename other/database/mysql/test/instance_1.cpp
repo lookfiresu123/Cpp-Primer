@@ -38,18 +38,18 @@ int test_prepared_statement(std::unique_ptr<sql::Connection> &con_ptr) {
     std::vector<std::string> words_int = {"stu_age","stu_score"};
     std::cin >> word;
     try {
-        if (!binary_search(words.begin(), words.end(), word))
+        if (std::find(words.begin(), words.end(), word) == words.end())
             throw Exception_1();
     } catch (Exception_1) {
         std::cout << "attribute out of range" << std::endl;
         exit(0);
     }
-    if (binary_search(words_str.begin(), words_str.end(), word)) {
+    if (std::find(words_str.begin(), words_str.end(), word) != words_str.end()) {
         std::cin >> value_str;
         unsigned int pos = static_cast<unsigned int>(std::find(words.begin(), words.end(), word) - words.begin());
         pstmt->setString(pos, value_str);
         pstmt->executeUpdate();
-    } else if (binary_search(words_int.begin(), words_int.end(), word)) {
+    } else if (std::find(words_int.begin(), words_int.end(), word) != words_int.end()) {
         std::cin >> value_int;
         unsigned int pos = static_cast<unsigned int>(std::find(words.begin(), words.end(), word) - words.begin());
         pstmt->setInt(pos, value_int);
