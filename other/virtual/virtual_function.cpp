@@ -16,9 +16,15 @@ class People {
             cout << "no country for people" << endl;
         };
         People() {
-            //cout << "call constructor People" << endl;
+            weight = 1;
+            height = 2;
+            cout << "call constructor People" << endl;
         };
-        virtual ~People() { cout << "call destructor People" << endl;  };
+        virtual ~People() {
+            weight = 0;
+            height = 0;
+            cout << "call destructor People" << endl;
+        };
 };
 
 class Chinese : public People {
@@ -43,10 +49,13 @@ class Japanese : public People {
             cout << "country is :" << country << endl;
         };
         Japanese() {
-            //cout << "call constructor Japanese" << endl;
+            cout << "call constructor Japanese" << endl;
             country = "japan";
         };
-        ~Japanese() {  cout << "call destructor Japanese" << endl;  };
+        ~Japanese() {
+            // country = "";
+            cout << "call destructor Japanese" << endl;
+        };
 };
 
 int main () {
